@@ -15,7 +15,6 @@
 		59BFB2462BFCFAE6008B6EA8 /* MementoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2452BFCFAE6008B6EA8 /* MementoTests.swift */; };
 		59BFB2502BFCFAE6008B6EA8 /* MementoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */; };
 		59BFB2522BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */; };
-		59FC6A402BFECF4200D72FF2 /* MementoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 59FC6A302BFECF4100D72FF2 /* MementoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +32,6 @@
 			remoteGlobalIDString = 59BFB22E2BFCFAE5008B6EA8;
 			remoteInfo = Memento;
 		};
-		59FC6A3E2BFECF4200D72FF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 59BFB2272BFCFAE5008B6EA8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59FC6A2F2BFECF4100D72FF2;
-			remoteInfo = MementoWidgetExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,7 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				59FC6A402BFECF4200D72FF2 /* MementoWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,7 +59,6 @@
 		59BFB24B2BFCFAE6008B6EA8 /* MementoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MementoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITests.swift; sourceTree = "<group>"; };
 		59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		59FC6A302BFECF4100D72FF2 /* MementoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MementoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +77,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		59BFB2482BFCFAE6008B6EA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59FC6A2D2BFECF4100D72FF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,7 +102,6 @@
 				59BFB22F2BFCFAE5008B6EA8 /* Memento.app */,
 				59BFB2412BFCFAE6008B6EA8 /* MementoTests.xctest */,
 				59BFB24B2BFCFAE6008B6EA8 /* MementoUITests.xctest */,
-				59FC6A302BFECF4100D72FF2 /* MementoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,7 +174,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				59FC6A3F2BFECF4200D72FF2 /* PBXTargetDependency */,
 			);
 			name = Memento;
 			productName = Memento;
@@ -235,23 +216,6 @@
 			productReference = 59BFB24B2BFCFAE6008B6EA8 /* MementoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		59FC6A2F2BFECF4100D72FF2 /* MementoWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 59FC6A412BFECF4200D72FF2 /* Build configuration list for PBXNativeTarget "MementoWidgetExtension" */;
-			buildPhases = (
-				59FC6A2C2BFECF4100D72FF2 /* Sources */,
-				59FC6A2D2BFECF4100D72FF2 /* Frameworks */,
-				59FC6A2E2BFECF4100D72FF2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MementoWidgetExtension;
-			productName = MementoWidgetExtension;
-			productReference = 59FC6A302BFECF4100D72FF2 /* MementoWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -273,9 +237,6 @@
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 59BFB22E2BFCFAE5008B6EA8;
 					};
-					59FC6A2F2BFECF4100D72FF2 = {
-						CreatedOnToolsVersion = 15.3;
-					};
 				};
 			};
 			buildConfigurationList = 59BFB22A2BFCFAE5008B6EA8 /* Build configuration list for PBXProject "Memento" */;
@@ -294,7 +255,6 @@
 				59BFB22E2BFCFAE5008B6EA8 /* Memento */,
 				59BFB2402BFCFAE6008B6EA8 /* MementoTests */,
 				59BFB24A2BFCFAE6008B6EA8 /* MementoUITests */,
-				59FC6A2F2BFECF4100D72FF2 /* MementoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -317,13 +277,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		59BFB2492BFCFAE6008B6EA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59FC6A2E2BFECF4100D72FF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,13 +313,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59FC6A2C2BFECF4100D72FF2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -379,11 +325,6 @@
 			isa = PBXTargetDependency;
 			target = 59BFB22E2BFCFAE5008B6EA8 /* Memento */;
 			targetProxy = 59BFB24C2BFCFAE6008B6EA8 /* PBXContainerItemProxy */;
-		};
-		59FC6A3F2BFECF4200D72FF2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59FC6A2F2BFECF4100D72FF2 /* MementoWidgetExtension */;
-			targetProxy = 59FC6A3E2BFECF4200D72FF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -641,60 +582,6 @@
 			};
 			name = Release;
 		};
-		59FC6A422BFECF4200D72FF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5T458C78BL;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MementoWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MementoWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento.MementoWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		59FC6A432BFECF4200D72FF2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5T458C78BL;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MementoWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MementoWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento.MementoWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -730,15 +617,6 @@
 			buildConfigurations = (
 				59BFB25C2BFCFAE6008B6EA8 /* Debug */,
 				59BFB25D2BFCFAE6008B6EA8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59FC6A412BFECF4200D72FF2 /* Build configuration list for PBXNativeTarget "MementoWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59FC6A422BFECF4200D72FF2 /* Debug */,
-				59FC6A432BFECF4200D72FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
