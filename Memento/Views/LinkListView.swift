@@ -16,6 +16,9 @@ struct LinkListView: View {
 
     var body: some View {
         NavigationStack {
+            if items.isEmpty {
+                ContentUnavailableView("No Links Added", systemImage: "link")
+            }
             List {
                 ForEach(items) { item in
                     Link(item.link, destination: URL(string: item.link)!)
@@ -32,6 +35,7 @@ struct LinkListView: View {
                     }
                 }
             }
+            .navigationTitle("Links")
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddItemView(shown: $viewModel.sheetShown)
             })
