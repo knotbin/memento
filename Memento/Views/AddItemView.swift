@@ -33,6 +33,7 @@ struct AddItemView: View {
                         addItem(link: viewModel.linkText)
                         shown = false
                     }
+                    .disabled(viewModel.linkText.isEmpty)
                 }
             }
         }

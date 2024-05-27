@@ -25,6 +25,11 @@ struct LinkListView: View {
                         Text("Viewed").tag(true)
                     }
                     .pickerStyle(.segmented)
+                    
+                    if !checkFilteredData() {
+                        ContentUnavailableView("No Links Added", systemImage: "link")
+                    }
+                    
                     ForEach(items.filter {
                         if viewModel.viewedItems && $0.viewed == true {
                             return true
@@ -76,6 +81,23 @@ struct LinkListView: View {
     
     func deleteItem(item: Item) {
         modelContext.delete(item)
+    }
+    
+    func checkFilteredData() -> Bool {
+        let filteredList = items.filter {
+            if viewModel.viewedItems && $0.viewed == true {
+                return true
+            } else if !viewModel.viewedItems && $0.viewed == false {
+                return true
+            } else {
+                return false
+            }
+        }
+        if filteredList.isEmpty {
+            return false
+        } else {
+            return true
+        }
     }
 }
 
