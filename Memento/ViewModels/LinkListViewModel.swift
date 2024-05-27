@@ -9,9 +9,8 @@ import Foundation
 
 @Observable
 class LinkListViewModel {
-    
-    
     var sheetShown = false
+    var viewedItems = false
     
     func addItemSheet() {
         sheetShown = true

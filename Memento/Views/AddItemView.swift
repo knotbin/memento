@@ -20,20 +20,18 @@ struct AddItemView: View {
                 TextField("Enter URL", text: $viewModel.linkText)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
-                Button {
-                    addItem(link: viewModel.linkText)
-                    shown = false
-                } label: {
-                    Text("Add Link")
-                }
             }
             .navigationTitle("New Link")
             .toolbar {
-                ToolbarItem {
-                    Button {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
                         shown = false
-                    } label: {
-                        Image(systemName: "xmark.circle")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save") {
+                        addItem(link: viewModel.linkText)
+                        shown = false
                     }
                 }
             }

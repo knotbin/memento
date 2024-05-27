@@ -12,9 +12,11 @@ import SwiftData
 final class Item {
     var timestamp: Date
     var link: String
+    var viewed: Bool
     
     init(timestamp: Date, link: String) {
         self.timestamp = timestamp
         self.link = link
+        self.viewed = false
     }
 }

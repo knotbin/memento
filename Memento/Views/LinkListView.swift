@@ -16,25 +16,45 @@ struct LinkListView: View {
 
     var body: some View {
         NavigationStack {
-            if items.isEmpty {
-                ContentUnavailableView("No Links Added", systemImage: "link")
-            }
             ScrollView {
-                ForEach(items) { item in
-                    VStack(alignment: .leading) {
-                        URLPreview(urlString: item.link)
-                            .padding(.bottom, 15)
-                        HStack {
-                            Button(role: .destructive) {
-                                deleteItem(item: item)
-                            } label: {
-                                Image(systemName: "trash")
+                if items.isEmpty {
+                    ContentUnavailableView("No Links Added", systemImage: "link")
+                } else {
+                    Picker(selection: $viewModel.viewedItems, label: Text("")) {
+                        Text("Unviewed").tag(false)
+                        Text("Viewed").tag(true)
+                    }
+                    .pickerStyle(.segmented)
+                    ForEach(items.filter {
+                        if viewModel.viewedItems && $0.viewed == true {
+                            return true
+                        } else if !viewModel.viewedItems && $0.viewed == false {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }) { item in
+                        VStack(alignment: .leading) {
+                            URLPreview(urlString: item.link)
+                                .padding(.bottom, 10)
+                            HStack {
+                                Button {
+                                    item.viewed.toggle()
+                                } label: {
+                                    Image(systemName: "checkmark.circle")
+                                }
+                                Button(role: .destructive) {
+                                    deleteItem(item: item)
+                                } label: {
+                                    Image(systemName: "trash")
+                                }
                             }
                         }
+                        .padding()
                     }
-                    .padding()
                 }
             }
+            .padding()
             
             
             .toolbar {
