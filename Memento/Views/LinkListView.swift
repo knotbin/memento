@@ -19,18 +19,29 @@ struct LinkListView: View {
             if items.isEmpty {
                 ContentUnavailableView("No Links Added", systemImage: "link")
             }
-            List {
+            ScrollView {
                 ForEach(items) { item in
-                    Link(item.name, destination: URL(string: item.link)!)
+                    VStack {
+                        URLPreview(urlString: item.link)
+                        HStack {
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                        }
+                    }
                 }
-                .onDelete(perform: deleteItems)
+                .padding()
             }
+            
+            
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItemSheet) {
+                    Button(action: viewModel.addItemSheet) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
@@ -39,18 +50,6 @@ struct LinkListView: View {
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddItemView(shown: $viewModel.sheetShown)
             })
-        }
-    }
-
-    private func addItemSheet() {
-        viewModel.sheetShown = true
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
         }
     }
 }

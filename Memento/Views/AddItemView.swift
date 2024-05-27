@@ -17,14 +17,11 @@ struct AddItemView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    TextField("Enter Name (optional)", text: $viewModel.nameText)
-                    TextField("Enter URL", text: $viewModel.linkText)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                }
+                TextField("Enter URL", text: $viewModel.linkText)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
                 Button {
-                    addItem(link: viewModel.linkText, name: viewModel.nameText)
+                    addItem(link: viewModel.linkText)
                     shown = false
                 } label: {
                     Text("Add Link")
@@ -43,22 +40,18 @@ struct AddItemView: View {
         }
     }
     
-    func addItem(link: String, name: String) {
-        var url = link
-        var title = name
+    func addItem(link: String) {
+        var fulllink = link
+        
         if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") {
-            url = link
+            fulllink = link
         } else if link.hasPrefix("www.") {
-            url = "https://\(link)"
+            fulllink = "https://\(link)"
         } else {
-            url = "https://www.\(link)"
+            fulllink = "https://www.\(link)"
         }
         
-        if title == "" {
-            title = link
-        }
-        
-        let item = Item(timestamp: Date(), link: url, name: title)
+        let item = Item(timestamp: Date(), link: fulllink)
         modelContext.insert(item)
     }
 }

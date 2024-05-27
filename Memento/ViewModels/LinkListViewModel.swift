@@ -6,10 +6,15 @@
 //
 
 import Foundation
+import LinkPresentation
 
 @Observable
 class LinkListViewModel {
     var sheetShown = false
+    
+    func addItemSheet() {
+        sheetShown = true
+    }
     
     init() {}
 }

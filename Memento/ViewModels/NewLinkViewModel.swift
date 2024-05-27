@@ -10,7 +10,6 @@ import Foundation
 @Observable
 class NewLinkViewModel {
     var linkText = ""
-    var nameText = ""
     
     init() {}
 }

@@ -19,6 +19,7 @@
 		59BFB2502BFCFAE6008B6EA8 /* MementoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */; };
 		59BFB2522BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */; };
 		59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A52C0439BF00457E4B /* NewLinkViewModel.swift */; };
+		59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A72C04F77500457E4B /* URLPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITests.swift; sourceTree = "<group>"; };
 		59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59DF06A52C0439BF00457E4B /* NewLinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLinkViewModel.swift; sourceTree = "<group>"; };
+		59DF06A72C04F77500457E4B /* URLPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */,
 				59899A382C0159FB00470E42 /* LinkListView.swift */,
 				59899A3A2C015B8400470E42 /* AddItemView.swift */,
+				59DF06A72C04F77500457E4B /* URLPreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				59899A392C0159FB00470E42 /* LinkListView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */,
+				59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
