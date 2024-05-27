@@ -21,7 +21,7 @@ struct LinkListView: View {
             }
             List {
                 ForEach(items) { item in
-                    Link(item.link, destination: URL(string: item.link)!)
+                    Link(item.name, destination: URL(string: item.link)!)
                 }
                 .onDelete(perform: deleteItems)
             }

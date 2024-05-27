@@ -11,17 +11,20 @@ import SwiftData
 struct AddItemView: View {
     @Environment(\.modelContext) private var modelContext
     
-    @State var linkText = ""
+    @State var viewModel = NewLinkViewModel()
     @Binding var shown: Bool
     
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Enter URL", text: $linkText)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
+                Section {
+                    TextField("Enter Name (optional)", text: $viewModel.nameText)
+                    TextField("Enter URL", text: $viewModel.linkText)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                }
                 Button {
-                    addItem(link: linkText)
+                    addItem(link: viewModel.linkText, name: viewModel.nameText)
                     shown = false
                 } label: {
                     Text("Add Link")
@@ -40,8 +43,9 @@ struct AddItemView: View {
         }
     }
     
-    func addItem(link: String) {
+    func addItem(link: String, name: String) {
         var url = link
+        var title = name
         if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") {
             url = link
         } else if link.hasPrefix("www.") {
@@ -49,7 +53,12 @@ struct AddItemView: View {
         } else {
             url = "https://www.\(link)"
         }
-        let item = Item(timestamp: Date(), link: url)
+        
+        if title == "" {
+            title = link
+        }
+        
+        let item = Item(timestamp: Date(), link: url, name: title)
         modelContext.insert(item)
     }
 }
