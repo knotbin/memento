@@ -10,7 +10,7 @@ import SwiftData
 
 struct LinkListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query(animation: .smooth) private var items: [Item]
     
     @State var viewModel = LinkListViewModel()
 
@@ -21,18 +21,19 @@ struct LinkListView: View {
             }
             ScrollView {
                 ForEach(items) { item in
-                    VStack {
+                    VStack(alignment: .leading) {
                         URLPreview(urlString: item.link)
+                            .padding(.bottom, 15)
                         HStack {
-                            Button {
-                                
+                            Button(role: .destructive) {
+                                deleteItem(item: item)
                             } label: {
                                 Image(systemName: "trash")
                             }
                         }
                     }
+                    .padding()
                 }
-                .padding()
             }
             
             
@@ -51,6 +52,10 @@ struct LinkListView: View {
                 AddItemView(shown: $viewModel.sheetShown)
             })
         }
+    }
+    
+    func deleteItem(item: Item) {
+        modelContext.delete(item)
     }
 }
 
