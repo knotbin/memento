@@ -42,7 +42,7 @@ struct AddItemView: View {
     func addItem(link: String) {
         var fulllink = link
         
-        if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") {
+        if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
             fulllink = link
         } else if link.hasPrefix("www.") {
             fulllink = "https://\(link)"
