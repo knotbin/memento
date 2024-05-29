@@ -10,6 +10,13 @@
 		59899A392C0159FB00470E42 /* LinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* LinkListView.swift */; };
 		59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddItemView.swift */; };
 		59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */; };
+		598F53A92C06A02B00362AB5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53A72C06A02B00362AB5 /* Item.swift */; };
+		598F53AA2C06A05C00362AB5 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53A42C06A00C00362AB5 /* ConfigureModelContainer.swift */; };
+		598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53AB2C06A1C200362AB5 /* ShareView.swift */; };
+		5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D22B2C0699E900E643A2 /* ShareViewController.swift */; };
+		5992D22F2C0699E900E643A2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5992D22E2C0699E900E643A2 /* Base */; };
+		5992D2332C0699E900E643A2 /* ShareSheet.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5992D2292C0699E900E643A2 /* ShareSheet.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */; };
 		59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */; };
 		59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
@@ -23,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5992D2312C0699E900E643A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59BFB2272BFCFAE5008B6EA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5992D2282C0699E900E643A2;
+			remoteInfo = ShareSheet;
+		};
 		59BFB2422BFCFAE6008B6EA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 59BFB2272BFCFAE5008B6EA8 /* Project object */;
@@ -46,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5992D2332C0699E900E643A2 /* ShareSheet.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +71,17 @@
 		59899A382C0159FB00470E42 /* LinkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListView.swift; sourceTree = "<group>"; };
 		59899A3A2C015B8400470E42 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListViewModel.swift; sourceTree = "<group>"; };
+		598F53A42C06A00C00362AB5 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
+		598F53A72C06A02B00362AB5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		598F53AB2C06A1C200362AB5 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		598F53AD2C06AFBA00362AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		598F53AE2C06BE3000362AB5 /* Memento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memento.entitlements; sourceTree = "<group>"; };
+		598F53AF2C06BE7B00362AB5 /* ShareSheet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareSheet.entitlements; sourceTree = "<group>"; };
+		5992D2292C0699E900E643A2 /* ShareSheet.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareSheet.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5992D22B2C0699E900E643A2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		5992D22E2C0699E900E643A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5992D2302C0699E900E643A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
 		59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5992D2262C0699E900E643A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59BFB22C2BFCFAE5008B6EA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,12 +138,51 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		598F53A52C06A00C00362AB5 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				598F53A42C06A00C00362AB5 /* ConfigureModelContainer.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		598F53A82C06A02B00362AB5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				598F53A72C06A02B00362AB5 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5992D22A2C0699E900E643A2 /* ShareSheet */ = {
+			isa = PBXGroup;
+			children = (
+				598F53AF2C06BE7B00362AB5 /* ShareSheet.entitlements */,
+				5992D22B2C0699E900E643A2 /* ShareViewController.swift */,
+				598F53AB2C06A1C200362AB5 /* ShareView.swift */,
+				5992D22D2C0699E900E643A2 /* MainInterface.storyboard */,
+				5992D2302C0699E900E643A2 /* Info.plist */,
+				598F53A82C06A02B00362AB5 /* Models */,
+				598F53A52C06A00C00362AB5 /* Functions */,
+			);
+			path = ShareSheet;
+			sourceTree = "<group>";
+		};
+		5992D2372C069E1700E643A2 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		59BFB2262BFCFAE5008B6EA8 = {
 			isa = PBXGroup;
 			children = (
 				59BFB2312BFCFAE5008B6EA8 /* Memento */,
 				59BFB2442BFCFAE6008B6EA8 /* MementoTests */,
 				59BFB24E2BFCFAE6008B6EA8 /* MementoUITests */,
+				5992D22A2C0699E900E643A2 /* ShareSheet */,
 				59BFB2302BFCFAE5008B6EA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +193,7 @@
 				59BFB22F2BFCFAE5008B6EA8 /* Memento.app */,
 				59BFB2412BFCFAE6008B6EA8 /* MementoTests.xctest */,
 				59BFB24B2BFCFAE6008B6EA8 /* MementoUITests.xctest */,
+				5992D2292C0699E900E643A2 /* ShareSheet.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +201,9 @@
 		59BFB2312BFCFAE5008B6EA8 /* Memento */ = {
 			isa = PBXGroup;
 			children = (
+				598F53AE2C06BE3000362AB5 /* Memento.entitlements */,
+				598F53AD2C06AFBA00362AB5 /* Info.plist */,
+				5992D2372C069E1700E643A2 /* Functions */,
 				59899A3C2C015D0D00470E42 /* ViewModels */,
 				59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */,
 				59FC6A442BFEE22300D72FF2 /* Views */,
@@ -185,6 +261,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5992D2282C0699E900E643A2 /* ShareSheet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5992D2362C0699E900E643A2 /* Build configuration list for PBXNativeTarget "ShareSheet" */;
+			buildPhases = (
+				5992D2252C0699E900E643A2 /* Sources */,
+				5992D2262C0699E900E643A2 /* Frameworks */,
+				5992D2272C0699E900E643A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareSheet;
+			productName = ShareSheet;
+			productReference = 5992D2292C0699E900E643A2 /* ShareSheet.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		59BFB22E2BFCFAE5008B6EA8 /* Memento */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59BFB2552BFCFAE6008B6EA8 /* Build configuration list for PBXNativeTarget "Memento" */;
@@ -197,6 +290,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5992D2322C0699E900E643A2 /* PBXTargetDependency */,
 			);
 			name = Memento;
 			productName = Memento;
@@ -249,6 +343,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					5992D2282C0699E900E643A2 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					59BFB22E2BFCFAE5008B6EA8 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -278,11 +375,20 @@
 				59BFB22E2BFCFAE5008B6EA8 /* Memento */,
 				59BFB2402BFCFAE6008B6EA8 /* MementoTests */,
 				59BFB24A2BFCFAE6008B6EA8 /* MementoUITests */,
+				5992D2282C0699E900E643A2 /* ShareSheet */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5992D2272C0699E900E643A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5992D22F2C0699E900E643A2 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59BFB22D2BFCFAE5008B6EA8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +415,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5992D2252C0699E900E643A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */,
+				598F53A92C06A02B00362AB5 /* Item.swift in Sources */,
+				598F53AA2C06A05C00362AB5 /* ConfigureModelContainer.swift in Sources */,
+				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59BFB22B2BFCFAE5008B6EA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +437,7 @@
 				59899A392C0159FB00470E42 /* LinkListView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */,
+				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,
 				59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +462,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5992D2322C0699E900E643A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5992D2282C0699E900E643A2 /* ShareSheet */;
+			targetProxy = 5992D2312C0699E900E643A2 /* PBXContainerItemProxy */;
+		};
 		59BFB2432BFCFAE6008B6EA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 59BFB22E2BFCFAE5008B6EA8 /* Memento */;
@@ -356,7 +479,70 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		5992D22D2C0699E900E643A2 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5992D22E2C0699E900E643A2 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		5992D2342C0699E900E643A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareSheet/ShareSheet.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5T458C78BL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareSheet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareSheet;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento.ShareSheet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5992D2352C0699E900E643A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareSheet/ShareSheet.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5T458C78BL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareSheet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareSheet;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento.ShareSheet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		59BFB2532BFCFAE6008B6EA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,14 +665,17 @@
 		59BFB2562BFCFAE6008B6EA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memento/Memento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memento/Preview Content\"";
 				DEVELOPMENT_TEAM = 5T458C78BL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Memento/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -508,14 +697,17 @@
 		59BFB2572BFCFAE6008B6EA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memento/Memento.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memento/Preview Content\"";
 				DEVELOPMENT_TEAM = 5T458C78BL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Memento/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -613,6 +805,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5992D2362C0699E900E643A2 /* Build configuration list for PBXNativeTarget "ShareSheet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5992D2342C0699E900E643A2 /* Debug */,
+				5992D2352C0699E900E643A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		59BFB22A2BFCFAE5008B6EA8 /* Build configuration list for PBXProject "Memento" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

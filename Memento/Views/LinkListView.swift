@@ -40,7 +40,7 @@ struct LinkListView: View {
                         }
                     }) { item in
                         VStack(alignment: .leading) {
-                            URLPreview(urlString: item.link)
+                            URLPreview(url: item.url)
                                 .padding(.bottom, 10)
                             HStack {
                                 Button {

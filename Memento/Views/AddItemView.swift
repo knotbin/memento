@@ -49,8 +49,11 @@ struct AddItemView: View {
         } else {
             fulllink = "https://www.\(link)"
         }
+        guard let url = URL(string: fulllink) else {
+            return
+        }
         
-        let item = Item(timestamp: Date(), link: fulllink)
+        let item = Item(timestamp: Date(), link: fulllink, url: url)
         modelContext.insert(item)
     }
 }

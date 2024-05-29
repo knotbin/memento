@@ -9,15 +9,14 @@ import SwiftUI
 import LinkPresentation
 
 struct URLPreview : UIViewRepresentable {
-    var urlString: String
+    var url: URL
 
     func makeUIView(context: Context) -> LPLinkView {
-        let previewURL = URL(string: urlString)!
-        let view = LPLinkView(url: previewURL)
+        let view = LPLinkView(url: url)
         
         let provider = LPMetadataProvider()
 
-        provider.startFetchingMetadata(for: previewURL) { (metadata, error) in
+        provider.startFetchingMetadata(for: url) { (metadata, error) in
             if let md = metadata {
                 DispatchQueue.main.async {
                     view.metadata = md
