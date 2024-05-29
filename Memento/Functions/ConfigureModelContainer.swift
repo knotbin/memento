@@ -13,7 +13,7 @@ public func ConfigureModelContainer() -> ModelContainer {
     ])
     
     // Set up your ModelConfiguration however you need it
-    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, groupContainer: .identifier("group.memento.app"), cloudKitDatabase: .none)
+    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, groupContainer: .identifier("group.xyz.knotbin.memento"), cloudKitDatabase: .none)
     
     do {
         return try ModelContainer(for: schema, configurations: [modelConfiguration])

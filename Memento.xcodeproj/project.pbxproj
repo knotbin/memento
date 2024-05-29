@@ -13,8 +13,8 @@
 		598F53A92C06A02B00362AB5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53A72C06A02B00362AB5 /* Item.swift */; };
 		598F53AA2C06A05C00362AB5 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53A42C06A00C00362AB5 /* ConfigureModelContainer.swift */; };
 		598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53AB2C06A1C200362AB5 /* ShareView.swift */; };
+		598F53B12C07E53F00362AB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F53B02C07E53F00362AB5 /* MainInterface.storyboard */; };
 		5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D22B2C0699E900E643A2 /* ShareViewController.swift */; };
-		5992D22F2C0699E900E643A2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5992D22E2C0699E900E643A2 /* Base */; };
 		5992D2332C0699E900E643A2 /* ShareSheet.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5992D2292C0699E900E643A2 /* ShareSheet.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */; };
@@ -77,9 +77,9 @@
 		598F53AD2C06AFBA00362AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		598F53AE2C06BE3000362AB5 /* Memento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memento.entitlements; sourceTree = "<group>"; };
 		598F53AF2C06BE7B00362AB5 /* ShareSheet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareSheet.entitlements; sourceTree = "<group>"; };
+		598F53B02C07E53F00362AB5 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		5992D2292C0699E900E643A2 /* ShareSheet.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareSheet.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5992D22B2C0699E900E643A2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		5992D22E2C0699E900E643A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5992D2302C0699E900E643A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +160,7 @@
 				598F53AF2C06BE7B00362AB5 /* ShareSheet.entitlements */,
 				5992D22B2C0699E900E643A2 /* ShareViewController.swift */,
 				598F53AB2C06A1C200362AB5 /* ShareView.swift */,
-				5992D22D2C0699E900E643A2 /* MainInterface.storyboard */,
+				598F53B02C07E53F00362AB5 /* MainInterface.storyboard */,
 				5992D2302C0699E900E643A2 /* Info.plist */,
 				598F53A82C06A02B00362AB5 /* Models */,
 				598F53A52C06A00C00362AB5 /* Functions */,
@@ -385,7 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5992D22F2C0699E900E643A2 /* Base in Resources */,
+				598F53B12C07E53F00362AB5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,17 +479,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		5992D22D2C0699E900E643A2 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5992D22E2C0699E900E643A2 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		5992D2342C0699E900E643A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -508,7 +497,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento.ShareSheet;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.sharesheet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -534,7 +523,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento.ShareSheet;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.sharesheet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -686,7 +675,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -718,7 +707,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roscoe.Memento;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
