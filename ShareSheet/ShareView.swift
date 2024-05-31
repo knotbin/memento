@@ -29,15 +29,8 @@ struct ShareView: View {
                     provider.loadItem(forTypeIdentifier: "public.url") { data, _ in
                         if let url = data as? URL {
                             var mainmetadata = LPLinkMetadata()
-                            
-                            linkprovider.startFetchingMetadata(for: url) { (metadata, error) in
-                                if let md = metadata {
-                                    DispatchQueue.main.async {
-                                        mainmetadata = md
-                                    }
-                                } else {
-                                    return
-                                }
+                            Task {
+                                mainmetadata = await fetchMetadata(url: url)
                             }
                             let item = Item(timestamp: Date(), link: url.absoluteString, url: url, metadata: CodableLinkMetadata(metadata: mainmetadata))
                             modelContext.insert(item)

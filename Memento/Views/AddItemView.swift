@@ -33,7 +33,9 @@ struct AddItemView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        addItem(link: viewModel.linkText)
+                        Task {
+                            await addItem(link: viewModel.linkText)
+                        }
                         shown = false
                     }
                     .disabled(viewModel.linkText.isEmpty)
@@ -42,9 +44,8 @@ struct AddItemView: View {
         }
     }
     
-    func addItem(link: String) {
+    func addItem(link: String) async {
         var fulllink = link
-        var mainmetadata = LPLinkMetadata()
         
         if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
             fulllink = link
@@ -57,19 +58,10 @@ struct AddItemView: View {
             return
         }
         
-        provider.startFetchingMetadata(for: url) { (metadata, error) in
-            if let md = metadata {
-                DispatchQueue.main.async {
-                    mainmetadata = md
-                }
-            } else {
-                return
-            }
-        }
+        let metadata = await fetchMetadata(url: url)
         
-        let item = Item(timestamp: Date(), link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: mainmetadata))
+        let item = Item(timestamp: Date(), link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: metadata))
         modelContext.insert(item)
-        print(item.metadata.toLPLinkMetadata().title)
     }
 }
 

@@ -16,6 +16,8 @@
 		598F53B12C07E53F00362AB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F53B02C07E53F00362AB5 /* MainInterface.storyboard */; };
 		598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		598F53B82C096AB100362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B72C096AB100362AB5 /* CodableLinkMetadata.swift */; };
+		598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
+		598F53BC2C0A05D700362AB5 /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53BB2C0A05D700362AB5 /* FetchMetadata.swift */; };
 		5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D22B2C0699E900E643A2 /* ShareViewController.swift */; };
 		5992D2332C0699E900E643A2 /* ShareSheet.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5992D2292C0699E900E643A2 /* ShareSheet.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
@@ -82,6 +84,8 @@
 		598F53B02C07E53F00362AB5 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
 		598F53B72C096AB100362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
+		598F53B92C096D2500362AB5 /* FetchMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMetadata.swift; sourceTree = "<group>"; };
+		598F53BB2C0A05D700362AB5 /* FetchMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMetadata.swift; sourceTree = "<group>"; };
 		5992D2292C0699E900E643A2 /* ShareSheet.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareSheet.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5992D22B2C0699E900E643A2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5992D2302C0699E900E643A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				598F53A42C06A00C00362AB5 /* ConfigureModelContainer.swift */,
+				598F53BB2C0A05D700362AB5 /* FetchMetadata.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */,
+				598F53B92C096D2500362AB5 /* FetchMetadata.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */,
+				598F53BC2C0A05D700362AB5 /* FetchMetadata.swift in Sources */,
 				598F53A92C06A02B00362AB5 /* Item.swift in Sources */,
 				598F53AA2C06A05C00362AB5 /* ConfigureModelContainer.swift in Sources */,
 				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
@@ -443,6 +450,7 @@
 				59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */,
 				59899A392C0159FB00470E42 /* LinkListView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
+				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
 				59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */,
 				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,
 				59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */,
