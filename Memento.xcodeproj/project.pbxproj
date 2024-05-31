@@ -14,6 +14,8 @@
 		598F53AA2C06A05C00362AB5 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53A42C06A00C00362AB5 /* ConfigureModelContainer.swift */; };
 		598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53AB2C06A1C200362AB5 /* ShareView.swift */; };
 		598F53B12C07E53F00362AB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F53B02C07E53F00362AB5 /* MainInterface.storyboard */; };
+		598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
+		598F53B82C096AB100362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B72C096AB100362AB5 /* CodableLinkMetadata.swift */; };
 		5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D22B2C0699E900E643A2 /* ShareViewController.swift */; };
 		5992D2332C0699E900E643A2 /* ShareSheet.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5992D2292C0699E900E643A2 /* ShareSheet.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
@@ -78,6 +80,8 @@
 		598F53AE2C06BE3000362AB5 /* Memento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memento.entitlements; sourceTree = "<group>"; };
 		598F53AF2C06BE7B00362AB5 /* ShareSheet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareSheet.entitlements; sourceTree = "<group>"; };
 		598F53B02C07E53F00362AB5 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
+		598F53B72C096AB100362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
 		5992D2292C0699E900E643A2 /* ShareSheet.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareSheet.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5992D22B2C0699E900E643A2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5992D2302C0699E900E643A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				598F53A72C06A02B00362AB5 /* Item.swift */,
+				598F53B72C096AB100362AB5 /* CodableLinkMetadata.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,15 +206,15 @@
 		59BFB2312BFCFAE5008B6EA8 /* Memento */ = {
 			isa = PBXGroup;
 			children = (
-				598F53AE2C06BE3000362AB5 /* Memento.entitlements */,
-				598F53AD2C06AFBA00362AB5 /* Info.plist */,
-				5992D2372C069E1700E643A2 /* Functions */,
-				59899A3C2C015D0D00470E42 /* ViewModels */,
 				59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */,
+				59899A3C2C015D0D00470E42 /* ViewModels */,
 				59FC6A442BFEE22300D72FF2 /* Views */,
 				59FC6A452BFEE23D00D72FF2 /* Models */,
-				59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */,
+				5992D2372C069E1700E643A2 /* Functions */,
 				59BFB23A2BFCFAE6008B6EA8 /* Preview Content */,
+				59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */,
+				598F53AE2C06BE3000362AB5 /* Memento.entitlements */,
+				598F53AD2C06AFBA00362AB5 /* Info.plist */,
 			);
 			path = Memento;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				59BFB2362BFCFAE5008B6EA8 /* Item.swift */,
+				598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				598F53A92C06A02B00362AB5 /* Item.swift in Sources */,
 				598F53AA2C06A05C00362AB5 /* ConfigureModelContainer.swift in Sources */,
 				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
+				598F53B82C096AB100362AB5 /* CodableLinkMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +446,7 @@
 				59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */,
 				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,
 				59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */,
+				598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

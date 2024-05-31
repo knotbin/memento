@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import LinkPresentation
 
 @Model
 final class Item {
@@ -14,11 +15,13 @@ final class Item {
     var link: String
     var url: URL
     var viewed: Bool
+    var metadata: CodableLinkMetadata
     
-    init(timestamp: Date, link: String, url: URL) {
+    init(timestamp: Date, link: String, url: URL, metadata: CodableLinkMetadata) {
         self.timestamp = timestamp
         self.link = link
         self.url = url
         self.viewed = false
+        self.metadata = metadata
     }
 }

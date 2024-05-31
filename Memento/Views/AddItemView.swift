@@ -7,12 +7,15 @@
 
 import SwiftUI
 import SwiftData
+import LinkPresentation
 
 struct AddItemView: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var viewModel = NewLinkViewModel()
     @Binding var shown: Bool
+    
+    let provider = LPMetadataProvider()
     
     var body: some View {
         NavigationStack {
@@ -41,6 +44,7 @@ struct AddItemView: View {
     
     func addItem(link: String) {
         var fulllink = link
+        var mainmetadata = LPLinkMetadata()
         
         if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
             fulllink = link
@@ -53,8 +57,19 @@ struct AddItemView: View {
             return
         }
         
-        let item = Item(timestamp: Date(), link: fulllink, url: url)
+        provider.startFetchingMetadata(for: url) { (metadata, error) in
+            if let md = metadata {
+                DispatchQueue.main.async {
+                    mainmetadata = md
+                }
+            } else {
+                return
+            }
+        }
+        
+        let item = Item(timestamp: Date(), link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: mainmetadata))
         modelContext.insert(item)
+        print(item.metadata.toLPLinkMetadata().title)
     }
 }
 
