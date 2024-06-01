@@ -1,5 +1,5 @@
 //
-//  LinkListView.swift
+//  ItemListView.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 5/24/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct LinkListView: View {
+struct ItemListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(animation: .smooth) private var items: [Item]
     
@@ -102,6 +102,6 @@ struct LinkListView: View {
 }
 
 #Preview {
-    LinkListView()
+    ItemListView()
         .modelContainer(for: Item.self, inMemory: true)
 }

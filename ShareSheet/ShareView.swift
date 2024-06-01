@@ -32,15 +32,12 @@ struct ShareView: View {
                             Task {
                                 mainmetadata = await fetchMetadata(url: url)
                             }
-                            let item = Item(timestamp: Date(), link: url.absoluteString, url: url, metadata: CodableLinkMetadata(metadata: mainmetadata))
+                            let item = Item(link: url.absoluteString, url: url, metadata: CodableLinkMetadata(metadata: mainmetadata))
                             modelContext.insert(item)
                             extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                         }
                     }
                 }
-//                let item = Item(timestamp: Date(), link: url.absoluteString, url: url)
-//                modelContext.insert(item)
-//                extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
             }
     }
     

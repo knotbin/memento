@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		59899A392C0159FB00470E42 /* LinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* LinkListView.swift */; };
+		59899A392C0159FB00470E42 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* ItemListView.swift */; };
 		59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddItemView.swift */; };
 		59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */; };
 		598F53A92C06A02B00362AB5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53A72C06A02B00362AB5 /* Item.swift */; };
@@ -31,6 +31,7 @@
 		59BFB2522BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */; };
 		59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A52C0439BF00457E4B /* NewLinkViewModel.swift */; };
 		59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A72C04F77500457E4B /* URLPreviewView.swift */; };
+		59EBBAAA2C0BDE62000C9658 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBBAA92C0BDE62000C9658 /* ItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		59899A382C0159FB00470E42 /* LinkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListView.swift; sourceTree = "<group>"; };
+		59899A382C0159FB00470E42 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		59899A3A2C015B8400470E42 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListViewModel.swift; sourceTree = "<group>"; };
 		598F53A42C06A00C00362AB5 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59DF06A52C0439BF00457E4B /* NewLinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLinkViewModel.swift; sourceTree = "<group>"; };
 		59DF06A72C04F77500457E4B /* URLPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPreviewView.swift; sourceTree = "<group>"; };
+		59EBBAA92C0BDE62000C9658 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,9 +256,10 @@
 			isa = PBXGroup;
 			children = (
 				59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */,
-				59899A382C0159FB00470E42 /* LinkListView.swift */,
+				59899A382C0159FB00470E42 /* ItemListView.swift */,
 				59899A3A2C015B8400470E42 /* AddItemView.swift */,
 				59DF06A72C04F77500457E4B /* URLPreviewView.swift */,
+				59EBBAA92C0BDE62000C9658 /* ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,9 +451,10 @@
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */,
-				59899A392C0159FB00470E42 /* LinkListView.swift in Sources */,
+				59899A392C0159FB00470E42 /* ItemListView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
+				59EBBAAA2C0BDE62000C9658 /* ItemView.swift in Sources */,
 				59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */,
 				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,
 				59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */,

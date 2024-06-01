@@ -17,8 +17,8 @@ final class Item {
     var viewed: Bool
     var metadata: CodableLinkMetadata
     
-    init(timestamp: Date, link: String, url: URL, metadata: CodableLinkMetadata) {
-        self.timestamp = timestamp
+    init(link: String, url: URL, metadata: CodableLinkMetadata) {
+        self.timestamp = Date()
         self.link = link
         self.url = url
         self.viewed = false

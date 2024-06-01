@@ -24,7 +24,7 @@ struct AddItemView: View {
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
             }
-            .navigationTitle("New Link")
+            .navigationTitle("New Item")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
@@ -60,7 +60,7 @@ struct AddItemView: View {
         
         let metadata = await fetchMetadata(url: url)
         
-        let item = Item(timestamp: Date(), link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: metadata))
+        let item = Item(link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: metadata))
         modelContext.insert(item)
     }
 }
