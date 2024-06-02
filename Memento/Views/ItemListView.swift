@@ -30,32 +30,32 @@ struct ItemListView: View {
                         ContentUnavailableView("No Links Added", systemImage: "link")
                     }
                     
-                    ForEach(items.filter {
-                        if viewModel.viewedItems && $0.viewed == true {
-                            return true
-                        } else if !viewModel.viewedItems && $0.viewed == false {
-                            return true
-                        } else {
-                            return false
-                        }
-                    }) { item in
-                        VStack(alignment: .leading) {
-                            URLPreview(url: item.url)
-                                .padding(.bottom, 10)
-                            HStack {
-                                Button {
-                                    item.viewed.toggle()
-                                } label: {
-                                    Image(systemName: "checkmark.circle")
-                                }
-                                Button(role: .destructive) {
-                                    deleteItem(item: item)
-                                } label: {
-                                    Image(systemName: "trash")
-                                }
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 100) {
+                        ForEach(items.filter {
+                            if viewModel.viewedItems && $0.viewed == true {
+                                return true
+                            } else if !viewModel.viewedItems && $0.viewed == false {
+                                return true
+                            } else {
+                                return false
                             }
+                        }) { item in
+                            ItemView(item: item)
+                                .contextMenu(ContextMenu(menuItems: {
+                                    Button(role: .destructive) {
+                                        deleteItem(item: item)
+                                    } label: {
+                                        Text("Delete")
+                                        Image(systemName: "trash")
+                                    }
+                                    Button {
+                                        item.viewed.toggle()
+                                    } label: {
+                                        Text("Mark Viewed")
+                                        Image(systemName: "book")
+                                    }
+                                }))
                         }
-                        .padding()
                     }
                 }
             }
@@ -80,7 +80,9 @@ struct ItemListView: View {
     }
     
     func deleteItem(item: Item) {
-        modelContext.delete(item)
+        withAnimation {
+            modelContext.delete(item)
+        }
     }
     
     func checkFilteredData() -> Bool {

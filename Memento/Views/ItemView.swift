@@ -17,15 +17,15 @@ struct ItemView: View {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 100)
                     .cornerRadius(10)
+                    .frame(height: 100)
                     .padding(10)
             } else {
                 Image("EmptyLink")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 100)
                     .cornerRadius(10)
+                    .frame(height: 100)
                     .padding(10)
             }
             VStack {
@@ -37,7 +37,7 @@ struct ItemView: View {
         }
         .background(Color.gray.opacity(0.3))
         .cornerRadius(20)
-        .frame(width: 180, height: 190)
+        .frame(height: 170)
     }
 }
 
@@ -49,7 +49,7 @@ struct ItemView: View {
         var body: some View {
             ItemView(item: Item(link: "https://x.com/itswords_/status/1796776745112072330/photo/1", url: URL(string: "https://x.com/itswords_/status/1796776745112072330/photo/1")!, metadata: CodableLinkMetadata(metadata: passedValue)))
                 .task {
-                    passedValue = await fetchMetadata(url: URL(string: "https://x.com/itswords_/status/1796776745112072330/photo/1")!)
+                    passedValue = await fetchMetadata(url: URL(string: "https://apple.com")!)
                 }
         }
     }
