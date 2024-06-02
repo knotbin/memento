@@ -11,7 +11,7 @@ import LinkPresentation
 
 @Model
 final class Item {
-    var timestamp: Date
+    let timestamp: Date
     var link: String
     var url: URL
     var viewed: Bool
