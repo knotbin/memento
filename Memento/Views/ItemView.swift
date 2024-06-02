@@ -13,7 +13,7 @@ struct ItemView: View {
     
     var body: some View {
         VStack {
-            if let data = item.metadata.siteImage, let image = UIImage(data: data) {
+            if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -29,7 +29,7 @@ struct ItemView: View {
                     .padding(10)
             }
             VStack {
-                Text(item.metadata.title ?? item.link)
+                Text(item.metadata?.title ?? item.link)
                     .bold()
                     .multilineTextAlignment(.center)
             }
