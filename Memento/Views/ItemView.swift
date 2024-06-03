@@ -10,34 +10,38 @@ import LinkPresentation
 
 struct ItemView: View {
     var item: Item
+    @State var alertshown = false
     
     var body: some View {
-        VStack {
-            if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .frame(height: 100)
-                    .padding(10)
-            } else {
-                Image("EmptyLink")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .frame(height: 100)
-                    .padding(10)
-            }
+        Link(destination: item.url) {
             VStack {
-                Text(item.metadata?.title ?? item.link)
-                    .bold()
-                    .multilineTextAlignment(.center)
+                if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(10)
+                        .frame(height: 100)
+                        .padding(10)
+                } else {
+                    Image("EmptyLink")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(10)
+                        .frame(height: 100)
+                        .padding(10)
+                }
+                VStack {
+                    Text(item.metadata?.title ?? item.link)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(Color.primary)
+                }
+                .padding(10)
             }
-            .padding(10)
+            .background(Color.gray.opacity(0.3))
+            .cornerRadius(20)
+            .frame(height: 170)
         }
-        .background(Color.gray.opacity(0.3))
-        .cornerRadius(20)
-        .frame(height: 170)
     }
 }
 
