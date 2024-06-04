@@ -64,6 +64,15 @@ struct ItemListView: View {
             
             .toolbar {
                 ToolbarItem {
+                    Button {
+                        Task {
+                            await addFromPaste()
+                        }
+                    } label: {
+                        Image(systemName: "clipboard")
+                    }
+                }
+                ToolbarItem {
                     Button(action: viewModel.addItemSheet) {
                         Label("Add Item", systemImage: "plus")
                     }
@@ -79,6 +88,19 @@ struct ItemListView: View {
     func deleteItem(item: Item) {
         withAnimation {
             modelContext.delete(item)
+        }
+    }
+    
+    func addFromPaste() async {
+        let pasteText = paste()
+        guard let link: String = pasteText else {
+            return
+        }
+        guard let item = await makeItem(link: link) else {
+            return
+        }
+        withAnimation {
+            modelContext.insert(item)
         }
     }
     
