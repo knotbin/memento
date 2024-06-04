@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5988EFE82C0F710C007C28CF /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
+		5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
 		59899A392C0159FB00470E42 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* ItemListView.swift */; };
 		59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddItemView.swift */; };
 		59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		5988EFE72C0F710C007C28CF /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
+		5988EFEA2C0F71C0007C28CF /* MakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeItem.swift; sourceTree = "<group>"; };
 		59899A382C0159FB00470E42 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		59899A3A2C015B8400470E42 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListViewModel.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */,
 				598F53B92C096D2500362AB5 /* FetchMetadata.swift */,
 				5988EFE72C0F710C007C28CF /* Paste.swift */,
+				5988EFEA2C0F71C0007C28CF /* MakeItem.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 			files = (
 				5988EFE82C0F710C007C28CF /* Paste.swift in Sources */,
 				59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */,
+				5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */,

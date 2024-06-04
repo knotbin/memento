@@ -45,22 +45,9 @@ struct AddItemView: View {
     }
     
     func addItem(link: String) async {
-        var fulllink = link
-        
-        if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
-            fulllink = link
-        } else if link.hasPrefix("www.") {
-            fulllink = "https://\(link)"
-        } else {
-            fulllink = "https://www.\(link)"
-        }
-        guard let url = URL(string: fulllink) else {
+        guard let item = await makeItem(link: link) else {
             return
         }
-        
-        let metadata = await fetchMetadata(url: url)
-        
-        let item = Item(link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: metadata))
         modelContext.insert(item)
     }
 }
