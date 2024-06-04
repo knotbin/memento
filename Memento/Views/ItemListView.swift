@@ -63,9 +63,6 @@ struct ItemListView: View {
             
             
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
                 ToolbarItem {
                     Button(action: viewModel.addItemSheet) {
                         Label("Add Item", systemImage: "plus")
