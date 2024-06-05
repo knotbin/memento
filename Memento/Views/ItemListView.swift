@@ -42,17 +42,11 @@ struct ItemListView: View {
                         }) { item in
                             ItemView(item: item)
                                 .contextMenu(ContextMenu(menuItems: {
-                                    Button(role: .destructive) {
+                                    Button("Delete", systemImage: "trash", role: .destructive) {
                                         deleteItem(item: item)
-                                    } label: {
-                                        Text("Delete")
-                                        Image(systemName: "trash")
                                     }
-                                    Button {
+                                    Button("Mark Viewed", systemImage: "book") {
                                         item.viewed.toggle()
-                                    } label: {
-                                        Text("Mark Viewed")
-                                        Image(systemName: "book")
                                     }
                                 }))
                         }
@@ -64,12 +58,10 @@ struct ItemListView: View {
             
             .toolbar {
                 ToolbarItem {
-                    Button {
+                    Button("Add Item From Clipboard", systemImage: "clipboard") {
                         Task {
                             await addFromPaste()
                         }
-                    } label: {
-                        Image(systemName: "clipboard")
                     }
                 }
                 ToolbarItem {
