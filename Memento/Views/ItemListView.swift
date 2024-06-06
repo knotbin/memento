@@ -41,6 +41,7 @@ struct ItemListView: View {
                             }
                         }) { item in
                             ItemView(item: item)
+                                .accessibilityLabel(item.metadata?.title ?? item.link)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Delete", systemImage: "trash", role: .destructive) {
                                         deleteItem(item: item)
