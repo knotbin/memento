@@ -30,7 +30,7 @@ struct ItemListView: View {
                         ContentUnavailableView("No Links Added", systemImage: "link")
                     }
                     
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 100) {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 0) {
                         ForEach(items.filter {
                             if viewModel.viewedItems && $0.viewed == true {
                                 return true
@@ -42,6 +42,7 @@ struct ItemListView: View {
                         }) { item in
                             ItemView(item: item)
                                 .accessibilityLabel(item.metadata?.title ?? item.link)
+                                .padding(5)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Delete", systemImage: "trash", role: .destructive) {
                                         deleteItem(item: item)
