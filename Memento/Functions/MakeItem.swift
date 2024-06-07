@@ -22,7 +22,7 @@ public func makeItem(link: String) async -> Item? {
         return nil
     }
     
-    var metadata = await fetchMetadata(url: url)
+    let metadata = await fetchMetadata(url: url)
     
     let item = Item(link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: metadata))
     

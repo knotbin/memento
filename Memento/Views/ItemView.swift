@@ -39,6 +39,8 @@ struct ItemView: View {
             }
             .frame(height: 170)
         }
+        .accessibilityLabel(item.metadata?.title ?? item.link)
+        .padding(5)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5946444F2C13722800F47784 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
 		5988EFE82C0F710C007C28CF /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
 		5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
 		59899A392C0159FB00470E42 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* ItemListView.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		5988EFE72C0F710C007C28CF /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
 		5988EFEA2C0F71C0007C28CF /* MakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeItem.swift; sourceTree = "<group>"; };
 		59899A382C0159FB00470E42 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				59BFB2362BFCFAE5008B6EA8 /* Item.swift */,
 				598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */,
+				5946444E2C13722800F47784 /* Filters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */,
+				5946444F2C13722800F47784 /* Filters.swift in Sources */,
 				59899A392C0159FB00470E42 /* ItemListView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,

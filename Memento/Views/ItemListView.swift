@@ -20,29 +20,23 @@ struct ItemListView: View {
                 if items.isEmpty {
                     ContentUnavailableView("No Links Added", systemImage: "link")
                 } else {
-                    Picker(selection: $viewModel.viewedItems, label: Text("")) {
-                        Text("Unviewed").tag(false)
-                        Text("Viewed").tag(true)
+                    Picker(selection: $viewModel.filter, label: Text("Filter")) {
+                        ForEach(filters.allCases, id: \.self) { filter in
+                            Text(String(describing: filter).capitalized)
+                        }
+                        
                     }
                     .pickerStyle(.segmented)
                     
-                    if !checkFilteredData() {
+                    if !viewModel.checkFilteredData(items: items) {
                         ContentUnavailableView("No Links Added", systemImage: "link")
                     }
                     
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 0) {
                         ForEach(items.filter {
-                            if viewModel.viewedItems && $0.viewed == true {
-                                return true
-                            } else if !viewModel.viewedItems && $0.viewed == false {
-                                return true
-                            } else {
-                                return false
-                            }
+                            viewModel.filterItem(item: $0)
                         }) { item in
                             ItemView(item: item)
-                                .accessibilityLabel(item.metadata?.title ?? item.link)
-                                .padding(5)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Delete", systemImage: "trash", role: .destructive) {
                                         deleteItem(item: item)
@@ -95,23 +89,6 @@ struct ItemListView: View {
         }
         withAnimation {
             modelContext.insert(item)
-        }
-    }
-    
-    func checkFilteredData() -> Bool {
-        let filteredList = items.filter {
-            if viewModel.viewedItems && $0.viewed == true {
-                return true
-            } else if !viewModel.viewedItems && $0.viewed == false {
-                return true
-            } else {
-                return false
-            }
-        }
-        if filteredList.isEmpty {
-            return false
-        } else {
-            return true
         }
     }
 }
