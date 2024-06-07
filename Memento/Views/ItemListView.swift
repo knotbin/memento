@@ -39,7 +39,9 @@ struct ItemListView: View {
                             ItemView(item: item)
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Delete", systemImage: "trash", role: .destructive) {
-                                        deleteItem(item: item)
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
+                                            deleteItem(item: item)
+                                        }
                                     }
                                     Button("Mark Viewed", systemImage: "book") {
                                         item.viewed.toggle()
