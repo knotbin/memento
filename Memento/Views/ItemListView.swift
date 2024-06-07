@@ -10,7 +10,7 @@ import SwiftData
 
 struct ItemListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(animation: .smooth) private var items: [Item]
+    @Query(sort: \Item.timestamp, order: .reverse, animation: .smooth) private var items: [Item]
     
     @State var viewModel = LinkListViewModel()
 
