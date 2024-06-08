@@ -8,5 +8,5 @@
 import Foundation
 
 enum filters: CaseIterable {
-    case all, viewed, unviewed
+    case all, unviewed, viewed
 }
