@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import SwiftData
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -40,6 +41,7 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct WidgetAppEntryView : View {
+    @Query private var items: [Item]
     var entry: Provider.Entry
 
     var body: some View {
@@ -54,18 +56,14 @@ struct WidgetAppEntryView : View {
 }
 
 struct WidgetApp: Widget {
+    let modelContainer = ConfigureModelContainer()
     let kind: String = "WidgetApp"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                WidgetAppEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                WidgetAppEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
+            WidgetAppEntryView(entry: entry)
+                .modelContainer(modelContainer)
+                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
