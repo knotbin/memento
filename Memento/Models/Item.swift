@@ -10,7 +10,7 @@ import SwiftData
 import LinkPresentation
 
 @Model
-public final class Item {
+final class Item {
     let timestamp: Date
     var link: String
     var url: URL

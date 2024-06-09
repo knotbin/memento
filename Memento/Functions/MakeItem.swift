@@ -8,7 +8,7 @@
 import Foundation
 import LinkPresentation
 
-public func makeItem(link: String) async -> Item? {
+func makeItem(link: String) async -> Item? {
     var fulllink = link
     
     if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
