@@ -49,7 +49,7 @@ struct ItemListView: View {
                                             deleteItem(item: item)
                                         }
                                     }
-                                    Button("Mark Viewed", systemImage: "book") {
+                                    Button(item.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
                                         item.viewed.toggle()
                                     }
                                 }))
