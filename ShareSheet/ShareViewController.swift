@@ -19,10 +19,11 @@ class ShareViewController: UIViewController {
         self.addChild(contentView)
         self.view.addSubview(contentView.view)
         
-        contentView.view.frame.size = CGSize(width: 200, height: 100)
-        contentView.view.center = CGPoint(x: self.view.frame.size.width  / 2,
-                                          y: self.view.frame.size.height / 2)
-//        contentView.view.layer.cornerRadius = CGFloat(10)
+        contentView.view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        contentView.view.bottomAnchor.constraint (equalTo: self.view.bottomAnchor).isActive = true
+        contentView.view.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        contentView.view.rightAnchor.constraint (equalTo: self.view.rightAnchor).isActive = true
     }
 
 }

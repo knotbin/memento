@@ -30,11 +30,14 @@ struct ShareView: View {
                         if let url = data as? URL {
                             var mainmetadata = LPLinkMetadata()
                             Task {
-                                mainmetadata = await fetchMetadata(url: url)
+                                let item = await makeItem(link: url.absoluteString)
+                                guard let fullitem = item else {
+                                    extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                                    return
+                                }
+                                modelContext.insert(fullitem)
+                                extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                             }
-                            let item = Item(link: url.absoluteString, url: url, metadata: CodableLinkMetadata(metadata: mainmetadata))
-                            modelContext.insert(item)
-                            extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                         }
                     }
                 }
