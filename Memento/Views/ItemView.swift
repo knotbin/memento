@@ -10,36 +10,33 @@ import LinkPresentation
 
 struct ItemView: View {
     var item: Item
-    @State var alertshown = false
+    
     
     var body: some View {
-        Link(destination: item.url) {
-            VStack(alignment: .leading) {
-                if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(10)
-                        .frame(height: 100)
-                        .shadow(radius: 2)
-                } else {
-                    Image("EmptyLink")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(10)
-                        .frame(height: 100)
-                        .shadow(radius: 2)
-                }
-                VStack {
-                    Text(item.metadata?.title ?? item.link)
-                        .bold()
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(Color.primary)
-                }
+        VStack(alignment: .leading) {
+            if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .frame(height: 100)
+                    .shadow(radius: 2)
+            } else {
+                Image("EmptyLink")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .frame(height: 100)
+                    .shadow(radius: 2)
             }
-            .frame(height: 170)
+            VStack {
+                Text(item.metadata?.title ?? item.link)
+                    .bold()
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(Color.primary)
+            }
         }
-        .accessibilityLabel(item.metadata?.title ?? item.link)
+        .frame(height: 170)
         .padding(5)
     }
 }

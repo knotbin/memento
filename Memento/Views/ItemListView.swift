@@ -10,6 +10,7 @@ import SwiftData
 
 struct ItemListView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.openURL) var openURL
     @Query(sort: \Item.timestamp, order: .reverse, animation: .smooth) private var items: [Item]
     
     @State var viewModel = LinkListViewModel()
@@ -36,7 +37,12 @@ struct ItemListView: View {
                         ForEach(items.filter {
                             viewModel.filterItem(item: $0)
                         }) { item in
-                            ItemView(item: item)
+                            Button {
+                                item.viewed = true
+                                openURL(item.url)
+                            } label: {
+                                ItemView(item: item)
+                            }
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Delete", systemImage: "trash", role: .destructive) {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
