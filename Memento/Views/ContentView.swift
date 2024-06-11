@@ -9,8 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @Environment(\.openURL) var openURL
     var body: some View {
         ItemListView()
+            .onOpenURL(perform: { url in
+                openURL(url)
+            })
     }
 }
 

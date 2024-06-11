@@ -11,11 +11,11 @@ import SwiftData
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+        SimpleEntry(date: Date())
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+        let entry = SimpleEntry(date: Date())
         completion(entry)
     }
 
@@ -26,7 +26,7 @@ struct Provider: TimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
+            let entry = SimpleEntry(date: entryDate)
             entries.append(entry)
         }
 
@@ -36,8 +36,7 @@ struct Provider: TimelineProvider {
 }
 
 struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
+    var date: Date
 }
 
 struct WidgetAppEntryView : View {
@@ -46,11 +45,12 @@ struct WidgetAppEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+            if let item = items.randomElement() {
+                Text(item.metadata?.title ?? item.link)
+                .widgetURL(item.url)
+            } else {
+                Text("No Items added")
+            }
         }
     }
 }
@@ -73,6 +73,6 @@ struct WidgetApp: Widget {
 #Preview(as: .systemSmall) {
     WidgetApp()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    SimpleEntry(date: .now)
+    SimpleEntry(date: .now)
 }
