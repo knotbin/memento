@@ -46,8 +46,40 @@ struct WidgetAppEntryView : View {
     var body: some View {
         VStack {
             if let item = items.randomElement() {
-                Text(item.metadata?.title ?? item.link)
-                .widgetURL(item.url)
+                VStack(alignment: .leading) {
+                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(10)
+                            .frame(height: 65)
+                            .shadow(radius: 2)
+                    } else {
+                        Image("EmptyLink")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(10)
+                            .frame(height: 65)
+                            .shadow(radius: 2)
+                    }
+                    Text(item.metadata?.title ?? item.link)
+                        .bold()
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(Color.primary)
+                    HStack {
+                        Button {
+                            item.viewed = true
+                        } label: {
+                            Image(systemName: "book")
+                        }
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
+                    }
+                }
+                .padding(5)
             } else {
                 Text("No Items added")
             }
