@@ -8,7 +8,6 @@
 import Foundation
 import AppIntents
 import SwiftData
-import SwiftUI
 
 struct LinkEntityQuery: EntityQuery {
     func entities(for identifiers: [LinkEntity.ID]) async throws -> [LinkEntity] {

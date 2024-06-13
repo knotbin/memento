@@ -7,9 +7,6 @@
 
 import Foundation
 import SwiftData
-import LinkPresentation
-import AppIntents
-import SwiftUI
 
 @Model
 @available(iOS 16.0, *)
