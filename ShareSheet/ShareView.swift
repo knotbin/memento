@@ -28,7 +28,6 @@ struct ShareView: View {
                 for provider in input {
                     provider.loadItem(forTypeIdentifier: "public.url") { data, _ in
                         if let url = data as? URL {
-                            var mainmetadata = LPLinkMetadata()
                             Task {
                                 let link = await makeLink(address: url.absoluteString)
                                 guard let fulllink = link else {
