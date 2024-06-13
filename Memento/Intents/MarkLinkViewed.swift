@@ -15,13 +15,16 @@ struct MarkLinkViewed: AppIntent {
     @Parameter(title: "Link")
     var link: LinkEntity
     
+    let modelContainer = ConfigureModelContainer()
+    
     func perform() async throws -> some IntentResult {
-        let modelContainer = ConfigureModelContainer()
-        let links = try? await modelContainer.mainContext.fetch(FetchDescriptor<Link>())
+        let context = await modelContainer.mainContext
+        let links = try? context.fetch(FetchDescriptor<Link>())
         let filteredLink = links?.filter { $0.id == link.id }
         if let link = filteredLink?.first {
             link.viewed.toggle()
         }
+        try context.save()
         
         return .result()
     }
