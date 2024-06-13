@@ -8,17 +8,17 @@
 import SwiftUI
 import SwiftData
 
-struct ItemListView: View {
+struct LinkListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) var openURL
-    @Query(sort: \Item.timestamp, order: .reverse, animation: .smooth) private var items: [Item]
+    @Query(sort: \Link.timestamp, order: .reverse, animation: .smooth) private var links: [Link]
     
     @State var viewModel = LinkListViewModel()
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                if items.isEmpty {
+                if links.isEmpty {
                     ContentUnavailableView("No Links Added", systemImage: "link")
                 } else {
                     Picker(selection: $viewModel.filter, label: Text("Filter")) {
@@ -29,24 +29,24 @@ struct ItemListView: View {
                     }
                     .pickerStyle(.segmented)
                     
-                    if !viewModel.checkFilteredData(items: items) {
+                    if !viewModel.checkFilteredData(links: links) {
                         ContentUnavailableView("No Links Added", systemImage: "link")
                     }
                     
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 0) {
-                        ForEach(items.filter {
-                            viewModel.filterItem(item: $0)
+                        ForEach(links.filter {
+                            viewModel.filterLink(link: $0)
                         }) { item in
                             Button {
                                 item.viewed = true
                                 openURL(item.url)
                             } label: {
-                                ItemView(item: item)
+                                LinkView(link: item)
                             }
                                 .contextMenu(ContextMenu(menuItems: {
                                     Button("Delete", systemImage: "trash", role: .destructive) {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
-                                            deleteItem(item: item)
+                                            deleteLink(item: item)
                                         }
                                     }
                                     Button(item.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
@@ -62,7 +62,7 @@ struct ItemListView: View {
             
             .toolbar {
                 ToolbarItem {
-                    Button("Add Item From Clipboard", systemImage: "clipboard") {
+                    Button("Add Link From Clipboard", systemImage: "clipboard") {
                         Task {
                             await addFromPaste()
                         }
@@ -70,18 +70,18 @@ struct ItemListView: View {
                 }
                 ToolbarItem {
                     Button(action: viewModel.addItemSheet) {
-                        Label("Add Item", systemImage: "plus")
+                        Label("Add Link", systemImage: "plus")
                     }
                 }
             }
             .navigationTitle("Links")
             .sheet(isPresented: $viewModel.sheetShown, content: {
-                AddItemView(shown: $viewModel.sheetShown)
+                AddLinkView(shown: $viewModel.sheetShown)
             })
         }
     }
     
-    func deleteItem(item: Item) {
+    func deleteLink(item: Link) {
         withAnimation {
             modelContext.delete(item)
         }
@@ -89,19 +89,19 @@ struct ItemListView: View {
     
     func addFromPaste() async {
         let pasteText = paste()
-        guard let link: String = pasteText else {
+        guard let address: String = pasteText else {
             return
         }
-        guard let item = await makeItem(link: link) else {
+        guard let link = await makeLink(address: address) else {
             return
         }
         withAnimation {
-            modelContext.insert(item)
+            modelContext.insert(link)
         }
     }
 }
 
 #Preview {
-    ItemListView()
-        .modelContainer(for: Item.self, inMemory: true)
+    LinkListView()
+        .modelContainer(for: Link.self, inMemory: true)
 }

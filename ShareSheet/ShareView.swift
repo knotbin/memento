@@ -17,7 +17,7 @@ struct ShareView: View {
     let linkprovider = LPMetadataProvider()
     
     var body: some View {
-        Text("Adding Item...")
+        Text("Adding Link...")
         
             .onAppear {
                 guard
@@ -30,12 +30,12 @@ struct ShareView: View {
                         if let url = data as? URL {
                             var mainmetadata = LPLinkMetadata()
                             Task {
-                                let item = await makeItem(link: url.absoluteString)
-                                guard let fullitem = item else {
+                                let link = await makeLink(address: url.absoluteString)
+                                guard let fulllink = link else {
                                     extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                                     return
                                 }
-                                modelContext.insert(fullitem)
+                                modelContext.insert(fulllink)
                                 extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                             }
                         }

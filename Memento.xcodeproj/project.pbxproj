@@ -10,8 +10,8 @@
 		5946444F2C13722800F47784 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
 		5988EFE82C0F710C007C28CF /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
 		5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
-		59899A392C0159FB00470E42 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* ItemListView.swift */; };
-		59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddItemView.swift */; };
+		59899A392C0159FB00470E42 /* LinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* LinkListView.swift */; };
+		59899A3B2C015B8400470E42 /* AddLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddLinkView.swift */; };
 		59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */; };
 		598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53AB2C06A1C200362AB5 /* ShareView.swift */; };
 		598F53B12C07E53F00362AB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F53B02C07E53F00362AB5 /* MainInterface.storyboard */; };
@@ -26,8 +26,8 @@
 		59A0767E2C161ECC0050D90F /* WidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0767D2C161ECC0050D90F /* WidgetApp.swift */; };
 		59A076802C161ECD0050D90F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A0767F2C161ECD0050D90F /* Assets.xcassets */; };
 		59A076842C161ECD0050D90F /* WidgetAppExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 59A076742C161ECC0050D90F /* WidgetAppExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		59A076922C1621A30050D90F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
-		59A076932C1621A30050D90F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
+		59A076922C1621A30050D90F /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Link.swift */; };
+		59A076932C1621A30050D90F /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Link.swift */; };
 		59A076942C1621A60050D90F /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		59A076982C1621E80050D90F /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
@@ -36,7 +36,7 @@
 		59A0769B2C16220B0050D90F /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
 		59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */; };
 		59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */; };
-		59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
+		59BFB2372BFCFAE5008B6EA8 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Link.swift */; };
 		59BFB2392BFCFAE6008B6EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */; };
 		59BFB23C2BFCFAE6008B6EA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BFB23B2BFCFAE6008B6EA8 /* Preview Assets.xcassets */; };
 		59BFB2462BFCFAE6008B6EA8 /* MementoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2452BFCFAE6008B6EA8 /* MementoTests.swift */; };
@@ -44,7 +44,9 @@
 		59BFB2522BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */; };
 		59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A52C0439BF00457E4B /* NewLinkViewModel.swift */; };
 		59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A72C04F77500457E4B /* URLPreviewView.swift */; };
-		59EBBAAA2C0BDE62000C9658 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBBAA92C0BDE62000C9658 /* ItemView.swift */; };
+		59E7BE3D2C1AB6280091BFEF /* LinkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */; };
+		59E7BE3F2C1AB6530091BFEF /* LinkEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */; };
+		59EBBAAA2C0BDE62000C9658 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBBAA92C0BDE62000C9658 /* LinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +99,8 @@
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		5988EFE72C0F710C007C28CF /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
 		5988EFEA2C0F71C0007C28CF /* MakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeItem.swift; sourceTree = "<group>"; };
-		59899A382C0159FB00470E42 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
-		59899A3A2C015B8400470E42 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		59899A382C0159FB00470E42 /* LinkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListView.swift; sourceTree = "<group>"; };
+		59899A3A2C015B8400470E42 /* AddLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLinkView.swift; sourceTree = "<group>"; };
 		59899A3D2C015D1D00470E42 /* LinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListViewModel.swift; sourceTree = "<group>"; };
 		598F53AB2C06A1C200362AB5 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		598F53AD2C06AFBA00362AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
 		59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		59BFB2362BFCFAE5008B6EA8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		59BFB2362BFCFAE5008B6EA8 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59BFB23B2BFCFAE6008B6EA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		59BFB2412BFCFAE6008B6EA8 /* MementoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MementoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +134,9 @@
 		59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59DF06A52C0439BF00457E4B /* NewLinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLinkViewModel.swift; sourceTree = "<group>"; };
 		59DF06A72C04F77500457E4B /* URLPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPreviewView.swift; sourceTree = "<group>"; };
-		59EBBAA92C0BDE62000C9658 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkEntity.swift; sourceTree = "<group>"; };
+		59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkEntityQuery.swift; sourceTree = "<group>"; };
+		59EBBAA92C0BDE62000C9658 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,14 +299,24 @@
 			path = MementoUITests;
 			sourceTree = "<group>";
 		};
+		59E7BE3B2C1AB6120091BFEF /* Link */ = {
+			isa = PBXGroup;
+			children = (
+				59BFB2362BFCFAE5008B6EA8 /* Link.swift */,
+				59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */,
+				59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */,
+			);
+			path = Link;
+			sourceTree = "<group>";
+		};
 		59FC6A442BFEE22300D72FF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */,
-				59899A382C0159FB00470E42 /* ItemListView.swift */,
-				59899A3A2C015B8400470E42 /* AddItemView.swift */,
+				59899A382C0159FB00470E42 /* LinkListView.swift */,
+				59899A3A2C015B8400470E42 /* AddLinkView.swift */,
 				59DF06A72C04F77500457E4B /* URLPreviewView.swift */,
-				59EBBAA92C0BDE62000C9658 /* ItemView.swift */,
+				59EBBAA92C0BDE62000C9658 /* LinkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,7 +324,7 @@
 		59FC6A452BFEE23D00D72FF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				59BFB2362BFCFAE5008B6EA8 /* Item.swift */,
+				59E7BE3B2C1AB6120091BFEF /* Link */,
 				598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */,
 				5946444E2C13722800F47784 /* Filters.swift */,
 			);
@@ -508,7 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59A076922C1621A30050D90F /* Item.swift in Sources */,
+				59A076922C1621A30050D90F /* Link.swift in Sources */,
 				59A0769B2C16220B0050D90F /* FetchMetadata.swift in Sources */,
 				598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */,
 				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
@@ -525,7 +539,7 @@
 				59A0769A2C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */,
 				59A0767C2C161ECC0050D90F /* WidgetAppBundle.swift in Sources */,
 				59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */,
-				59A076932C1621A30050D90F /* Item.swift in Sources */,
+				59A076932C1621A30050D90F /* Link.swift in Sources */,
 				59A0767E2C161ECC0050D90F /* WidgetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,15 +551,17 @@
 				5988EFE82C0F710C007C28CF /* Paste.swift in Sources */,
 				59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */,
 				5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */,
-				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
+				59BFB2372BFCFAE5008B6EA8 /* Link.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */,
+				59E7BE3D2C1AB6280091BFEF /* LinkEntity.swift in Sources */,
+				59E7BE3F2C1AB6530091BFEF /* LinkEntityQuery.swift in Sources */,
 				5946444F2C13722800F47784 /* Filters.swift in Sources */,
-				59899A392C0159FB00470E42 /* ItemListView.swift in Sources */,
+				59899A392C0159FB00470E42 /* LinkListView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
-				59EBBAAA2C0BDE62000C9658 /* ItemView.swift in Sources */,
-				59899A3B2C015B8400470E42 /* AddItemView.swift in Sources */,
+				59EBBAAA2C0BDE62000C9658 /* LinkView.swift in Sources */,
+				59899A3B2C015B8400470E42 /* AddLinkView.swift in Sources */,
 				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,
 				59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */,
 				598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */,

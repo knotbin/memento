@@ -9,7 +9,7 @@ import SwiftData
 
 public func ConfigureModelContainer() -> ModelContainer {
     let schema = Schema([
-        Item.self
+        Link.self
     ])
     
     // Set up your ModelConfiguration however you need it

@@ -11,7 +11,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.openURL) var openURL
     var body: some View {
-        ItemListView()
+        LinkListView()
             .onOpenURL(perform: { url in
                 openURL(url)
             })
@@ -20,5 +20,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Link.self, inMemory: true)
 }

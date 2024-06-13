@@ -8,23 +8,23 @@
 import Foundation
 import LinkPresentation
 
-func makeItem(link: String) async -> Item? {
-    var fulllink = link
+func makeLink(address: String) async -> Link? {
+    var fulladdress = address
     
-    if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
-        fulllink = link
-    } else if link.hasPrefix("www.") {
-        fulllink = "https://\(link)"
+    if address.hasPrefix("https://www.") || address.hasPrefix("http://www.") || address.hasPrefix("https://") || address.hasPrefix("http://") {
+        fulladdress = address
+    } else if address.hasPrefix("www.") {
+        fulladdress = "https://\(address)"
     } else {
-        fulllink = "https://www.\(link)"
+        fulladdress = "https://www.\(address)"
     }
-    guard let url = URL(string: fulllink) else {
+    guard let url = URL(string: fulladdress) else {
         return nil
     }
     
     let metadata = await fetchMetadata(url: url)
     
-    let item = Item(link: fulllink, url: url, metadata: CodableLinkMetadata(metadata: metadata))
+    let link = Link(address: fulladdress, url: url, metadata: CodableLinkMetadata(metadata: metadata))
     
-    return item
+    return link
 }

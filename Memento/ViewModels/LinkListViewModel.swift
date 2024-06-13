@@ -17,21 +17,21 @@ class LinkListViewModel {
         sheetShown = true
     }
     
-    func filterItem(item: Item) -> Bool {
+    func filterLink(link: Link) -> Bool {
         if filter == .all {
             return true
-        } else if filter == .unviewed && item.viewed == false {
+        } else if filter == .unviewed && link.viewed == false {
             return true
-        } else if filter == .viewed && item.viewed == true {
+        } else if filter == .viewed && link.viewed == true {
             return true
         } else {
             return false
         }
     }
     
-    func checkFilteredData(items: [Item]) -> Bool {
-        let filteredList = items.filter {
-            filterItem(item: $0)
+    func checkFilteredData(links: [Link]) -> Bool {
+        let filteredList = links.filter {
+            filterLink(link: $0)
         }
         if filteredList.isEmpty {
             return false

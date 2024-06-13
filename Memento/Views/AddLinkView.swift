@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 import LinkPresentation
 
-struct AddItemView: View {
+struct AddLinkView: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var viewModel = NewLinkViewModel()
@@ -24,7 +24,7 @@ struct AddItemView: View {
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
             }
-            .navigationTitle("New Item")
+            .navigationTitle("New Link")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
@@ -34,7 +34,7 @@ struct AddItemView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         Task {
-                            await addItem(link: viewModel.linkText)
+                            await addLink(address: viewModel.linkText)
                         }
                         shown = false
                     }
@@ -44,15 +44,15 @@ struct AddItemView: View {
         }
     }
     
-    func addItem(link: String) async {
-        guard let item = await makeItem(link: link) else {
+    func addLink(address: String) async {
+        guard let link = await makeLink(address: address) else {
             return
         }
-        modelContext.insert(item)
+        modelContext.insert(link)
     }
 }
 
 #Preview {
-    AddItemView(shown: .constant(false))
-        .modelContainer(for: Item.self, inMemory: true)
+    AddLinkView(shown: .constant(false))
+        .modelContainer(for: Link.self, inMemory: true)
 }

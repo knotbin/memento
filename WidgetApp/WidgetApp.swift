@@ -40,14 +40,14 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct WidgetAppEntryView : View {
-    @Query private var items: [Item]
+    @Query private var links: [Link]
     var entry: Provider.Entry
 
     var body: some View {
         VStack {
-            if let item = items.randomElement() {
+            if let link = links.randomElement() {
                 VStack(alignment: .leading) {
-                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                    if let data = link.metadata?.siteImage, let image = UIImage(data: data) {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -62,13 +62,13 @@ struct WidgetAppEntryView : View {
                             .frame(height: 65)
                             .shadow(radius: 2)
                     }
-                    Text(item.metadata?.title ?? item.link)
+                    Text(link.metadata?.title ?? link.address)
                         .bold()
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.primary)
                     HStack {
                         Button {
-                            item.viewed = true
+                            link.viewed = true
                         } label: {
                             Image(systemName: "book")
                         }
