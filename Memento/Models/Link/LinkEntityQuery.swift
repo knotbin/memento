@@ -22,6 +22,16 @@ struct LinkEntityQuery: EntityQuery {
         let filteredLinks = links.filter { identifiers.contains($0.id) }
         return filteredLinks.map { LinkEntity(link: $0) }
     }
+    func suggestedEntities() async throws -> [LinkEntity] {
+        var links: [Link] = []
+        let modelContainer = ConfigureModelContainer()
+        let modelContext = ModelContext(modelContainer)
+        let fetchDescriptor = FetchDescriptor<Link>()
+        do {
+             links = try modelContext.fetch(fetchDescriptor)
+        }
+        return links.map { LinkEntity(link: $0) }
+    }
 }
 
 extension LinkEntityQuery: EntityStringQuery {
