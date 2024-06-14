@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 import SwiftData
+import AppIntents
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -67,11 +68,9 @@ struct WidgetAppEntryView : View {
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.primary)
                     HStack {
-                        Button {
-                            link.viewed = true
-                        } label: {
+                        Button(intent: LinkIDViewedIntent(linkID: link.id.uuidString), label: {
                             Image(systemName: "book")
-                        }
+                        })
                         Button {
                             
                         } label: {

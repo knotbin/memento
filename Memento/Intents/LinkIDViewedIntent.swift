@@ -1,5 +1,5 @@
 //
-//  MarkLinkViewed.swift
+//  LinkIDViewedIntent.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 6/13/24.
@@ -9,18 +9,26 @@ import Foundation
 import AppIntents
 import SwiftData
 
-struct MarkLinkViewed: AppIntent {
-    static let title: LocalizedStringResource = "Toggle Link Viewed"
+struct LinkIDViewedIntent: AppIntent {
+    static var title: LocalizedStringResource = "Toggle Link Viewed from Link ID"
     
-    @Parameter(title: "Link")
-    var link: LinkEntity
+    @Parameter(title: "Link ID")
+    var linkID: String
+    
+    init(linkID: String) {
+        self.linkID = linkID
+    }
+    
+    init() {
+        // empty
+    }
     
     let modelContainer = ConfigureModelContainer()
     
     func perform() async throws -> some IntentResult {
-        let context = await modelContainer.mainContext
+        let context = ModelContext(modelContainer)
         let links = try? context.fetch(FetchDescriptor<Link>())
-        let filteredLink = links?.filter { $0.id == link.id }
+        let filteredLink = links?.filter { $0.id == UUID(uuidString: linkID) }
         if let link = filteredLink?.first {
             link.viewed.toggle()
         }

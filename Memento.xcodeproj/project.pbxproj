@@ -45,7 +45,11 @@
 		59DF06A82C04F77500457E4B /* URLPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A72C04F77500457E4B /* URLPreviewView.swift */; };
 		59E7BE3D2C1AB6280091BFEF /* LinkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */; };
 		59E7BE3F2C1AB6530091BFEF /* LinkEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */; };
-		59E7BE462C1B77F00091BFEF /* MarkLinkViewed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* MarkLinkViewed.swift */; };
+		59E7BE462C1B77F00091BFEF /* LinkViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* LinkViewedIntent.swift */; };
+		59E7BE472C1B98A90091BFEF /* LinkViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* LinkViewedIntent.swift */; };
+		59E7BE482C1B99B80091BFEF /* LinkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */; };
+		59E7BE492C1B99BD0091BFEF /* LinkEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */; };
+		59E7BE4C2C1BF16E0091BFEF /* LinkIDViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4A2C1BF02C0091BFEF /* LinkIDViewedIntent.swift */; };
 		59EBBAAA2C0BDE62000C9658 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBBAA92C0BDE62000C9658 /* LinkView.swift */; };
 /* End PBXBuildFile section */
 
@@ -135,7 +139,8 @@
 		59DF06A72C04F77500457E4B /* URLPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPreviewView.swift; sourceTree = "<group>"; };
 		59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkEntity.swift; sourceTree = "<group>"; };
 		59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkEntityQuery.swift; sourceTree = "<group>"; };
-		59E7BE452C1B77F00091BFEF /* MarkLinkViewed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkLinkViewed.swift; sourceTree = "<group>"; };
+		59E7BE452C1B77F00091BFEF /* LinkViewedIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewedIntent.swift; sourceTree = "<group>"; };
+		59E7BE4A2C1BF02C0091BFEF /* LinkIDViewedIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkIDViewedIntent.swift; sourceTree = "<group>"; usesTabs = 0; };
 		59EBBAA92C0BDE62000C9658 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,7 +309,8 @@
 		59E7BE442C1B76160091BFEF /* Intents */ = {
 			isa = PBXGroup;
 			children = (
-				59E7BE452C1B77F00091BFEF /* MarkLinkViewed.swift */,
+				59E7BE452C1B77F00091BFEF /* LinkViewedIntent.swift */,
+				59E7BE4A2C1BF02C0091BFEF /* LinkIDViewedIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -536,7 +542,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A0769A2C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */,
+				59E7BE492C1B99BD0091BFEF /* LinkEntityQuery.swift in Sources */,
 				59A0767C2C161ECC0050D90F /* WidgetAppBundle.swift in Sources */,
+				59E7BE482C1B99B80091BFEF /* LinkEntity.swift in Sources */,
+				59E7BE472C1B98A90091BFEF /* LinkViewedIntent.swift in Sources */,
+				59E7BE4C2C1BF16E0091BFEF /* LinkIDViewedIntent.swift in Sources */,
 				59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */,
 				59A076932C1621A30050D90F /* Link.swift in Sources */,
 				59A0767E2C161ECC0050D90F /* WidgetApp.swift in Sources */,
@@ -555,7 +565,7 @@
 				59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */,
 				59E7BE3D2C1AB6280091BFEF /* LinkEntity.swift in Sources */,
 				59E7BE3F2C1AB6530091BFEF /* LinkEntityQuery.swift in Sources */,
-				59E7BE462C1B77F00091BFEF /* MarkLinkViewed.swift in Sources */,
+				59E7BE462C1B77F00091BFEF /* LinkViewedIntent.swift in Sources */,
 				5946444F2C13722800F47784 /* Filters.swift in Sources */,
 				59899A392C0159FB00470E42 /* LinkListView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
