@@ -15,6 +15,7 @@ struct ContentView: View {
             .onOpenURL(perform: { url in
                 openURL(url)
             })
+            .modelContext(ModelContext(ConfigureModelContainer()))
     }
 }
 

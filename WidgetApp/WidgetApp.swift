@@ -41,7 +41,8 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct WidgetAppEntryView : View {
-    @Query private var links: [Link]
+    let links = (try? ModelContext(ConfigureModelContainer()).fetch(FetchDescriptor<Link>())) ?? []
+    
     var entry: Provider.Entry
 
     var body: some View {
