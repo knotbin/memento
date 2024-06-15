@@ -20,6 +20,8 @@ struct LinkEntity: AppEntity {
     
     var id: Link.ID
     
+    var viewed: Bool
+    
     static let typeDisplayRepresentation: TypeDisplayRepresentation = "Link"
     
     var displayRepresentation: DisplayRepresentation {
@@ -34,6 +36,7 @@ struct LinkEntity: AppEntity {
     
     init(link: Link) {
         self.id = link.id
+        self.viewed = link.viewed
         self.name = link.metadata?.title ?? link.address
         self.link = link.address
         self.imageData = link.metadata?.siteImage ?? nil

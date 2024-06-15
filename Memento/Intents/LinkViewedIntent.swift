@@ -24,9 +24,9 @@ struct LinkViewedIntent: AppIntent {
     let modelContainer = ConfigureModelContainer()
     
     func perform() async throws -> some IntentResult & ProvidesDialog {
-        let entities = try await LinkEntityQuery().suggestedEntities()
+        let entities = try await LinkEntityQuery().suggestedEntities().filter({$0.viewed == false})
         guard !entities.isEmpty else {
-            return .result(dialog: "There are no links to mark.")
+            return .result(dialog: "There are no unviewed links to mark.")
         }
         var enteredLink: LinkEntity
         if let link = link {
@@ -39,10 +39,13 @@ struct LinkViewedIntent: AppIntent {
         }
         let context = ModelContext(modelContainer)
         let links = try? context.fetch(FetchDescriptor<Link>())
-        let filteredLink = links?.filter { $0.id == enteredLink.id }
-        if let link = filteredLink?.first {
-            link.viewed = true
+        guard let link = links?.filter({ $0.id == enteredLink.id }).first else {
+            return .result(dialog: "An Error Occured")
         }
+        if link.viewed == true {
+            return .result(dialog: "Link is already viewed")
+        }
+        link.viewed = true
         try context.save()
         
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been marked as viewed.")
