@@ -10,7 +10,7 @@ import AppIntents
 import SwiftData
 
 struct LinkViewedIntent: AppIntent {
-    static var title: LocalizedStringResource = "Toggle Link Viewed"
+    static var title: LocalizedStringResource = "Mark Link Viewed"
     
     @Parameter(title: "Link")
     var link: LinkEntity?
@@ -41,7 +41,7 @@ struct LinkViewedIntent: AppIntent {
         let links = try? context.fetch(FetchDescriptor<Link>())
         let filteredLink = links?.filter { $0.id == enteredLink.id }
         if let link = filteredLink?.first {
-            link.viewed.toggle()
+            link.viewed = true
         }
         try context.save()
         
