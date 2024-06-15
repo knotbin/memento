@@ -47,7 +47,7 @@ struct WidgetAppEntryView : View {
 
     var body: some View {
         VStack {
-            if let link = links.randomElement() {
+            if let link = links.filter({$0.viewed == false}).randomElement() {
                 VStack(alignment: .leading) {
                     if let data = link.metadata?.siteImage, let image = UIImage(data: data) {
                         Image(uiImage: image)
@@ -81,7 +81,8 @@ struct WidgetAppEntryView : View {
                 }
                 .padding(5)
             } else {
-                Text("No Items added")
+                Text("No Unviewed Items")
+                    .multilineTextAlignment(.center)
             }
         }
     }
