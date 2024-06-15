@@ -49,6 +49,7 @@
 		59E7BE472C1B98A90091BFEF /* LinkViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* LinkViewedIntent.swift */; };
 		59E7BE482C1B99B80091BFEF /* LinkEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */; };
 		59E7BE492C1B99BD0091BFEF /* LinkEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */; };
+		59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */; };
 		59EBBAAA2C0BDE62000C9658 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBBAA92C0BDE62000C9658 /* LinkView.swift */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,7 @@
 		59E7BE3C2C1AB6280091BFEF /* LinkEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkEntity.swift; sourceTree = "<group>"; };
 		59E7BE3E2C1AB6530091BFEF /* LinkEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkEntityQuery.swift; sourceTree = "<group>"; };
 		59E7BE452C1B77F00091BFEF /* LinkViewedIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewedIntent.swift; sourceTree = "<group>"; };
+		59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoShortcuts.swift; sourceTree = "<group>"; };
 		59EBBAA92C0BDE62000C9658 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +309,7 @@
 		59E7BE442C1B76160091BFEF /* Intents */ = {
 			isa = PBXGroup;
 			children = (
+				59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */,
 				59E7BE452C1B77F00091BFEF /* LinkViewedIntent.swift */,
 			);
 			path = Intents;
@@ -554,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5988EFE82C0F710C007C28CF /* Paste.swift in Sources */,
+				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
 				59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */,
 				5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Link.swift in Sources */,
