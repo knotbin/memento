@@ -69,7 +69,7 @@ struct WidgetAppEntryView : View {
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.primary)
                     HStack {
-                        Button(intent: LinkIDViewedIntent(linkID: link.id.uuidString), label: {
+                        Button(intent: LinkViewedIntent(link: link), label: {
                             Image(systemName: "book")
                         })
                         Button {

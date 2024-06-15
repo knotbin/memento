@@ -15,6 +15,12 @@ struct LinkViewedIntent: AppIntent {
     @Parameter(title: "Link")
     var link: LinkEntity
     
+    init(link: Link) {
+        self.link = LinkEntity(link: link)
+    }
+    
+    init() {}
+    
     let modelContainer = ConfigureModelContainer()
     
     func perform() async throws -> some IntentResult {
@@ -27,5 +33,9 @@ struct LinkViewedIntent: AppIntent {
         try context.save()
         
         return .result()
+    }
+    
+    static var parameterSummary: some ParameterSummary {
+            Summary("Toggle whether \(\.$link) is viewed or not.")
     }
 }
