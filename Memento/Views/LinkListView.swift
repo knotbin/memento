@@ -97,6 +97,7 @@ struct LinkListView: View {
         }
         withAnimation {
             modelContext.insert(link)
+            MementoShortcuts.updateAppShortcutParameters()
         }
     }
 }

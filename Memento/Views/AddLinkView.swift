@@ -49,6 +49,7 @@ struct AddLinkView: View {
             return
         }
         modelContext.insert(link)
+        MementoShortcuts.updateAppShortcutParameters()
     }
 }
 
