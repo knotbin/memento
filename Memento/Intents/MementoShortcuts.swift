@@ -57,6 +57,12 @@ struct MementoShortcuts: AppShortcutsProvider {
 
             shortTitle: "Mark Link as Viewed",
             systemImageName: "book"
+        );
+        AppShortcut(
+            intent: SaveLinkIntent(),
+            phrases: ["Add a link to \(.applicationName)"],
+            shortTitle: "Add Link",
+            systemImageName: "link.badge.plus"
         )
     }
 }

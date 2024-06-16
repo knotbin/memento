@@ -21,8 +21,6 @@ struct LinkViewedIntent: AppIntent {
     
     init() {}
     
-    let modelContainer = ConfigureModelContainer()
-    
     func perform() async throws -> some IntentResult & ProvidesDialog {
         let entities = try await LinkEntityQuery().suggestedEntities().filter({$0.viewed == false})
         guard !entities.isEmpty else {
@@ -37,7 +35,7 @@ struct LinkViewedIntent: AppIntent {
                 dialog: "Which link would you like to mark viewed?"
             )
         }
-        let context = ModelContext(modelContainer)
+        let context = ModelContext(ConfigureModelContainer())
         let links = try? context.fetch(FetchDescriptor<Link>())
         guard let link = links?.filter({ $0.id == enteredLink.id }).first else {
             return .result(dialog: "An Error Occured")
