@@ -17,6 +17,7 @@ struct SaveLinkIntent: AppIntent {
     
     func perform() async throws -> some IntentResult & ProvidesDialog {
         let modelContext = ModelContext(ConfigureModelContainer())
+        modelContext.autosaveEnabled = true
         var fullurl: URL
         if let url = url {
             fullurl = url
