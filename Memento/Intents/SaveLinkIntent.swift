@@ -16,8 +16,8 @@ struct SaveLinkIntent: AppIntent {
     var url: URL?
     
     func perform() async throws -> some IntentResult & ProvidesDialog {
-        let modelContext = ModelContext(ConfigureModelContainer())
-        modelContext.autosaveEnabled = true
+        let context = ModelContext(ConfigureModelContainer())
+        context.autosaveEnabled = true
         var fullurl: URL
         if let url = url {
             fullurl = url
@@ -28,7 +28,7 @@ struct SaveLinkIntent: AppIntent {
         guard let link = await makeLink(address: fullurl.absoluteString) else {
             return .result(dialog: "")
         }
-        modelContext.insert(link)
+        context.insert(link)
         return .result(dialog: "I've added \(link.metadata?.title ?? link.address) to Memento")
         
     }
