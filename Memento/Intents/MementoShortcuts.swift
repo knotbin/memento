@@ -18,17 +18,6 @@ struct MementoShortcuts: AppShortcutsProvider {
             systemImageName: "link.badge.plus"
         )
         AppShortcut(
-            intent: LinkViewedIntent(),
-            phrases: [
-                "Mark a link I saved in \(.applicationName) as viewed",
-                "Mark \(\.$link) as viewed in \(.applicationName)",
-                "Set link in \(.applicationName) to viewed",
-                "Change status of \(\.$link) to viewed in \(.applicationName)",
-            ],
-            shortTitle: "Mark Link as Viewed",
-            systemImageName: "book"
-        )
-        AppShortcut(
             intent: DeleteLinkIntent(),
             phrases: ["Delete a link in \(.applicationName)"],
             shortTitle: "Delete Link",
