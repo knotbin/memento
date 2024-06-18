@@ -41,49 +41,50 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct WidgetAppEntryView : View {
-    let links = (try? ModelContext(ConfigureModelContainer()).fetch(FetchDescriptor<Link>())) ?? []
-    
+    static var linkdescriptor = FetchDescriptor<Link>(predicate: #Predicate {$0.viewed == false})
+    @Query(linkdescriptor, animation: .snappy) var links: [Link]
     var entry: Provider.Entry
 
     var body: some View {
         VStack {
-            if let link = links.filter({$0.viewed == false}).randomElement() {
+            if let link = links.randomElement() {
                 VStack(alignment: .leading) {
-                    if let data = link.metadata?.siteImage, let image = UIImage(data: data) {
-                        Image(uiImage: image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(10)
-                            .frame(height: 65)
-                            .shadow(radius: 2)
-                    } else {
-                        Image("EmptyLink")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(10)
-                            .frame(height: 65)
-                            .shadow(radius: 2)
+                    VStack(alignment: .leading) {
+                        if let data = link.metadata?.siteImage, let image = UIImage(data: data) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(10)
+                                .frame(height: 65)
+                                .shadow(radius: 2)
+                        } else {
+                            Image("EmptyLink")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(10)
+                                .frame(height: 65)
+                                .shadow(radius: 2)
+                        }
+                        Text(link.metadata?.title ?? link.address)
+                            .bold()
+                            .multilineTextAlignment(.leading)
+                            .foregroundStyle(Color.primary)
                     }
-                    Text(link.metadata?.title ?? link.address)
-                        .bold()
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(Color.primary)
                     HStack {
                         Button(intent: LinkViewedIntent(link: link), label: {
                             Image(systemName: "book")
                         })
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "xmark")
-                        }
+                        Button(intent: DeleteLinkIntent(link: link), label: {Image(systemName: "xmark")})
                     }
                 }
                 .padding(5)
+                .transition(.push(from: .bottom))
             } else {
                 Text("No Unviewed Items")
                     .multilineTextAlignment(.center)
+                    .transition(.push(from: .bottom))
             }
+            
         }
     }
 }

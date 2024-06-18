@@ -45,6 +45,7 @@ struct LinkViewedIntent: AppIntent {
             return .result(dialog: "Link is already viewed")
         }
         link.viewed = true
+        try context.save()
         MementoShortcuts.updateAppShortcutParameters()
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been marked as viewed.")
     }

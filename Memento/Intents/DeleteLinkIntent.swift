@@ -42,6 +42,7 @@ struct DeleteLinkIntent: AppIntent {
             return .result(dialog: "An Error Occured")
         }
         context.delete(link)
+        try context.save()
         MementoShortcuts.updateAppShortcutParameters()
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been deleted.")
     }
