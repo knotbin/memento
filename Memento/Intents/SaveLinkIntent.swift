@@ -29,6 +29,7 @@ struct SaveLinkIntent: AppIntent {
             return .result(dialog: "")
         }
         context.insert(link)
+        MementoShortcuts.updateAppShortcutParameters()
         return .result(dialog: "I've added \(link.metadata?.title ?? link.address) to Memento")
         
     }

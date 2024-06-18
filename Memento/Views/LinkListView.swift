@@ -51,6 +51,7 @@ struct LinkListView: View {
                                     }
                                     Button(item.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
                                         item.viewed.toggle()
+                                        MementoShortcuts.updateAppShortcutParameters()
                                     }
                                 }))
                         }
@@ -84,6 +85,7 @@ struct LinkListView: View {
     func deleteLink(item: Link) {
         withAnimation {
             modelContext.delete(item)
+            MementoShortcuts.updateAppShortcutParameters()
         }
     }
     

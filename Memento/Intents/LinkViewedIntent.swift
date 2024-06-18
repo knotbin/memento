@@ -36,6 +36,7 @@ struct LinkViewedIntent: AppIntent {
             )
         }
         let context = ModelContext(ConfigureModelContainer())
+        context.autosaveEnabled = true
         let links = try? context.fetch(FetchDescriptor<Link>())
         guard let link = links?.filter({ $0.id == enteredLink.id }).first else {
             return .result(dialog: "An Error Occured")
@@ -44,8 +45,7 @@ struct LinkViewedIntent: AppIntent {
             return .result(dialog: "Link is already viewed")
         }
         link.viewed = true
-        try context.save()
-        
+        MementoShortcuts.updateAppShortcutParameters()
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been marked as viewed.")
     }
     
