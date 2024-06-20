@@ -38,6 +38,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     var date: Date
+    var links: [Link]?
 }
 
 struct WidgetAppEntryView : View {
@@ -55,14 +56,12 @@ struct WidgetAppEntryView : View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(10)
-                                .frame(height: 65)
                                 .shadow(radius: 2)
                         } else {
                             Image("EmptyLink")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(10)
-                                .frame(height: 65)
                                 .shadow(radius: 2)
                         }
                         Text(link.metadata?.title ?? link.address)
@@ -79,10 +78,29 @@ struct WidgetAppEntryView : View {
                 }
                 .padding(5)
                 .transition(.push(from: .bottom))
+            } else if entry.links != nil {
+                VStack(alignment: .leading) {
+                    VStack(alignment: .leading) {
+                        Image("EmptyLink")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(10)
+                            .frame(height: 65)
+                            .shadow(radius: 2)
+                        Text("Memento")
+                            .bold()
+                            .multilineTextAlignment(.leading)
+                            .foregroundStyle(Color.primary)
+                    }
+                    HStack {
+                        Button(action: {}, label: {
+                            Image(systemName: "book")
+                        })
+                        Button(action: {}, label: {Image(systemName: "xmark")})
+                    }
+                }
             } else {
-                Text("No Unviewed Items")
-                    .multilineTextAlignment(.center)
-                    .transition(.push(from: .bottom))
+                Text("You have no unviewed links")
             }
             
         }
@@ -99,8 +117,8 @@ struct WidgetApp: Widget {
                 .modelContainer(modelContainer)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Link Display")
+        .description("Shows a random link you saved, updating every hour.")
     }
 }
 

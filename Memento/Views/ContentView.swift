@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-import WidgetKit
 
 struct ContentView: View {
     @Environment(\.openURL) var openURL
@@ -16,9 +15,6 @@ struct ContentView: View {
             .onOpenURL(perform: { url in
                 openURL(url)
             })
-            .onAppear {
-                WidgetCenter.shared.reloadAllTimelines()
-            }
             .modelContext(ModelContext(ConfigureModelContainer()))
     }
 }
