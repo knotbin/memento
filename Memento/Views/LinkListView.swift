@@ -12,19 +12,31 @@ import WidgetKit
 struct LinkListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Link.timestamp, order: .reverse, animation: .smooth) private var links: [Link]
+    var filteredLinks: [Link] {
+        guard !viewModel.searchText.isEmpty else {
+            return links
+        }
+        return links.filter {
+            if $0.address.localizedCaseInsensitiveContains(viewModel.searchText) {
+                return true
+            } else {
+                guard let title = $0.metadata?.title else {
+                    return false
+                }
+                if title.localizedCaseInsensitiveContains(viewModel.searchText) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+    }
     
     @State var viewModel = LinkListViewModel()
 
     var body: some View {
         NavigationStack {
-            Picker(selection: $viewModel.filter, label: Text("Filter")) {
-                ForEach(filters.allCases, id: \.self) { filter in
-                    Text(String(describing: filter).capitalized)
-                }
-                
-            }
-            .pickerStyle(.segmented)
-            List(links.filter {viewModel.filterLink(link: $0)}) { link in
+            List(filteredLinks) { link in
                 CompactLinkView(link: link)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Delete", systemImage: "trash", role: .destructive) {
@@ -39,9 +51,10 @@ struct LinkListView: View {
                         }
                     }))
             }
+            .searchable(text: $viewModel.searchText, prompt: "Search Links")
             .overlay {
-                if links.filter({viewModel.filterLink(link: $0)}).isEmpty {
-                    ContentUnavailableView("No Items Found", systemImage: "magnifyingglass")
+                if filteredLinks.isEmpty {
+                    ContentUnavailableView.search(text: viewModel.searchText)
                 }
             }
             .toolbar {
