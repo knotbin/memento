@@ -11,7 +11,6 @@ import LinkPresentation
 struct LinkView: View {
     var link: Link
     
-    
     var body: some View {
         VStack(alignment: .leading) {
             if let data = link.metadata?.siteImage, let image = UIImage(data: data) {

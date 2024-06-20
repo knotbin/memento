@@ -118,7 +118,7 @@ struct WidgetApp: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Link Display")
-        .description("Shows a random link you saved, updating every hour.")
+        .description("This widget shows a random link you saved, updating every hour.")
     }
 }
 
