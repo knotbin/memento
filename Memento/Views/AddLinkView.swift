@@ -24,6 +24,7 @@ struct AddLinkView: View {
                 TextField("Enter URL", text: $viewModel.linkText)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
+                    .keyboardType(.URL)
             }
             .navigationTitle("New Link")
             .toolbar {
@@ -40,7 +41,9 @@ struct AddLinkView: View {
                         shown = false
                     }
                     .disabled(viewModel.linkText.isEmpty)
+                    
                 }
+                
             }
         }
     }
