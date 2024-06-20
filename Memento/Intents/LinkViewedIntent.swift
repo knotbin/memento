@@ -8,6 +8,7 @@
 import Foundation
 import AppIntents
 import SwiftData
+import WidgetKit
 
 struct LinkViewedIntent: AppIntent {
     static var title: LocalizedStringResource = "Mark Link Viewed"
@@ -47,6 +48,7 @@ struct LinkViewedIntent: AppIntent {
         link.viewed = true
         try context.save()
         MementoShortcuts.updateAppShortcutParameters()
+        WidgetCenter.shared.reloadAllTimelines()
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been marked as viewed.")
     }
     

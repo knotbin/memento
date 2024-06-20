@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 struct LinkListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -52,6 +53,7 @@ struct LinkListView: View {
                                     Button(item.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
                                         item.viewed.toggle()
                                         MementoShortcuts.updateAppShortcutParameters()
+                                        WidgetCenter.shared.reloadAllTimelines()
                                     }
                                 }))
                         }
@@ -86,6 +88,7 @@ struct LinkListView: View {
         withAnimation {
             modelContext.delete(item)
             MementoShortcuts.updateAppShortcutParameters()
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     
@@ -100,6 +103,7 @@ struct LinkListView: View {
         withAnimation {
             modelContext.insert(link)
             MementoShortcuts.updateAppShortcutParameters()
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 }

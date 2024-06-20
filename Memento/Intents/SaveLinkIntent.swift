@@ -8,6 +8,7 @@
 import Foundation
 import AppIntents
 import SwiftData
+import WidgetKit
 
 struct SaveLinkIntent: AppIntent {
     static var title: LocalizedStringResource = "Save Link"
@@ -31,6 +32,7 @@ struct SaveLinkIntent: AppIntent {
         context.insert(link)
         try context.save()
         MementoShortcuts.updateAppShortcutParameters()
+        WidgetCenter.shared.reloadAllTimelines()
         return .result(dialog: "I've added \(link.metadata?.title ?? link.address) to Memento")
         
     }

@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import LinkPresentation
+import WidgetKit
 
 struct AddLinkView: View {
     @Environment(\.modelContext) private var modelContext
@@ -50,6 +51,7 @@ struct AddLinkView: View {
         }
         modelContext.insert(link)
         MementoShortcuts.updateAppShortcutParameters()
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }
 

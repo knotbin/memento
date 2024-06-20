@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import LinkPresentation
+import WidgetKit
 
 struct ShareView: View {
     @Environment(\.modelContext) private var modelContext
@@ -36,6 +37,7 @@ struct ShareView: View {
                                 }
                                 modelContext.insert(fulllink)
                                 MementoShortcuts.updateAppShortcutParameters()
+                                WidgetCenter.shared.reloadAllTimelines()
                                 extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                             }
                         }

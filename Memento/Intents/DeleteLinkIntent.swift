@@ -8,6 +8,7 @@
 import Foundation
 import AppIntents
 import SwiftData
+import WidgetKit
 
 struct DeleteLinkIntent: AppIntent {
     static var title: LocalizedStringResource = "Delete Link"
@@ -44,6 +45,7 @@ struct DeleteLinkIntent: AppIntent {
         context.delete(link)
         try context.save()
         MementoShortcuts.updateAppShortcutParameters()
+        WidgetCenter.shared.reloadAllTimelines()
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been deleted.")
     }
     
