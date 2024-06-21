@@ -79,6 +79,7 @@ struct WidgetAppEntryView : View {
                     }
                 }
                 .transition(.push(from: .bottom))
+                .widgetURL(link.url)
             } else if entry.links != nil {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
