@@ -73,10 +73,11 @@ struct WidgetAppEntryView : View {
                         Button(intent: LinkViewedIntent(link: link), label: {
                             Image(systemName: "book")
                         })
-                        Button(intent: DeleteLinkIntent(link: link), label: {Image(systemName: "xmark")})
+                            .clipShape(Circle())
+                        Button(intent: DeleteLinkIntent(link: link), label: {Image(systemName: "trash")})
+                            .clipShape(Circle())
                     }
                 }
-                .padding(5)
                 .transition(.push(from: .bottom))
             } else if entry.links != nil {
                 VStack(alignment: .leading) {
