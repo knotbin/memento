@@ -50,6 +50,23 @@ struct LinkListView: View {
                             WidgetCenter.shared.reloadAllTimelines()
                         }
                     }))
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            link.viewed.toggle()
+                        } label: {
+                            Label({link.viewed ? "Unmark Viewed" : "Mark Viewed"}(), systemImage: "book")
+                        }
+                        .tint(.indigo)
+                    }
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            withAnimation {
+                                modelContext.delete(link)
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
             }
             .searchable(text: $viewModel.searchText, prompt: "Search Links")
             .overlay {
