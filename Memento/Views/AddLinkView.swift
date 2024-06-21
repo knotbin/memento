@@ -41,6 +41,7 @@ struct AddLinkView: View {
                         shown = false
                     }
                     .disabled(viewModel.linkText.isEmpty)
+                    .keyboardShortcut(.defaultAction)
                     
                 }
                 
