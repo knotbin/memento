@@ -40,9 +40,8 @@ struct LinkListView: View {
                 CompactLinkView(link: link)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Delete", systemImage: "trash", role: .destructive) {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
-                                deleteLink(item: link)
-                            }
+                            deleteLink(item: link)
+                            WidgetCenter.shared.reloadAllTimelines()
                         }
                         Button(link.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
                             link.viewed.toggle()
@@ -53,6 +52,7 @@ struct LinkListView: View {
                     .swipeActions(edge: .leading) {
                         Button {
                             link.viewed.toggle()
+                            WidgetCenter.shared.reloadAllTimelines()
                         } label: {
                             Label({link.viewed ? "Unmark Viewed" : "Mark Viewed"}(), systemImage: "book")
                         }
@@ -62,6 +62,7 @@ struct LinkListView: View {
                         Button(role: .destructive) {
                             withAnimation {
                                 modelContext.delete(link)
+                                WidgetCenter.shared.reloadAllTimelines()
                             }
                         } label: {
                             Label("Delete", systemImage: "trash")
