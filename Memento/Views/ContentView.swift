@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         LinkListView()
             .onOpenURL(perform: { url in
-                var links = try! modelContext.fetch(FetchDescriptor<Link>(predicate: #Predicate { $0.url == url }))
+                let links = try! modelContext.fetch(FetchDescriptor<Link>(predicate: #Predicate { $0.url == url }))
                 for link in links {
                     link.viewed = true
                 }

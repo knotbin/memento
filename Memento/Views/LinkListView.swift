@@ -72,7 +72,11 @@ struct LinkListView: View {
             .searchable(text: $viewModel.searchText, prompt: "Search Links")
             .overlay {
                 if filteredLinks.isEmpty {
-                    ContentUnavailableView.search(text: viewModel.searchText)
+                    if viewModel.searchText.isEmpty {
+                        ContentUnavailableView("No Links Added", systemImage: "link")
+                    } else {
+                        ContentUnavailableView.search(text: viewModel.searchText)
+                    }
                 }
             }
             .toolbar {
