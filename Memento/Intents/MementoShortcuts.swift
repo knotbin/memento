@@ -13,7 +13,7 @@ struct MementoShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: SaveLinkIntent(),
-            phrases: ["Add a link to \(.applicationName)", "Add \(\.$url) to \(.applicationName)", "Make a new link in \(.applicationName)", "Create a new link in \(.applicationName) from \(\.$url)"],
+            phrases: ["Add a link to \(.applicationName)", "Make a new link in \(.applicationName)", "Create a new link in \(.applicationName)"],
             shortTitle: "Add Link",
             systemImageName: "link.badge.plus"
         )
