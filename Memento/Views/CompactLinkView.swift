@@ -23,7 +23,7 @@ struct CompactLinkView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(10)
-                        .frame(width: 70, height: 70)
+                        .frame(width: 70, height: 50)
                         .shadow(radius: 2)
                 } else {
                     Image("EmptyLink")
