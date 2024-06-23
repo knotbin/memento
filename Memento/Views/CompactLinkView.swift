@@ -30,7 +30,7 @@ struct CompactLinkView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(10)
-                        .frame(width: 70, height: 70)
+                        .frame(width: 70, height: 50)
                         .shadow(radius: 2)
                 }
                 VStack {
@@ -39,6 +39,8 @@ struct CompactLinkView: View {
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.primary)
                 }
+                Spacer()
+                Image(systemName: link.viewed ? "book.fill" : "book")
             }
             .frame(maxHeight: 70)
         }
