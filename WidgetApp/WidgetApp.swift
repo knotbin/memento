@@ -103,6 +103,7 @@ struct WidgetAppEntryView : View {
                 }
             } else {
                 Text("You have no unviewed links")
+                    .widgetURL(nil)
             }
             
         }

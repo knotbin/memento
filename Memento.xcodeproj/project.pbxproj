@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592B37182C29DFE500366B7E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B37172C29DFE500366B7E /* Note.swift */; };
+		592B37192C29DFE500366B7E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B37172C29DFE500366B7E /* Note.swift */; };
+		592B371A2C29DFE500366B7E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B37172C29DFE500366B7E /* Note.swift */; };
 		5946444F2C13722800F47784 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
 		5978256E2C23926400BC86FF /* CompactLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978256D2C23926400BC86FF /* CompactLinkView.swift */; };
 		5988EFE82C0F710C007C28CF /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
@@ -119,6 +122,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		592B37172C29DFE500366B7E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		5978256D2C23926400BC86FF /* CompactLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactLinkView.swift; sourceTree = "<group>"; };
 		5988EFE72C0F710C007C28CF /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
@@ -208,6 +212,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		592B37162C29DC9900366B7E /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				592B37172C29DFE500366B7E /* Note.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		59899A3C2C015D0D00470E42 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +369,7 @@
 		59FC6A452BFEE23D00D72FF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				592B37162C29DC9900366B7E /* Note */,
 				59E7BE3B2C1AB6120091BFEF /* Link */,
 				598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */,
 				5946444E2C13722800F47784 /* Filters.swift */,
@@ -565,6 +578,7 @@
 				598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */,
 				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
 				59A076982C1621E80050D90F /* MakeLink.swift in Sources */,
+				592B37192C29DFE500366B7E /* Note.swift in Sources */,
 				59AA758A2C1E349E00313B7F /* LinkViewedIntent.swift in Sources */,
 				59A076992C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */,
 				59A076942C1621A60050D90F /* CodableLinkMetadata.swift in Sources */,
@@ -587,6 +601,7 @@
 				59E7BE482C1B99B80091BFEF /* LinkEntity.swift in Sources */,
 				59AA75932C1E730900313B7F /* MakeLink.swift in Sources */,
 				59E7BE472C1B98A90091BFEF /* LinkViewedIntent.swift in Sources */,
+				592B371A2C29DFE500366B7E /* Note.swift in Sources */,
 				59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */,
 				59A076932C1621A30050D90F /* Link.swift in Sources */,
 				59A0767E2C161ECC0050D90F /* WidgetApp.swift in Sources */,
@@ -609,6 +624,7 @@
 				59E7BE3D2C1AB6280091BFEF /* LinkEntity.swift in Sources */,
 				59E7BE3F2C1AB6530091BFEF /* LinkEntityQuery.swift in Sources */,
 				59E7BE462C1B77F00091BFEF /* LinkViewedIntent.swift in Sources */,
+				592B37182C29DFE500366B7E /* Note.swift in Sources */,
 				5946444F2C13722800F47784 /* Filters.swift in Sources */,
 				59899A392C0159FB00470E42 /* LinkListView.swift in Sources */,
 				5978256E2C23926400BC86FF /* CompactLinkView.swift in Sources */,

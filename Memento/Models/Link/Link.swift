@@ -9,7 +9,6 @@ import Foundation
 import SwiftData
 
 @Model
-@available(iOS 16.0, *)
 class Link: Identifiable {
     let id: UUID
     
