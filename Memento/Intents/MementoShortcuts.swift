@@ -23,5 +23,11 @@ struct MementoShortcuts: AppShortcutsProvider {
             shortTitle: "Delete Link",
             systemImageName: "trash"
         )
+        AppShortcut(
+            intent: PasteLinkIntent(),
+            phrases: ["Add a link in \(.applicationName) from my clipboard.", "Save a link in \(.applicationName) from paste."],
+            shortTitle: "Save Link from Clipboard",
+            systemImageName: "clipboard"
+        )
     }
 }
