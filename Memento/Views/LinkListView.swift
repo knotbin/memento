@@ -37,7 +37,7 @@ struct LinkListView: View {
     var body: some View {
         NavigationStack {
             List(filteredLinks) { link in
-                CompactLinkView(link: link)
+                LinkView(link: link)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Delete", systemImage: "trash", role: .destructive) {
                             deleteLink(item: link)
