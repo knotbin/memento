@@ -13,23 +13,7 @@ struct LinkListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Link.timestamp, order: .reverse, animation: .smooth) private var links: [Link]
     var filteredLinks: [Link] {
-        guard !viewModel.searchText.isEmpty else {
-            return links
-        }
-        return links.filter {
-            if $0.address.localizedCaseInsensitiveContains(viewModel.searchText) {
-                return true
-            } else {
-                guard let title = $0.metadata?.title else {
-                    return false
-                }
-                if title.localizedCaseInsensitiveContains(viewModel.searchText) {
-                    return true
-                } else {
-                    return false
-                }
-            }
-        }
+        viewModel.filterLinks(links)
     }
     
     @State var viewModel = LinkListViewModel()
