@@ -36,8 +36,7 @@ struct ShareView: View {
                                     return
                                 }
                                 modelContext.insert(fulllink)
-                                MementoShortcuts.updateAppShortcutParameters()
-                                WidgetCenter.shared.reloadAllTimelines()
+                                UpdateAll()
                                 extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                             }
                         }

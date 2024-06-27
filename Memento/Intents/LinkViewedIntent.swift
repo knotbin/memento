@@ -47,8 +47,7 @@ struct LinkViewedIntent: AppIntent {
         }
         link.viewed = true
         try context.save()
-        MementoShortcuts.updateAppShortcutParameters()
-        WidgetCenter.shared.reloadAllTimelines()
+        UpdateAll()
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been marked as viewed.")
     }
     

@@ -44,8 +44,7 @@ struct DeleteLinkIntent: AppIntent {
         }
         context.delete(link)
         try context.save()
-        MementoShortcuts.updateAppShortcutParameters()
-        WidgetCenter.shared.reloadAllTimelines()
+        UpdateAll()
         return .result(dialog: "Okay, \(enteredLink.name ?? enteredLink.link) has been deleted.")
     }
     

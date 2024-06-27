@@ -31,8 +31,7 @@ struct SaveLinkIntent: AppIntent {
         }
         context.insert(link)
         try context.save()
-        MementoShortcuts.updateAppShortcutParameters()
-        WidgetCenter.shared.reloadAllTimelines()
+        UpdateAll()
         return .result(dialog: "I've added \(link.metadata?.title ?? link.address) to Memento")
         
     }

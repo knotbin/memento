@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590FA2A22C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
+		590FA2A32C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
+		590FA2A42C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
 		592B37182C29DFE500366B7E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B37172C29DFE500366B7E /* Note.swift */; };
 		592B37192C29DFE500366B7E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B37172C29DFE500366B7E /* Note.swift */; };
 		592B371A2C29DFE500366B7E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B37172C29DFE500366B7E /* Note.swift */; };
@@ -128,6 +131,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
 		592B37172C29DFE500366B7E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		592B371B2C29E61C00366B7E /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 				5988EFE72C0F710C007C28CF /* Paste.swift */,
 				5988EFEA2C0F71C0007C28CF /* MakeLink.swift */,
 				59B638F72C2CC32E002F41AC /* LinkFromPaste.swift */,
+				590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				59A076922C1621A30050D90F /* Link.swift in Sources */,
 				59AA758D2C1E34B000313B7F /* LinkEntity.swift in Sources */,
 				59A0769B2C16220B0050D90F /* FetchMetadata.swift in Sources */,
+				590FA2A32C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
 				598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */,
 				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
 				59A076982C1621E80050D90F /* MakeLink.swift in Sources */,
@@ -610,6 +616,7 @@
 				59E7BE492C1B99BD0091BFEF /* LinkEntityQuery.swift in Sources */,
 				59A0767C2C161ECC0050D90F /* WidgetAppBundle.swift in Sources */,
 				59AA75922C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */,
+				590FA2A42C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
 				59E7BE482C1B99B80091BFEF /* LinkEntity.swift in Sources */,
 				59AA75932C1E730900313B7F /* MakeLink.swift in Sources */,
 				59E7BE472C1B98A90091BFEF /* LinkViewedIntent.swift in Sources */,
@@ -648,6 +655,7 @@
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				592B371C2C29E61C00366B7E /* NoteView.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
+				590FA2A22C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
 				59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */,
 				59899A3B2C015B8400470E42 /* AddLinkView.swift in Sources */,
 				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,

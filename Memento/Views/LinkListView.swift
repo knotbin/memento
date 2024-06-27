@@ -25,18 +25,17 @@ struct LinkListView: View {
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Delete", systemImage: "trash", role: .destructive) {
                             deleteLink(item: link)
-                            WidgetCenter.shared.reloadAllTimelines()
+                            UpdateAll()
                         }
                         Button(link.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
                             link.viewed.toggle()
-                            MementoShortcuts.updateAppShortcutParameters()
-                            WidgetCenter.shared.reloadAllTimelines()
+                            UpdateAll()
                         }
                     }))
                     .swipeActions(edge: .leading) {
                         Button {
                             link.viewed.toggle()
-                            WidgetCenter.shared.reloadAllTimelines()
+                            UpdateAll()
                         } label: {
                             Label({link.viewed ? "Unmark Viewed" : "Mark Viewed"}(), systemImage: "book")
                         }
@@ -46,7 +45,7 @@ struct LinkListView: View {
                         Button(role: .destructive) {
                             withAnimation {
                                 modelContext.delete(link)
-                                WidgetCenter.shared.reloadAllTimelines()
+                                UpdateAll()
                             }
                         } label: {
                             Label("Delete", systemImage: "trash")
@@ -87,8 +86,7 @@ struct LinkListView: View {
     func deleteLink(item: Link) {
         withAnimation {
             modelContext.delete(item)
-            MementoShortcuts.updateAppShortcutParameters()
-            WidgetCenter.shared.reloadAllTimelines()
+            UpdateAll()
         }
     }
     
@@ -102,8 +100,7 @@ struct LinkListView: View {
         }
         withAnimation {
             modelContext.insert(link)
-            MementoShortcuts.updateAppShortcutParameters()
-            WidgetCenter.shared.reloadAllTimelines()
+            UpdateAll()
         }
     }
 }
