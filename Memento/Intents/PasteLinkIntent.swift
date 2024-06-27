@@ -15,12 +15,10 @@ struct PasteLinkIntent: AppIntent {
     func perform() async throws -> some IntentResult & ProvidesDialog {
         let context = ModelContext(ConfigureModelContainer())
         context.autosaveEnabled = true
-        let pasteText = paste()
-        guard let address: String = pasteText else {
-            return .result(dialog: "No Text in Clipboard.")
-        }
-        guard let link = await makeLink(address: address) else {
-            return .result(dialog: "An error occured. Please try again.")
+        guard let link = await LinkFromPaste() else {
+            return .result(
+                dialog: "There is no available clipboard text."
+            )
         }
         context.insert(link)
         return .result(dialog: "OK, \(link.metadata?.title ?? link.address) has been added.")

@@ -52,6 +52,10 @@
 		59AA75932C1E730900313B7F /* MakeLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeLink.swift */; };
 		59AA75942C1E731000313B7F /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
 		59B638F42C2BBFA9002F41AC /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F32C2BBFA9002F41AC /* NoteListView.swift */; };
+		59B638F62C2CC2D9002F41AC /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F52C2CC2D9002F41AC /* AddNoteView.swift */; };
+		59B638F82C2CC32E002F41AC /* LinkFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* LinkFromPaste.swift */; };
+		59B638F92C2CC32E002F41AC /* LinkFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* LinkFromPaste.swift */; };
+		59B638FA2C2CC32E002F41AC /* LinkFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* LinkFromPaste.swift */; };
 		59BE70012C20C9CC00F17829 /* DeleteLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteLinkIntent.swift */; };
 		59BE70022C20C9CC00F17829 /* DeleteLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteLinkIntent.swift */; };
 		59BE70032C20C9CC00F17829 /* DeleteLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteLinkIntent.swift */; };
@@ -154,6 +158,8 @@
 		59A076882C161FC40050D90F /* WidgetAppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetAppExtension.entitlements; sourceTree = "<group>"; };
 		59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkIntent.swift; sourceTree = "<group>"; };
 		59B638F32C2BBFA9002F41AC /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		59B638F52C2CC2D9002F41AC /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		59B638F72C2CC32E002F41AC /* LinkFromPaste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFromPaste.swift; sourceTree = "<group>"; };
 		59BE70002C20C9CC00F17829 /* DeleteLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLinkIntent.swift; sourceTree = "<group>"; };
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
@@ -250,6 +256,7 @@
 				598F53B92C096D2500362AB5 /* FetchMetadata.swift */,
 				5988EFE72C0F710C007C28CF /* Paste.swift */,
 				5988EFEA2C0F71C0007C28CF /* MakeLink.swift */,
+				59B638F72C2CC32E002F41AC /* LinkFromPaste.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -363,6 +370,7 @@
 				59899A3A2C015B8400470E42 /* AddLinkView.swift */,
 				5978256D2C23926400BC86FF /* LinkView.swift */,
 				59B638F32C2BBFA9002F41AC /* NoteListView.swift */,
+				59B638F52C2CC2D9002F41AC /* AddNoteView.swift */,
 				592B371B2C29E61C00366B7E /* NoteView.swift */,
 			);
 			path = Views;
@@ -586,6 +594,7 @@
 				59A076992C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */,
 				59A076942C1621A60050D90F /* CodableLinkMetadata.swift in Sources */,
 				59C506A12C291DDF0022B553 /* Paste.swift in Sources */,
+				59B638F92C2CC32E002F41AC /* LinkFromPaste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +619,7 @@
 				59A076932C1621A30050D90F /* Link.swift in Sources */,
 				59A0767E2C161ECC0050D90F /* WidgetApp.swift in Sources */,
 				59C506A02C291DDF0022B553 /* Paste.swift in Sources */,
+				59B638FA2C2CC32E002F41AC /* LinkFromPaste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,10 +631,12 @@
 				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
 				59B638F42C2BBFA9002F41AC /* NoteListView.swift in Sources */,
 				59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */,
+				59B638F62C2CC2D9002F41AC /* AddNoteView.swift in Sources */,
 				5988EFEB2C0F71C0007C28CF /* MakeLink.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Link.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* NewLinkViewModel.swift in Sources */,
 				59C5069D2C291C390022B553 /* PasteLinkIntent.swift in Sources */,
+				59B638F82C2CC32E002F41AC /* LinkFromPaste.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* LinkListViewModel.swift in Sources */,
 				59E7BE3D2C1AB6280091BFEF /* LinkEntity.swift in Sources */,
 				59E7BE3F2C1AB6530091BFEF /* LinkEntityQuery.swift in Sources */,
