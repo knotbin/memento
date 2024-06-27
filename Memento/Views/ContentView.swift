@@ -12,7 +12,13 @@ struct ContentView: View {
     @Environment(\.openURL) var openURL
     let modelContext = ModelContext(ConfigureModelContainer())
     var body: some View {
-        LinkListView()
+        TabView {
+            LinkListView()
+                .tabItem { Label("Links", systemImage: "link") }
+            NoteListView()
+                .tabItem { Label("Notes", systemImage: "note.text") }
+        }
+            .modelContext(modelContext)
             .onOpenURL(perform: { url in
                 let links = try! modelContext.fetch(FetchDescriptor<Link>(predicate: #Predicate { $0.url == url }))
                 for link in links {
@@ -21,7 +27,6 @@ struct ContentView: View {
                 UpdateAll()
                 openURL(url)
             })
-            .modelContext(modelContext)
     }
 }
 
