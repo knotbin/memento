@@ -8,7 +8,6 @@
 import Foundation
 import AppIntents
 import SwiftData
-import WidgetKit
 
 struct LinkViewedIntent: AppIntent {
     static var title: LocalizedStringResource = "Mark Link Viewed"

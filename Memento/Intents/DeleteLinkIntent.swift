@@ -8,7 +8,6 @@
 import Foundation
 import AppIntents
 import SwiftData
-import WidgetKit
 
 struct DeleteLinkIntent: AppIntent {
     static var title: LocalizedStringResource = "Delete Link"

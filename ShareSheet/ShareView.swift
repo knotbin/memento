@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 import LinkPresentation
-import WidgetKit
 
 struct ShareView: View {
     @Environment(\.modelContext) private var modelContext

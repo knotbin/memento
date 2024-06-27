@@ -8,7 +8,6 @@
 import Foundation
 import AppIntents
 import SwiftData
-import WidgetKit
 
 struct SaveLinkIntent: AppIntent {
     static var title: LocalizedStringResource = "Save Link"

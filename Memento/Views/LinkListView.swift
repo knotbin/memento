@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-import WidgetKit
 
 struct LinkListView: View {
     @Environment(\.modelContext) private var modelContext
