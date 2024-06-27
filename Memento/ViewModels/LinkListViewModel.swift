@@ -10,7 +10,6 @@ import Foundation
 @Observable
 class LinkListViewModel {
     var sheetShown = false
-    var viewedItems = false
     var searchText = ""
     
     func addItemSheet() {
@@ -36,5 +35,6 @@ class LinkListViewModel {
             }
         }
     }
+    
     init() {}
 }

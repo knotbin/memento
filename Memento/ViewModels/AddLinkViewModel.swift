@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class NewLinkViewModel {
+class AddLinkViewModel {
     var linkText = ""
     
     init() {}

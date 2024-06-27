@@ -7,6 +7,7 @@
 
 import SwiftUI
 import LinkPresentation
+import UIKit
 
 struct LinkView: View {
     @Environment(\.openURL) var openURL

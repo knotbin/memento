@@ -8,11 +8,12 @@
 import SwiftUI
 import SwiftData
 import LinkPresentation
+import WidgetKit
 
 struct AddLinkView: View {
     @Environment(\.modelContext) private var modelContext
     
-    @State var viewModel = NewLinkViewModel()
+    @State var viewModel = AddLinkViewModel()
     @Binding var shown: Bool
     
     let provider = LPMetadataProvider()
@@ -53,7 +54,8 @@ struct AddLinkView: View {
             return
         }
         modelContext.insert(link)
-
+        MementoShortcuts.updateAppShortcutParameters()
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }
 

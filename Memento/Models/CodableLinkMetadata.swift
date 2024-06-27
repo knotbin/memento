@@ -7,7 +7,6 @@
 
 import Foundation
 import LinkPresentation
-import UIKit
 
 struct CodableLinkMetadata: Codable {
     var originalURL: URL?
