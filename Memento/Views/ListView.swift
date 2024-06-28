@@ -55,7 +55,7 @@ struct ListView: View {
             .overlay {
                 if filteredItems.isEmpty {
                     if viewModel.searchText.isEmpty {
-                        ContentUnavailableView("No Items Added", systemImage: "item")
+                        ContentUnavailableView("No Items Added", systemImage: "doc")
                     } else {
                         ContentUnavailableView.search(text: viewModel.searchText)
                     }

@@ -9,8 +9,7 @@ import SwiftData
 
 public func ConfigureModelContainer() -> ModelContainer {
     let schema = Schema([
-        Item.self,
-        Note.self
+        Item.self
     ])
     
     // Set up your ModelConfiguration however you need it
