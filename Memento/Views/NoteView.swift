@@ -27,6 +27,7 @@ struct NoteView: View {
                     .tint(.primary)
                 Spacer()
                 Image(systemName: note.viewed ? "book.fill" : "book")
+                    .tint(.accentColor)
             }
         }
     }

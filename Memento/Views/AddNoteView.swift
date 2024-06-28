@@ -17,10 +17,7 @@ struct AddNoteView: View {
         NavigationStack {
             Form {
                 TextField("Enter Note", text: $viewModel.noteText, axis: .vertical)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
                     .lineLimit(5...10)
-                    .keyboardType(.URL)
             }
             .navigationTitle("New Note")
             .toolbar {

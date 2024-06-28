@@ -18,6 +18,27 @@ struct NoteListView: View {
         NavigationStack {
             List(notes) { note in
                 NoteView(note: note)
+                    .contextMenu(ContextMenu(menuItems: {
+                        Button("Delete", systemImage: "trash", role: .destructive) {
+                            deleteNote(item: note)
+                        }
+                        Button(note.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
+                            note.viewed.toggle()
+                            UpdateAll()
+                        }
+                    }))
+                    .swipeActions(edge: .leading) {
+                        Button(note.viewed ? "Unmark Viewed" : "Mark Viewed", systemImage: "book") {
+                            note.viewed.toggle()
+                            UpdateAll()
+                        }
+                        .tint(.indigo)
+                    }
+                    .swipeActions(edge: .trailing) {
+                        Button("Delete", systemImage: "trash", role: .destructive) {
+                            deleteNote(item: note)
+                        }
+                    }
             }
             .navigationTitle("Notes")
             .overlay {
@@ -35,6 +56,12 @@ struct NoteListView: View {
             .sheet(isPresented: $viewModel.sheetshown) {
                 AddNoteView(shown: $viewModel.sheetshown)
             }
+        }
+    }
+    func deleteNote(item: Note) {
+        withAnimation {
+            modelContext.delete(item)
+            UpdateAll()
         }
     }
 }
