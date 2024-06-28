@@ -10,12 +10,7 @@ import SwiftUI
 
 @Observable
 class ListViewModel {
-    var sheetShown = false
     var searchText = ""
-    
-    func addSheet() {
-        sheetShown = true
-    }
     
     func filterItems(_ items: [Item]) -> [Item] {
         guard !searchText.isEmpty else {

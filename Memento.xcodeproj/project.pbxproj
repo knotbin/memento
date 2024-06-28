@@ -10,11 +10,7 @@
 		590FA2A22C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
 		590FA2A32C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
 		590FA2A42C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
-		590FA2A62C2DEA5500DA4A6E /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A52C2DEA5500DA4A6E /* AddNoteViewModel.swift */; };
-		590FA2A72C2DEA5500DA4A6E /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A52C2DEA5500DA4A6E /* AddNoteViewModel.swift */; };
-		590FA2A82C2DEA5500DA4A6E /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A52C2DEA5500DA4A6E /* AddNoteViewModel.swift */; };
 		5946444F2C13722800F47784 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
-		5964610B2C2E292000BF556E /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964610A2C2E292000BF556E /* NoteListViewModel.swift */; };
 		5978256E2C23926400BC86FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978256D2C23926400BC86FF /* ItemView.swift */; };
 		5988EFE82C0F710C007C28CF /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
 		5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
@@ -59,7 +55,6 @@
 		59BE70022C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
 		59BE70032C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
 		59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */; };
-		59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */; };
 		59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
 		59BFB2392BFCFAE6008B6EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */; };
 		59BFB2462BFCFAE6008B6EA8 /* MementoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2452BFCFAE6008B6EA8 /* MementoTests.swift */; };
@@ -70,6 +65,8 @@
 		59C5069F2C291C390022B553 /* PasteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteItemIntent.swift */; };
 		59C506A02C291DDF0022B553 /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
 		59C506A12C291DDF0022B553 /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
+		59CEA23C2C2F6AE1009079E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEA23B2C2F6AE1009079E8 /* ContentView.swift */; };
+		59CEA23E2C2F6C0F009079E8 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEA23D2C2F6C0F009079E8 /* ContentViewModel.swift */; };
 		59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A52C0439BF00457E4B /* AddViewModel.swift */; };
 		59E7BE3D2C1AB6280091BFEF /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */; };
 		59E7BE3F2C1AB6530091BFEF /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
@@ -128,9 +125,7 @@
 
 /* Begin PBXFileReference section */
 		590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
-		590FA2A52C2DEA5500DA4A6E /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
-		5964610A2C2E292000BF556E /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		5978256D2C23926400BC86FF /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		5988EFE72C0F710C007C28CF /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
 		5988EFEA2C0F71C0007C28CF /* MakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeItem.swift; sourceTree = "<group>"; };
@@ -161,7 +156,6 @@
 		59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemIntent.swift; sourceTree = "<group>"; };
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
-		59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59BFB2362BFCFAE5008B6EA8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59BFB2412BFCFAE6008B6EA8 /* MementoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MementoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +164,8 @@
 		59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITests.swift; sourceTree = "<group>"; };
 		59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59C5069C2C291C390022B553 /* PasteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteItemIntent.swift; sourceTree = "<group>"; };
+		59CEA23B2C2F6AE1009079E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		59CEA23D2C2F6C0F009079E8 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		59DF06A52C0439BF00457E4B /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
 		59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntityQuery.swift; sourceTree = "<group>"; };
@@ -221,10 +217,9 @@
 		59899A3C2C015D0D00470E42 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				59CEA23D2C2F6C0F009079E8 /* ContentViewModel.swift */,
 				59899A3D2C015D1D00470E42 /* ListViewModel.swift */,
 				59DF06A52C0439BF00457E4B /* AddViewModel.swift */,
-				5964610A2C2E292000BF556E /* NoteListViewModel.swift */,
-				590FA2A52C2DEA5500DA4A6E /* AddNoteViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -358,7 +353,7 @@
 		59FC6A442BFEE22300D72FF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				59BFB2342BFCFAE5008B6EA8 /* ContentView.swift */,
+				59CEA23B2C2F6AE1009079E8 /* ContentView.swift */,
 				59899A382C0159FB00470E42 /* ListView.swift */,
 				59899A3A2C015B8400470E42 /* AddView.swift */,
 				5978256D2C23926400BC86FF /* ItemView.swift */,
@@ -567,7 +562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				59AA758C2C1E34A200313B7F /* MementoShortcuts.swift in Sources */,
-				590FA2A72C2DEA5500DA4A6E /* AddNoteViewModel.swift in Sources */,
 				59C5069E2C291C390022B553 /* PasteItemIntent.swift in Sources */,
 				59BE70022C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */,
 				59AA758E2C1E34B200313B7F /* ItemEntityQuery.swift in Sources */,
@@ -592,7 +586,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				59AA758B2C1E34A200313B7F /* MementoShortcuts.swift in Sources */,
-				590FA2A82C2DEA5500DA4A6E /* AddNoteViewModel.swift in Sources */,
 				59C5069F2C291C390022B553 /* PasteItemIntent.swift in Sources */,
 				59BE70032C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */,
 				59AA75942C1E731000313B7F /* FetchMetadata.swift in Sources */,
@@ -618,29 +611,28 @@
 			files = (
 				5988EFE82C0F710C007C28CF /* Paste.swift in Sources */,
 				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
-				59BFB2352BFCFAE5008B6EA8 /* ContentView.swift in Sources */,
 				5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */,
 				59C5069D2C291C390022B553 /* PasteItemIntent.swift in Sources */,
-				590FA2A62C2DEA5500DA4A6E /* AddNoteViewModel.swift in Sources */,
 				59B638F82C2CC32E002F41AC /* ItemFromPaste.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* ListViewModel.swift in Sources */,
 				59E7BE3D2C1AB6280091BFEF /* ItemEntity.swift in Sources */,
 				59E7BE3F2C1AB6530091BFEF /* ItemEntityQuery.swift in Sources */,
 				59E7BE462C1B77F00091BFEF /* ItemViewedIntent.swift in Sources */,
 				5946444F2C13722800F47784 /* Filters.swift in Sources */,
-				5964610B2C2E292000BF556E /* NoteListViewModel.swift in Sources */,
 				59899A392C0159FB00470E42 /* ListView.swift in Sources */,
 				5978256E2C23926400BC86FF /* ItemView.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
+				59CEA23C2C2F6AE1009079E8 /* ContentView.swift in Sources */,
 				590FA2A22C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
 				59AA75902C1E5B7800313B7F /* SaveItemIntent.swift in Sources */,
 				59899A3B2C015B8400470E42 /* AddView.swift in Sources */,
 				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,
 				598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */,
 				59BE70012C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */,
+				59CEA23E2C2F6C0F009079E8 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

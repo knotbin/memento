@@ -2,30 +2,27 @@
 //  ContentView.swift
 //  Memento
 //
-//  Created by Roscoe Rubin-Rottenberg on 5/21/24.
+//  Created by Roscoe Rubin-Rottenberg on 6/28/24.
 //
 
 import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.openURL) var openURL
-    let modelContext = ModelContext(ConfigureModelContainer())
+    @State var viewModel = ContentViewModel()
+
     var body: some View {
-        ListView()
-            .modelContext(modelContext)
-            .onOpenURL(perform: { url in
-                let items = try! modelContext.fetch(FetchDescriptor<Item>(predicate: #Predicate { $0.url == url }))
-                for item in items {
-                    item.viewed = true
-                }
-                UpdateAll()
-                openURL(url)
+        NavigationStack {
+            ListView()
+            .toolbar { Button("Add Item", systemImage: "plus", action: viewModel.addSheet) }
+            .navigationTitle("Items")
+            .sheet(isPresented: $viewModel.sheetShown, content: {
+                AddView(shown: $viewModel.sheetShown)
             })
+        }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
