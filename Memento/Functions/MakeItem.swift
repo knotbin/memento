@@ -8,7 +8,7 @@
 import Foundation
 import LinkPresentation
 
-func makeLink(address: String) async -> Link? {
+func makeItem(address: String) async -> Item? {
     var fulladdress = address
     
     if address.hasPrefix("https://www.") || address.hasPrefix("http://www.") || address.hasPrefix("https://") || address.hasPrefix("http://") {
@@ -24,7 +24,7 @@ func makeLink(address: String) async -> Link? {
     
     let metadata = await fetchMetadata(url: url)
     
-    let link = Link(address: fulladdress, url: url, metadata: CodableLinkMetadata(metadata: metadata))
+    let item = Item(address: fulladdress, url: url, metadata: CodableLinkMetadata(metadata: metadata))
     
-    return link
+    return item
 }

@@ -1,5 +1,5 @@
 //
-//  LinkView.swift
+//  ItemView.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 6/19/24.
@@ -9,17 +9,17 @@ import SwiftUI
 import LinkPresentation
 import UIKit
 
-struct LinkView: View {
+struct ItemView: View {
     @Environment(\.openURL) var openURL
-    var link: Link 
+    var item: Item 
     
     var body: some View {
         Button {
-            link.viewed = true
-            openURL(link.url)
+            item.viewed = true
+            openURL(item.url)
         } label: {
             HStack(alignment: .top) {
-                if let data = link.metadata?.siteImage, let image = UIImage(data: data) {
+                if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -27,7 +27,7 @@ struct LinkView: View {
                         .frame(width: 70, height: 50)
                         .shadow(radius: 2)
                 } else {
-                    Image("EmptyLink")
+                    Image("EmptyItem")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(10)
@@ -35,13 +35,13 @@ struct LinkView: View {
                         .shadow(radius: 2)
                 }
                 VStack {
-                    Text(link.metadata?.title ?? link.address)
+                    Text(item.metadata?.title ?? item.address)
                         .bold()
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.primary)
                 }
                 Spacer()
-                Image(systemName: link.viewed ? "book.fill" : "book")
+                Image(systemName: item.viewed ? "book.fill" : "book")
             }
             .frame(maxHeight: 70)
         }
@@ -54,7 +54,7 @@ struct LinkView: View {
         @State var passedValue = LPLinkMetadata()
         
         var body: some View {
-            LinkView(link: Link(address: "https://chess.com", url: URL(string: "https://chess.com")!, metadata: CodableLinkMetadata(metadata: passedValue)))
+            ItemView(item: Item(address: "https://chess.com", url: URL(string: "https://chess.com")!, metadata: CodableLinkMetadata(metadata: passedValue)))
                 .task {
                     passedValue = await fetchMetadata(url: URL(string: "https://chess.com")!)
                 }

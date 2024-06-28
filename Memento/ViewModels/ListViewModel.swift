@@ -1,5 +1,5 @@
 //
-//  LinkListViewModel.swift
+//  ListViewModel.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 5/24/24.
@@ -8,19 +8,19 @@
 import Foundation
 
 @Observable
-class LinkListViewModel {
+class ListViewModel {
     var sheetShown = false
     var searchText = ""
     
-    func addItemSheet() {
+    func addSheet() {
         sheetShown = true
     }
     
-    func filterLinks(_ links: [Link]) -> [Link] {
+    func filterItems(_ items: [Item]) -> [Item] {
         guard !searchText.isEmpty else {
-            return links
+            return items
         }
-        return links.filter {
+        return items.filter {
             if $0.address.localizedCaseInsensitiveContains(searchText) {
                 return true
             } else {

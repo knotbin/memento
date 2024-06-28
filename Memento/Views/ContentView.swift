@@ -13,16 +13,16 @@ struct ContentView: View {
     let modelContext = ModelContext(ConfigureModelContainer())
     var body: some View {
         TabView {
-            LinkListView()
-                .tabItem { Label("Links", systemImage: "link") }
+            ListView()
+                .tabItem { Label("Items", systemImage: "link") }
             NoteListView()
                 .tabItem { Label("Notes", systemImage: "note.text") }
         }
             .modelContext(modelContext)
             .onOpenURL(perform: { url in
-                let links = try! modelContext.fetch(FetchDescriptor<Link>(predicate: #Predicate { $0.url == url }))
-                for link in links {
-                    link.viewed = true
+                let items = try! modelContext.fetch(FetchDescriptor<Item>(predicate: #Predicate { $0.url == url }))
+                for item in items {
+                    item.viewed = true
                 }
                 UpdateAll()
                 openURL(url)
@@ -32,5 +32,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Link.self, inMemory: true)
+        .modelContainer(for: Item.self, inMemory: true)
 }

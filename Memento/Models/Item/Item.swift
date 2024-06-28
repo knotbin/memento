@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Link: Identifiable {
+class Item: Identifiable {
     let id: UUID
     
     var timestamp: Date

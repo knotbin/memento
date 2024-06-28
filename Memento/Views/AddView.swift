@@ -1,5 +1,5 @@
 //
-//  AddItemView.swift
+//  AddView.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 5/24/24.
@@ -10,10 +10,10 @@ import SwiftData
 import LinkPresentation
 import WidgetKit
 
-struct AddLinkView: View {
+struct AddView: View {
     @Environment(\.modelContext) private var modelContext
     
-    @State var viewModel = AddLinkViewModel()
+    @State var viewModel = AddViewModel()
     @Binding var shown: Bool
     
     let provider = LPMetadataProvider()
@@ -21,12 +21,12 @@ struct AddLinkView: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Enter URL", text: $viewModel.linkText)
+                TextField("Enter URL", text: $viewModel.itemText)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
                     .keyboardType(.URL)
             }
-            .navigationTitle("New Link")
+            .navigationTitle("New Item")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
@@ -36,11 +36,11 @@ struct AddLinkView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         Task {
-                            await addLink(address: viewModel.linkText)
+                            await addItem(address: viewModel.itemText)
                         }
                         shown = false
                     }
-                    .disabled(viewModel.linkText.isEmpty)
+                    .disabled(viewModel.itemText.isEmpty)
                     .keyboardShortcut(.defaultAction)
                     
                 }
@@ -49,17 +49,17 @@ struct AddLinkView: View {
         }
     }
     
-    func addLink(address: String) async {
-        guard let link = await makeLink(address: address) else {
+    func addItem(address: String) async {
+        guard let item = await makeItem(address: address) else {
             return
         }
-        modelContext.insert(link)
+        modelContext.insert(item)
         MementoShortcuts.updateAppShortcutParameters()
         WidgetCenter.shared.reloadAllTimelines()
     }
 }
 
 #Preview {
-    AddLinkView(shown: .constant(false))
-        .modelContainer(for: Link.self, inMemory: true)
+    AddView(shown: .constant(false))
+        .modelContainer(for: Item.self, inMemory: true)
 }

@@ -38,52 +38,52 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     var date: Date
-    var links: [Link]?
+    var items: [Item]?
 }
 
 struct WidgetAppEntryView : View {
-    static var linkdescriptor = FetchDescriptor<Link>(predicate: #Predicate {$0.viewed == false})
-    @Query(linkdescriptor, animation: .snappy) var links: [Link]
+    static var itemdescriptor = FetchDescriptor<Item>(predicate: #Predicate {$0.viewed == false})
+    @Query(itemdescriptor, animation: .snappy) var items: [Item]
     var entry: Provider.Entry
 
     var body: some View {
         VStack {
-            if let link = links.randomElement() {
+            if let item = items.randomElement() {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
-                        if let data = link.metadata?.siteImage, let image = UIImage(data: data) {
+                        if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
                             Image(uiImage: image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         } else {
-                            Image("EmptyLink")
+                            Image("EmptyItem")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(link.metadata?.title ?? link.address)
+                        Text(item.metadata?.title ?? item.address)
                             .bold()
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)
                     }
                     HStack {
-                        Button(intent: LinkViewedIntent(link: link), label: {
+                        Button(intent: ItemViewedIntent(item: item), label: {
                             Image(systemName: "book")
                         })
                             .clipShape(Circle())
-                        Button(intent: DeleteLinkIntent(link: link), label: {Image(systemName: "trash")})
+                        Button(intent: DeleteItemIntent(item: item), label: {Image(systemName: "trash")})
                             .clipShape(Circle())
                     }
                 }
                 .transition(.push(from: .bottom))
-                .widgetURL(link.url)
-            } else if entry.links != nil {
+                .widgetURL(item.url)
+            } else if entry.items != nil {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
-                        Image("EmptyLink")
+                        Image("EmptyItem")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .cornerRadius(10)
@@ -102,7 +102,7 @@ struct WidgetAppEntryView : View {
                     }
                 }
             } else {
-                Text("You have no unviewed links")
+                Text("You have no unviewed items")
                     .widgetURL(nil)
             }
             
@@ -120,8 +120,8 @@ struct WidgetApp: Widget {
                 .modelContainer(modelContainer)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("Link Display")
-        .description("This widget shows a random link you saved, updating every hour.")
+        .configurationDisplayName("Item Display")
+        .description("This widget shows a random item you saved, updating every hour.")
     }
 }
 

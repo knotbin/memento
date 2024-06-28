@@ -1,5 +1,5 @@
 //
-//  ItemListView.swift
+//  ListView.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 5/24/24.
@@ -8,42 +8,42 @@
 import SwiftUI
 import SwiftData
 
-struct LinkListView: View {
+struct ListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Link.timestamp, order: .reverse, animation: .smooth) private var links: [Link]
-    var filteredLinks: [Link] {
-        viewModel.filterLinks(links)
+    @Query(sort: \Item.timestamp, order: .reverse, animation: .smooth) private var items: [Item]
+    var filteredItems: [Item] {
+        viewModel.filterItems(items)
     }
     
-    @State var viewModel = LinkListViewModel()
+    @State var viewModel = ListViewModel()
 
     var body: some View {
         NavigationStack {
-            List(filteredLinks) { link in
-                LinkView(link: link)
+            List(filteredItems) { item in
+                ItemView(item: item)
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Delete", systemImage: "trash", role: .destructive) {
-                            deleteLink(item: link)
+                            deleteItem(item: item)
                             UpdateAll()
                         }
-                        Button(link.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
-                            link.viewed.toggle()
+                        Button(item.viewed ? "Unmark Viewed": "Mark Viewed", systemImage: "book") {
+                            item.viewed.toggle()
                             UpdateAll()
                         }
                     }))
                     .swipeActions(edge: .leading) {
                         Button {
-                            link.viewed.toggle()
+                            item.viewed.toggle()
                             UpdateAll()
                         } label: {
-                            Label({link.viewed ? "Unmark Viewed" : "Mark Viewed"}(), systemImage: "book")
+                            Label({item.viewed ? "Unmark Viewed" : "Mark Viewed"}(), systemImage: "book")
                         }
                         .tint(.indigo)
                     }
                     .swipeActions(edge: .trailing) {
                         Button(role: .destructive) {
                             withAnimation {
-                                modelContext.delete(link)
+                                modelContext.delete(item)
                                 UpdateAll()
                             }
                         } label: {
@@ -51,11 +51,11 @@ struct LinkListView: View {
                         }
                     }
             }
-            .searchable(text: $viewModel.searchText, prompt: "Search Links")
+            .searchable(text: $viewModel.searchText, prompt: "Search Items")
             .overlay {
-                if filteredLinks.isEmpty {
+                if filteredItems.isEmpty {
                     if viewModel.searchText.isEmpty {
-                        ContentUnavailableView("No Links Added", systemImage: "link")
+                        ContentUnavailableView("No Items Added", systemImage: "item")
                     } else {
                         ContentUnavailableView.search(text: viewModel.searchText)
                     }
@@ -63,26 +63,26 @@ struct LinkListView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    Button("Add Link From Clipboard", systemImage: "clipboard") {
+                    Button("Add Item From Clipboard", systemImage: "clipboard") {
                         Task {
                             await addFromPaste()
                         }
                     }
                 }
                 ToolbarItem {
-                    Button(action: viewModel.addItemSheet) {
-                        Label("Add Link", systemImage: "plus")
+                    Button(action: viewModel.addSheet) {
+                        Label("Add Item", systemImage: "plus")
                     }
                 }
             }
-            .navigationTitle("Links")
+            .navigationTitle("Items")
             .sheet(isPresented: $viewModel.sheetShown, content: {
-                AddLinkView(shown: $viewModel.sheetShown)
+                AddView(shown: $viewModel.sheetShown)
             })
         }
     }
     
-    func deleteLink(item: Link) {
+    func deleteItem(item: Item) {
         withAnimation {
             modelContext.delete(item)
             UpdateAll()
@@ -94,17 +94,17 @@ struct LinkListView: View {
         guard let address: String = pasteText else {
             return
         }
-        guard let link = await makeLink(address: address) else {
+        guard let item = await makeItem(address: address) else {
             return
         }
         withAnimation {
-            modelContext.insert(link)
+            modelContext.insert(item)
             UpdateAll()
         }
     }
 }
 
 #Preview {
-    LinkListView()
-        .modelContainer(for: Link.self, inMemory: true)
+    ListView()
+        .modelContainer(for: Item.self, inMemory: true)
 }
