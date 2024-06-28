@@ -36,7 +36,7 @@ struct AddView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         Task {
-                            await addItem(address: viewModel.itemText)
+                            await addItem(link: viewModel.itemText)
                         }
                         shown = false
                     }
@@ -49,8 +49,8 @@ struct AddView: View {
         }
     }
     
-    func addItem(address: String) async {
-        guard let item = await makeItem(address: address) else {
+    func addItem(link: String) async {
+        guard let item = await makeItem(link: link) else {
             return
         }
         modelContext.insert(item)

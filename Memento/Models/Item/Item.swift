@@ -13,14 +13,14 @@ class Item: Identifiable {
     let id: UUID
     
     var timestamp: Date
-    var address: String
+    var link: String
     var url: URL
     var viewed: Bool
     var metadata: CodableLinkMetadata?
     
-    init(address: String, url: URL, metadata: CodableLinkMetadata) {
+    init(link: String, url: URL, metadata: CodableLinkMetadata) {
         self.timestamp = Date()
-        self.address = address
+        self.link = link
         self.url = url
         self.viewed = false
         self.metadata = metadata

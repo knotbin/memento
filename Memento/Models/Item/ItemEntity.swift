@@ -37,8 +37,8 @@ struct ItemEntity: AppEntity {
     init(item: Item) {
         self.id = item.id
         self.viewed = item.viewed
-        self.name = item.metadata?.title ?? item.address
-        self.item = item.address
+        self.name = item.metadata?.title ?? item.link
+        self.item = item.link
         self.imageData = item.metadata?.siteImage ?? nil
     }
 }

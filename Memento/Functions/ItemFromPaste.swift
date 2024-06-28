@@ -9,10 +9,10 @@ import Foundation
 
 func ItemFromPaste() async -> Item? {
     let pasteText = paste()
-    guard let address: String = pasteText else {
+    guard let link: String = pasteText else {
         return nil
     }
-    guard let item = await makeItem(address: address) else {
+    guard let item = await makeItem(link: link) else {
         return nil
     }
     return item

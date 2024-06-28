@@ -29,7 +29,7 @@ struct ShareView: View {
                     provider.loadItem(forTypeIdentifier: "public.url") { data, _ in
                         if let url = data as? URL {
                             Task {
-                                let item = await makeItem(address: url.absoluteString)
+                                let item = await makeItem(link: url.absoluteString)
                                 guard let fullitem = item else {
                                     extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                                     return

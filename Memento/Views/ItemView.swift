@@ -35,7 +35,7 @@ struct ItemView: View {
                         .shadow(radius: 2)
                 }
                 VStack {
-                    Text(item.metadata?.title ?? item.address)
+                    Text(item.metadata?.title ?? item.link)
                         .bold()
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.primary)
@@ -54,7 +54,7 @@ struct ItemView: View {
         @State var passedValue = LPLinkMetadata()
         
         var body: some View {
-            ItemView(item: Item(address: "https://chess.com", url: URL(string: "https://chess.com")!, metadata: CodableLinkMetadata(metadata: passedValue)))
+            ItemView(item: Item(link: "https://chess.com", url: URL(string: "https://chess.com")!, metadata: CodableLinkMetadata(metadata: passedValue)))
                 .task {
                     passedValue = await fetchMetadata(url: URL(string: "https://chess.com")!)
                 }

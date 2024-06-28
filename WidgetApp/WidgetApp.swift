@@ -64,7 +64,7 @@ struct WidgetAppEntryView : View {
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(item.metadata?.title ?? item.address)
+                        Text(item.metadata?.title ?? item.link)
                             .bold()
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)

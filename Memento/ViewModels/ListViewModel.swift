@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class ListViewModel {
@@ -21,7 +22,7 @@ class ListViewModel {
             return items
         }
         return items.filter {
-            if $0.address.localizedCaseInsensitiveContains(searchText) {
+            if $0.link.localizedCaseInsensitiveContains(searchText) {
                 return true
             } else {
                 guard let title = $0.metadata?.title else {
@@ -33,6 +34,12 @@ class ListViewModel {
                     return false
                 }
             }
+        }
+    }
+    func toggleViewed(_ item: Item) {
+        withAnimation {
+            item.viewed.toggle()
+            UpdateAll()
         }
     }
     
