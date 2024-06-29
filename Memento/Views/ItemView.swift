@@ -45,18 +45,3 @@ struct ItemView: View {
     }
 }
 
-#Preview {
-    struct AsyncTestView: View {
-        
-        @State var passedValue = LPLinkMetadata()
-        
-        var body: some View {
-            ItemView(item: Item(link: "https://chess.com", url: URL(string: "https://chess.com")!, metadata: CodableLinkMetadata(metadata: passedValue)))
-                .task {
-                    passedValue = await fetchMetadata(url: URL(string: "https://chess.com")!)
-                }
-        }
-    }
-    
-    return AsyncTestView()
-}

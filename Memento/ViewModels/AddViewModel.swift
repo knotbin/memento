@@ -10,6 +10,7 @@ import Foundation
 @Observable
 class AddViewModel {
     var itemText = ""
+    var noteText = ""
     
     init() {}
 }

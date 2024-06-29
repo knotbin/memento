@@ -38,9 +38,13 @@ class Item: Identifiable {
         self.id = UUID()
         self.timestamp = Date()
         self.viewed = false
-        self.note = note
         self.link = fulllink
         self.url = url
         self.metadata = CodableLinkMetadata(metadata: metadata)
+        if let newnote = note, !newnote.isEmpty {
+            self.note = newnote
+        } else {
+            self.note = nil
+        }
     }
 }

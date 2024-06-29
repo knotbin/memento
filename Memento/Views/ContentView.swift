@@ -10,6 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @State var viewModel = ContentViewModel()
+    let modelContext = ModelContext(ConfigureModelContainer())
 
     var body: some View {
         NavigationStack {
@@ -19,6 +20,7 @@ struct ContentView: View {
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddView(shown: $viewModel.sheetShown)
             })
+            .modelContext(modelContext)
         }
     }
 }

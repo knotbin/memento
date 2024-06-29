@@ -25,6 +25,10 @@ struct AddView: View {
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
                     .keyboardType(.URL)
+                Section {
+                    TextField("Add Notes (optional)", text: $viewModel.noteText, axis: .vertical)
+                        .lineLimit(5...10)
+                }
             }
             .navigationTitle("New Item")
             .toolbar {
@@ -36,7 +40,12 @@ struct AddView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         Task {
-                            await addItem(link: viewModel.itemText)
+                            if viewModel.noteText.isEmpty {
+                                await addItem(link: viewModel.itemText)
+                            } else {
+                                await addItem(link: viewModel.itemText, note: viewModel.noteText)
+                            }
+                            
                         }
                         shown = false
                     }
@@ -49,8 +58,8 @@ struct AddView: View {
         }
     }
     
-    func addItem(link: String) async {
-        guard let item = await Item(link: link) else {
+    func addItem(link: String, note: String? = nil) async {
+        guard let item = await Item(link: link, note: note) else {
             return
         }
         modelContext.insert(item)
