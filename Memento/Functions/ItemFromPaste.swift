@@ -12,7 +12,7 @@ func ItemFromPaste() async -> Item? {
     guard let link: String = pasteText else {
         return nil
     }
-    guard let item = await makeItem(link: link) else {
+    guard let item = await Item(link: link) else {
         return nil
     }
     return item

@@ -63,20 +63,6 @@ struct ListView: View {
             UpdateAll()
         }
     }
-    
-    func addFromPaste() async {
-        let pasteText = paste()
-        guard let link: String = pasteText else {
-            return
-        }
-        guard let item = await makeItem(link: link) else {
-            return
-        }
-        withAnimation {
-            modelContext.insert(item)
-            UpdateAll()
-        }
-    }
 }
 
 #Preview {

@@ -13,7 +13,6 @@
 		5946444F2C13722800F47784 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
 		5978256E2C23926400BC86FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978256D2C23926400BC86FF /* ItemView.swift */; };
 		5988EFE82C0F710C007C28CF /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
-		5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
 		59899A392C0159FB00470E42 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* ListView.swift */; };
 		59899A3B2C015B8400470E42 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddView.swift */; };
 		59899A3E2C015D1D00470E42 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3D2C015D1D00470E42 /* ListViewModel.swift */; };
@@ -34,7 +33,6 @@
 		59A076932C1621A30050D90F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
 		59A076942C1621A60050D90F /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
-		59A076982C1621E80050D90F /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
 		59A076992C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		59A0769A2C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		59A0769B2C16220B0050D90F /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
@@ -46,7 +44,6 @@
 		59AA75902C1E5B7800313B7F /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
 		59AA75912C1E5B7800313B7F /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
 		59AA75922C1E5B7800313B7F /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
-		59AA75932C1E730900313B7F /* MakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFEA2C0F71C0007C28CF /* MakeItem.swift */; };
 		59AA75942C1E731000313B7F /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
 		59B638F82C2CC32E002F41AC /* ItemFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */; };
 		59B638F92C2CC32E002F41AC /* ItemFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */; };
@@ -128,7 +125,6 @@
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		5978256D2C23926400BC86FF /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		5988EFE72C0F710C007C28CF /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
-		5988EFEA2C0F71C0007C28CF /* MakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeItem.swift; sourceTree = "<group>"; };
 		59899A382C0159FB00470E42 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		59899A3A2C015B8400470E42 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		59899A3D2C015D1D00470E42 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -242,7 +238,6 @@
 				5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */,
 				598F53B92C096D2500362AB5 /* FetchMetadata.swift */,
 				5988EFE72C0F710C007C28CF /* Paste.swift */,
-				5988EFEA2C0F71C0007C28CF /* MakeItem.swift */,
 				59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */,
 				590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */,
 			);
@@ -572,7 +567,6 @@
 				590FA2A32C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
 				598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */,
 				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
-				59A076982C1621E80050D90F /* MakeItem.swift in Sources */,
 				59AA758A2C1E349E00313B7F /* ItemViewedIntent.swift in Sources */,
 				59A076992C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */,
 				59A076942C1621A60050D90F /* CodableLinkMetadata.swift in Sources */,
@@ -595,7 +589,6 @@
 				59AA75922C1E5B7800313B7F /* SaveItemIntent.swift in Sources */,
 				590FA2A42C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
 				59E7BE482C1B99B80091BFEF /* ItemEntity.swift in Sources */,
-				59AA75932C1E730900313B7F /* MakeItem.swift in Sources */,
 				59E7BE472C1B98A90091BFEF /* ItemViewedIntent.swift in Sources */,
 				59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */,
 				59A076932C1621A30050D90F /* Item.swift in Sources */,
@@ -611,7 +604,6 @@
 			files = (
 				5988EFE82C0F710C007C28CF /* Paste.swift in Sources */,
 				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
-				5988EFEB2C0F71C0007C28CF /* MakeItem.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */,
 				59C5069D2C291C390022B553 /* PasteItemIntent.swift in Sources */,

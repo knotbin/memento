@@ -50,7 +50,7 @@ struct AddView: View {
     }
     
     func addItem(link: String) async {
-        guard let item = await makeItem(link: link) else {
+        guard let item = await Item(link: link) else {
             return
         }
         modelContext.insert(item)

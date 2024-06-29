@@ -26,19 +26,16 @@ struct ItemView: View {
                         .cornerRadius(10)
                         .frame(width: 70, height: 50)
                         .shadow(radius: 2)
-                } else {
-                    Image("EmptyItem")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(10)
-                        .frame(width: 70, height: 50)
-                        .shadow(radius: 2)
                 }
                 VStack {
                     Text(item.metadata?.title ?? item.link)
                         .bold()
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(Color.primary)
+                        .lineLimit(1)
+                    if let note = item.note {
+                        Text(note)
+                    }
                 }
                 Spacer()
                 Image(systemName: item.viewed ? "book.fill" : "book")

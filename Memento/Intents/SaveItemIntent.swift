@@ -25,7 +25,7 @@ struct SaveItemIntent: AppIntent {
             fullurl = try await $url.requestValue()
         }
         print(fullurl.absoluteString)
-        guard let item = await makeItem(link: fullurl.absoluteString) else {
+        guard let item = await Item(link: fullurl.absoluteString) else {
             return .result(dialog: "")
         }
         context.insert(item)

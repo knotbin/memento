@@ -12,18 +12,35 @@ import SwiftData
 class Item: Identifiable {
     let id: UUID
     
-    var timestamp: Date
+    let timestamp: Date
     var link: String
     var url: URL
     var viewed: Bool
     var metadata: CodableLinkMetadata?
+    var note: String?
     
-    init(link: String, url: URL, metadata: CodableLinkMetadata) {
-        self.timestamp = Date()
-        self.link = link
-        self.url = url
-        self.viewed = false
-        self.metadata = metadata
+    init?(link: String, note: String? = nil) async {
+        var fulllink = link
+        
+        if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
+            fulllink = link
+        } else if link.hasPrefix("www.") {
+            fulllink = "https://\(link)"
+        } else {
+            fulllink = "https://www.\(link)"
+        }
+        guard let url = URL(string: fulllink) else {
+            return nil
+        }
+        
+        let metadata = await fetchMetadata(url: url)
+        
         self.id = UUID()
+        self.timestamp = Date()
+        self.viewed = false
+        self.note = note
+        self.link = fulllink
+        self.url = url
+        self.metadata = CodableLinkMetadata(metadata: metadata)
     }
 }
