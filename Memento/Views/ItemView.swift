@@ -27,20 +27,20 @@ struct ItemView: View {
                         .frame(width: 70, height: 50)
                         .shadow(radius: 2)
                 }
-                VStack {
+                VStack(alignment: .leading) {
                     Text(item.metadata?.title ?? item.link)
                         .bold()
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(Color.primary)
+                        .tint(Color.primary)
                         .lineLimit(1)
                     if let note = item.note {
                         Text(note)
+                            .multilineTextAlignment(.leading)
+                            .tint(.secondary)
                     }
                 }
                 Spacer()
                 Image(systemName: item.viewed ? "book.fill" : "book")
             }
-            .frame(maxHeight: 70)
         }
     }
 }
