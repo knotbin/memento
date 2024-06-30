@@ -1,4 +1,3 @@
-//
 //  ShareView.swift
 //  ShareSheet
 //

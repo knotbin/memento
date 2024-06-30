@@ -8,49 +8,52 @@
 
 /* Begin PBXBuildFile section */
 		590FA2A22C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
-		590FA2A32C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
-		590FA2A42C2DC87200DA4A6E /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
 		5946444F2C13722800F47784 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
 		5978256E2C23926400BC86FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978256D2C23926400BC86FF /* ItemView.swift */; };
-		5988EFE82C0F710C007C28CF /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
+		597A7F4B2C31274B00891DCA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 597A7F4A2C31274B00891DCA /* Base */; };
+		597A7F4F2C31274B00891DCA /* MementoShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F452C31274B00891DCA /* MementoShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		597A7F582C31282E00891DCA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F572C31282E00891DCA /* ShareViewController.swift */; };
+		597A7F592C31284D00891DCA /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
+		597A7F5B2C31286600891DCA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F5A2C31286600891DCA /* ShareView.swift */; };
+		597A7F5C2C31289200891DCA /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
+		597A7F5D2C31289500891DCA /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
+		597A7F5E2C31289700891DCA /* MementoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */; };
+		597A7F5F2C31289900891DCA /* ItemViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */; };
+		597A7F602C31289C00891DCA /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
+		597A7F612C31289E00891DCA /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
+		597A7F622C3128A000891DCA /* PasteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteItemIntent.swift */; };
+		597A7F632C3128AF00891DCA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
+		597A7F642C3128B100891DCA /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */; };
+		597A7F652C3128B300891DCA /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
+		597A7F662C3128BC00891DCA /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
+		597A7F6C2C31292E00891DCA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A076762C161ECC0050D90F /* WidgetKit.framework */; };
+		597A7F6D2C31292E00891DCA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A076782C161ECC0050D90F /* SwiftUI.framework */; };
+		597A7F702C31292E00891DCA /* MementoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F6F2C31292E00891DCA /* MementoWidgetBundle.swift */; };
+		597A7F722C31292E00891DCA /* MementoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F712C31292E00891DCA /* MementoWidget.swift */; };
+		597A7F742C31292F00891DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597A7F732C31292F00891DCA /* Assets.xcassets */; };
+		597A7F792C31292F00891DCA /* MementoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F6B2C31292E00891DCA /* MementoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		597A7F7D2C31299300891DCA /* MementoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */; };
+		597A7F7E2C31299600891DCA /* ItemViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */; };
+		597A7F7F2C31299800891DCA /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
+		597A7F802C31299B00891DCA /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
+		597A7F812C31299D00891DCA /* PasteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteItemIntent.swift */; };
+		597A7F822C3129A700891DCA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
+		597A7F832C3129A900891DCA /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */; };
+		597A7F842C3129AB00891DCA /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
+		597A7F852C3129AD00891DCA /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
+		597A7F862C3129B000891DCA /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
+		597A7F872C3129B100891DCA /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
+		597A7F882C3129BA00891DCA /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */; };
+		597A7F892C3129BD00891DCA /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
+		597A7F8A2C3129C000891DCA /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		59899A392C0159FB00470E42 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A382C0159FB00470E42 /* ListView.swift */; };
 		59899A3B2C015B8400470E42 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddView.swift */; };
 		59899A3E2C015D1D00470E42 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3D2C015D1D00470E42 /* ListViewModel.swift */; };
-		598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53AB2C06A1C200362AB5 /* ShareView.swift */; };
-		598F53B12C07E53F00362AB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F53B02C07E53F00362AB5 /* MainInterface.storyboard */; };
 		598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
-		5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D22B2C0699E900E643A2 /* ShareViewController.swift */; };
-		5992D2332C0699E900E643A2 /* ShareSheet.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5992D2292C0699E900E643A2 /* ShareSheet.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
-		59A076772C161ECC0050D90F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A076762C161ECC0050D90F /* WidgetKit.framework */; };
-		59A076792C161ECC0050D90F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A076782C161ECC0050D90F /* SwiftUI.framework */; };
-		59A0767C2C161ECC0050D90F /* WidgetAppBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0767B2C161ECC0050D90F /* WidgetAppBundle.swift */; };
-		59A0767E2C161ECC0050D90F /* WidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0767D2C161ECC0050D90F /* WidgetApp.swift */; };
-		59A076802C161ECD0050D90F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A0767F2C161ECD0050D90F /* Assets.xcassets */; };
-		59A076842C161ECD0050D90F /* WidgetAppExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 59A076742C161ECC0050D90F /* WidgetAppExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		59A076922C1621A30050D90F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
-		59A076932C1621A30050D90F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
-		59A076942C1621A60050D90F /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
-		59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
-		59A076992C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
-		59A0769A2C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
-		59A0769B2C16220B0050D90F /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
-		59AA758A2C1E349E00313B7F /* ItemViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */; };
-		59AA758B2C1E34A200313B7F /* MementoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */; };
-		59AA758C2C1E34A200313B7F /* MementoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */; };
-		59AA758D2C1E34B000313B7F /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */; };
-		59AA758E2C1E34B200313B7F /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
 		59AA75902C1E5B7800313B7F /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
-		59AA75912C1E5B7800313B7F /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
-		59AA75922C1E5B7800313B7F /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
-		59AA75942C1E731000313B7F /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
-		59B638F82C2CC32E002F41AC /* ItemFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */; };
-		59B638F92C2CC32E002F41AC /* ItemFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */; };
-		59B638FA2C2CC32E002F41AC /* ItemFromPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */; };
 		59BE70012C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
-		59BE70022C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
-		59BE70032C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
 		59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */; };
 		59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
 		59BFB2392BFCFAE6008B6EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */; };
@@ -58,36 +61,29 @@
 		59BFB2502BFCFAE6008B6EA8 /* MementoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */; };
 		59BFB2522BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */; };
 		59C5069D2C291C390022B553 /* PasteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteItemIntent.swift */; };
-		59C5069E2C291C390022B553 /* PasteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteItemIntent.swift */; };
-		59C5069F2C291C390022B553 /* PasteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteItemIntent.swift */; };
-		59C506A02C291DDF0022B553 /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
-		59C506A12C291DDF0022B553 /* Paste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5988EFE72C0F710C007C28CF /* Paste.swift */; };
 		59CEA23C2C2F6AE1009079E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEA23B2C2F6AE1009079E8 /* ContentView.swift */; };
 		59CEA23E2C2F6C0F009079E8 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEA23D2C2F6C0F009079E8 /* ContentViewModel.swift */; };
 		59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A52C0439BF00457E4B /* AddViewModel.swift */; };
 		59E7BE3D2C1AB6280091BFEF /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */; };
 		59E7BE3F2C1AB6530091BFEF /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
 		59E7BE462C1B77F00091BFEF /* ItemViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */; };
-		59E7BE472C1B98A90091BFEF /* ItemViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */; };
-		59E7BE482C1B99B80091BFEF /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */; };
-		59E7BE492C1B99BD0091BFEF /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
 		59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5992D2312C0699E900E643A2 /* PBXContainerItemProxy */ = {
+		597A7F4D2C31274B00891DCA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 59BFB2272BFCFAE5008B6EA8 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5992D2282C0699E900E643A2;
-			remoteInfo = ShareSheet;
+			remoteGlobalIDString = 597A7F442C31274B00891DCA;
+			remoteInfo = MementoShare;
 		};
-		59A076822C161ECD0050D90F /* PBXContainerItemProxy */ = {
+		597A7F772C31292F00891DCA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 59BFB2272BFCFAE5008B6EA8 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 59A076732C161ECC0050D90F;
-			remoteInfo = WidgetAppExtension;
+			remoteGlobalIDString = 597A7F6A2C31292E00891DCA;
+			remoteInfo = MementoWidgetExtension;
 		};
 		59BFB2422BFCFAE6008B6EA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -106,14 +102,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		597A7F3D2C30D3B800891DCA /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		59FC6A282BFECD1000D72FF2 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				59A076842C161ECD0050D90F /* WidgetAppExtension.appex in Embed Foundation Extensions */,
-				5992D2332C0699E900E643A2 /* ShareSheet.appex in Embed Foundation Extensions */,
+				597A7F792C31292F00891DCA /* MementoWidgetExtension.appex in Embed Foundation Extensions */,
+				597A7F4F2C31274B00891DCA /* MementoShare.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,31 +130,29 @@
 		590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		5978256D2C23926400BC86FF /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
-		5988EFE72C0F710C007C28CF /* Paste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paste.swift; sourceTree = "<group>"; };
+		597A7F452C31274B00891DCA /* MementoShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MementoShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		597A7F4A2C31274B00891DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		597A7F4C2C31274B00891DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597A7F572C31282E00891DCA /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		597A7F5A2C31286600891DCA /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		597A7F6B2C31292E00891DCA /* MementoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MementoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		597A7F6F2C31292E00891DCA /* MementoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoWidgetBundle.swift; sourceTree = "<group>"; };
+		597A7F712C31292E00891DCA /* MementoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoWidget.swift; sourceTree = "<group>"; };
+		597A7F732C31292F00891DCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		597A7F752C31292F00891DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597A7F762C31292F00891DCA /* MementoWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MementoWidget.entitlements; sourceTree = "<group>"; };
 		59899A382C0159FB00470E42 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		59899A3A2C015B8400470E42 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		59899A3D2C015D1D00470E42 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		598F53AB2C06A1C200362AB5 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		598F53AD2C06AFBA00362AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		598F53AE2C06BE3000362AB5 /* Memento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memento.entitlements; sourceTree = "<group>"; };
-		598F53AF2C06BE7B00362AB5 /* ShareSheet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareSheet.entitlements; sourceTree = "<group>"; };
-		598F53B02C07E53F00362AB5 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
 		598F53B92C096D2500362AB5 /* FetchMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMetadata.swift; sourceTree = "<group>"; };
-		5992D2292C0699E900E643A2 /* ShareSheet.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareSheet.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		5992D22B2C0699E900E643A2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		5992D2302C0699E900E643A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
-		59A076742C161ECC0050D90F /* WidgetAppExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetAppExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A076762C161ECC0050D90F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		59A076782C161ECC0050D90F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		59A0767B2C161ECC0050D90F /* WidgetAppBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAppBundle.swift; sourceTree = "<group>"; };
-		59A0767D2C161ECC0050D90F /* WidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetApp.swift; sourceTree = "<group>"; };
-		59A0767F2C161ECD0050D90F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		59A076812C161ECD0050D90F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59A076882C161FC40050D90F /* WidgetAppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetAppExtension.entitlements; sourceTree = "<group>"; };
 		59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemIntent.swift; sourceTree = "<group>"; };
-		59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFromPaste.swift; sourceTree = "<group>"; };
 		59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemIntent.swift; sourceTree = "<group>"; };
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
@@ -170,19 +174,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5992D2262C0699E900E643A2 /* Frameworks */ = {
+		597A7F422C31274B00891DCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59A076712C161ECC0050D90F /* Frameworks */ = {
+		597A7F682C31292E00891DCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59A076792C161ECC0050D90F /* SwiftUI.framework in Frameworks */,
-				59A076772C161ECC0050D90F /* WidgetKit.framework in Frameworks */,
+				597A7F6D2C31292E00891DCA /* SwiftUI.framework in Frameworks */,
+				597A7F6C2C31292E00891DCA /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +214,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		597A7F462C31274B00891DCA /* MementoShare */ = {
+			isa = PBXGroup;
+			children = (
+				597A7F572C31282E00891DCA /* ShareViewController.swift */,
+				597A7F5A2C31286600891DCA /* ShareView.swift */,
+				597A7F492C31274B00891DCA /* MainInterface.storyboard */,
+				597A7F4C2C31274B00891DCA /* Info.plist */,
+			);
+			path = MementoShare;
+			sourceTree = "<group>";
+		};
+		597A7F6E2C31292E00891DCA /* MementoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				597A7F6F2C31292E00891DCA /* MementoWidgetBundle.swift */,
+				597A7F712C31292E00891DCA /* MementoWidget.swift */,
+				597A7F732C31292F00891DCA /* Assets.xcassets */,
+				597A7F752C31292F00891DCA /* Info.plist */,
+				597A7F762C31292F00891DCA /* MementoWidget.entitlements */,
+			);
+			path = MementoWidget;
+			sourceTree = "<group>";
+		};
 		59899A3C2C015D0D00470E42 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,25 +247,11 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		5992D22A2C0699E900E643A2 /* ShareSheet */ = {
-			isa = PBXGroup;
-			children = (
-				598F53AF2C06BE7B00362AB5 /* ShareSheet.entitlements */,
-				5992D22B2C0699E900E643A2 /* ShareViewController.swift */,
-				598F53AB2C06A1C200362AB5 /* ShareView.swift */,
-				598F53B02C07E53F00362AB5 /* MainInterface.storyboard */,
-				5992D2302C0699E900E643A2 /* Info.plist */,
-			);
-			path = ShareSheet;
-			sourceTree = "<group>";
-		};
 		5992D2372C069E1700E643A2 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
 				5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */,
 				598F53B92C096D2500362AB5 /* FetchMetadata.swift */,
-				5988EFE72C0F710C007C28CF /* Paste.swift */,
-				59B638F72C2CC32E002F41AC /* ItemFromPaste.swift */,
 				590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */,
 			);
 			path = Functions;
@@ -253,17 +266,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		59A0767A2C161ECC0050D90F /* WidgetApp */ = {
-			isa = PBXGroup;
-			children = (
-				59A0767B2C161ECC0050D90F /* WidgetAppBundle.swift */,
-				59A0767D2C161ECC0050D90F /* WidgetApp.swift */,
-				59A0767F2C161ECD0050D90F /* Assets.xcassets */,
-				59A076812C161ECD0050D90F /* Info.plist */,
-			);
-			path = WidgetApp;
-			sourceTree = "<group>";
-		};
 		59BFB2262BFCFAE5008B6EA8 = {
 			isa = PBXGroup;
 			children = (
@@ -271,8 +273,8 @@
 				59BFB2312BFCFAE5008B6EA8 /* Memento */,
 				59BFB2442BFCFAE6008B6EA8 /* MementoTests */,
 				59BFB24E2BFCFAE6008B6EA8 /* MementoUITests */,
-				5992D22A2C0699E900E643A2 /* ShareSheet */,
-				59A0767A2C161ECC0050D90F /* WidgetApp */,
+				597A7F462C31274B00891DCA /* MementoShare */,
+				597A7F6E2C31292E00891DCA /* MementoWidget */,
 				59A076752C161ECC0050D90F /* Frameworks */,
 				59BFB2302BFCFAE5008B6EA8 /* Products */,
 			);
@@ -284,8 +286,8 @@
 				59BFB22F2BFCFAE5008B6EA8 /* Memento.app */,
 				59BFB2412BFCFAE6008B6EA8 /* MementoTests.xctest */,
 				59BFB24B2BFCFAE6008B6EA8 /* MementoUITests.xctest */,
-				5992D2292C0699E900E643A2 /* ShareSheet.appex */,
-				59A076742C161ECC0050D90F /* WidgetAppExtension.appex */,
+				597A7F452C31274B00891DCA /* MementoShare.appex */,
+				597A7F6B2C31292E00891DCA /* MementoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,38 +371,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5992D2282C0699E900E643A2 /* ShareSheet */ = {
+		597A7F442C31274B00891DCA /* MementoShare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5992D2362C0699E900E643A2 /* Build configuration list for PBXNativeTarget "ShareSheet" */;
+			buildConfigurationList = 597A7F502C31274B00891DCA /* Build configuration list for PBXNativeTarget "MementoShare" */;
 			buildPhases = (
-				5992D2252C0699E900E643A2 /* Sources */,
-				5992D2262C0699E900E643A2 /* Frameworks */,
-				5992D2272C0699E900E643A2 /* Resources */,
+				597A7F412C31274B00891DCA /* Sources */,
+				597A7F422C31274B00891DCA /* Frameworks */,
+				597A7F432C31274B00891DCA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ShareSheet;
-			productName = ShareSheet;
-			productReference = 5992D2292C0699E900E643A2 /* ShareSheet.appex */;
+			name = MementoShare;
+			productName = MementoShare;
+			productReference = 597A7F452C31274B00891DCA /* MementoShare.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		59A076732C161ECC0050D90F /* WidgetAppExtension */ = {
+		597A7F6A2C31292E00891DCA /* MementoWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59A076872C161ECD0050D90F /* Build configuration list for PBXNativeTarget "WidgetAppExtension" */;
+			buildConfigurationList = 597A7F7A2C31292F00891DCA /* Build configuration list for PBXNativeTarget "MementoWidgetExtension" */;
 			buildPhases = (
-				59A076702C161ECC0050D90F /* Sources */,
-				59A076712C161ECC0050D90F /* Frameworks */,
-				59A076722C161ECC0050D90F /* Resources */,
+				597A7F672C31292E00891DCA /* Sources */,
+				597A7F682C31292E00891DCA /* Frameworks */,
+				597A7F692C31292E00891DCA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = WidgetAppExtension;
-			productName = WidgetAppExtension;
-			productReference = 59A076742C161ECC0050D90F /* WidgetAppExtension.appex */;
+			name = MementoWidgetExtension;
+			productName = MementoWidgetExtension;
+			productReference = 597A7F6B2C31292E00891DCA /* MementoWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		59BFB22E2BFCFAE5008B6EA8 /* Memento */ = {
@@ -411,12 +413,13 @@
 				59BFB22C2BFCFAE5008B6EA8 /* Frameworks */,
 				59BFB22D2BFCFAE5008B6EA8 /* Resources */,
 				59FC6A282BFECD1000D72FF2 /* Embed Foundation Extensions */,
+				597A7F3D2C30D3B800891DCA /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5992D2322C0699E900E643A2 /* PBXTargetDependency */,
-				59A076832C161ECD0050D90F /* PBXTargetDependency */,
+				597A7F4E2C31274B00891DCA /* PBXTargetDependency */,
+				597A7F782C31292F00891DCA /* PBXTargetDependency */,
 			);
 			name = Memento;
 			productName = Memento;
@@ -466,14 +469,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					5992D2282C0699E900E643A2 = {
-						CreatedOnToolsVersion = 15.3;
+					597A7F442C31274B00891DCA = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
-					59A076732C161ECC0050D90F = {
-						CreatedOnToolsVersion = 15.3;
+					597A7F6A2C31292E00891DCA = {
+						CreatedOnToolsVersion = 15.4;
 					};
 					59BFB22E2BFCFAE5008B6EA8 = {
 						CreatedOnToolsVersion = 15.3;
@@ -504,26 +508,26 @@
 				59BFB22E2BFCFAE5008B6EA8 /* Memento */,
 				59BFB2402BFCFAE6008B6EA8 /* MementoTests */,
 				59BFB24A2BFCFAE6008B6EA8 /* MementoUITests */,
-				5992D2282C0699E900E643A2 /* ShareSheet */,
-				59A076732C161ECC0050D90F /* WidgetAppExtension */,
+				597A7F442C31274B00891DCA /* MementoShare */,
+				597A7F6A2C31292E00891DCA /* MementoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5992D2272C0699E900E643A2 /* Resources */ = {
+		597A7F432C31274B00891DCA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				598F53B12C07E53F00362AB5 /* MainInterface.storyboard in Resources */,
+				597A7F4B2C31274B00891DCA /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59A076722C161ECC0050D90F /* Resources */ = {
+		597A7F692C31292E00891DCA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59A076802C161ECD0050D90F /* Assets.xcassets in Resources */,
+				597A7F742C31292F00891DCA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,49 +556,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5992D2252C0699E900E643A2 /* Sources */ = {
+		597A7F412C31274B00891DCA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59AA758C2C1E34A200313B7F /* MementoShortcuts.swift in Sources */,
-				59C5069E2C291C390022B553 /* PasteItemIntent.swift in Sources */,
-				59BE70022C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */,
-				59AA758E2C1E34B200313B7F /* ItemEntityQuery.swift in Sources */,
-				59AA75912C1E5B7800313B7F /* SaveItemIntent.swift in Sources */,
-				59A076922C1621A30050D90F /* Item.swift in Sources */,
-				59AA758D2C1E34B000313B7F /* ItemEntity.swift in Sources */,
-				59A0769B2C16220B0050D90F /* FetchMetadata.swift in Sources */,
-				590FA2A32C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
-				598F53AC2C06A1C200362AB5 /* ShareView.swift in Sources */,
-				5992D22C2C0699E900E643A2 /* ShareViewController.swift in Sources */,
-				59AA758A2C1E349E00313B7F /* ItemViewedIntent.swift in Sources */,
-				59A076992C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */,
-				59A076942C1621A60050D90F /* CodableLinkMetadata.swift in Sources */,
-				59C506A12C291DDF0022B553 /* Paste.swift in Sources */,
-				59B638F92C2CC32E002F41AC /* ItemFromPaste.swift in Sources */,
+				597A7F5B2C31286600891DCA /* ShareView.swift in Sources */,
+				597A7F5C2C31289200891DCA /* FetchMetadata.swift in Sources */,
+				597A7F592C31284D00891DCA /* ConfigureModelContainer.swift in Sources */,
+				597A7F642C3128B100891DCA /* ItemEntity.swift in Sources */,
+				597A7F5E2C31289700891DCA /* MementoShortcuts.swift in Sources */,
+				597A7F652C3128B300891DCA /* ItemEntityQuery.swift in Sources */,
+				597A7F872C3129B100891DCA /* Filters.swift in Sources */,
+				597A7F622C3128A000891DCA /* PasteItemIntent.swift in Sources */,
+				597A7F612C31289E00891DCA /* DeleteItemIntent.swift in Sources */,
+				597A7F632C3128AF00891DCA /* Item.swift in Sources */,
+				597A7F5F2C31289900891DCA /* ItemViewedIntent.swift in Sources */,
+				597A7F5D2C31289500891DCA /* UpdateAll.swift in Sources */,
+				597A7F582C31282E00891DCA /* ShareViewController.swift in Sources */,
+				597A7F602C31289C00891DCA /* SaveItemIntent.swift in Sources */,
+				597A7F662C3128BC00891DCA /* CodableLinkMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59A076702C161ECC0050D90F /* Sources */ = {
+		597A7F672C31292E00891DCA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59AA758B2C1E34A200313B7F /* MementoShortcuts.swift in Sources */,
-				59C5069F2C291C390022B553 /* PasteItemIntent.swift in Sources */,
-				59BE70032C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */,
-				59AA75942C1E731000313B7F /* FetchMetadata.swift in Sources */,
-				59A0769A2C1621EF0050D90F /* ConfigureModelContainer.swift in Sources */,
-				59E7BE492C1B99BD0091BFEF /* ItemEntityQuery.swift in Sources */,
-				59A0767C2C161ECC0050D90F /* WidgetAppBundle.swift in Sources */,
-				59AA75922C1E5B7800313B7F /* SaveItemIntent.swift in Sources */,
-				590FA2A42C2DC87200DA4A6E /* UpdateAll.swift in Sources */,
-				59E7BE482C1B99B80091BFEF /* ItemEntity.swift in Sources */,
-				59E7BE472C1B98A90091BFEF /* ItemViewedIntent.swift in Sources */,
-				59A076952C1621A70050D90F /* CodableLinkMetadata.swift in Sources */,
-				59A076932C1621A30050D90F /* Item.swift in Sources */,
-				59A0767E2C161ECC0050D90F /* WidgetApp.swift in Sources */,
-				59C506A02C291DDF0022B553 /* Paste.swift in Sources */,
-				59B638FA2C2CC32E002F41AC /* ItemFromPaste.swift in Sources */,
+				597A7F7F2C31299800891DCA /* SaveItemIntent.swift in Sources */,
+				597A7F892C3129BD00891DCA /* FetchMetadata.swift in Sources */,
+				597A7F802C31299B00891DCA /* DeleteItemIntent.swift in Sources */,
+				597A7F842C3129AB00891DCA /* ItemEntityQuery.swift in Sources */,
+				597A7F7D2C31299300891DCA /* MementoShortcuts.swift in Sources */,
+				597A7F832C3129A900891DCA /* ItemEntity.swift in Sources */,
+				597A7F812C31299D00891DCA /* PasteItemIntent.swift in Sources */,
+				597A7F882C3129BA00891DCA /* UpdateAll.swift in Sources */,
+				597A7F822C3129A700891DCA /* Item.swift in Sources */,
+				597A7F852C3129AD00891DCA /* CodableLinkMetadata.swift in Sources */,
+				597A7F8A2C3129C000891DCA /* ConfigureModelContainer.swift in Sources */,
+				597A7F702C31292E00891DCA /* MementoWidgetBundle.swift in Sources */,
+				597A7F862C3129B000891DCA /* Filters.swift in Sources */,
+				597A7F7E2C31299600891DCA /* ItemViewedIntent.swift in Sources */,
+				597A7F722C31292E00891DCA /* MementoWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,12 +604,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5988EFE82C0F710C007C28CF /* Paste.swift in Sources */,
 				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */,
 				59C5069D2C291C390022B553 /* PasteItemIntent.swift in Sources */,
-				59B638F82C2CC32E002F41AC /* ItemFromPaste.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* ListViewModel.swift in Sources */,
 				59E7BE3D2C1AB6280091BFEF /* ItemEntity.swift in Sources */,
 				59E7BE3F2C1AB6530091BFEF /* ItemEntityQuery.swift in Sources */,
@@ -648,17 +648,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5992D2322C0699E900E643A2 /* PBXTargetDependency */ = {
+		597A7F4E2C31274B00891DCA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 5992D2282C0699E900E643A2 /* ShareSheet */;
-			targetProxy = 5992D2312C0699E900E643A2 /* PBXContainerItemProxy */;
+			target = 597A7F442C31274B00891DCA /* MementoShare */;
+			targetProxy = 597A7F4D2C31274B00891DCA /* PBXContainerItemProxy */;
 		};
-		59A076832C161ECD0050D90F /* PBXTargetDependency */ = {
+		597A7F782C31292F00891DCA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 59A076732C161ECC0050D90F /* WidgetAppExtension */;
-			targetProxy = 59A076822C161ECD0050D90F /* PBXContainerItemProxy */;
+			target = 597A7F6A2C31292E00891DCA /* MementoWidgetExtension */;
+			targetProxy = 597A7F772C31292F00891DCA /* PBXContainerItemProxy */;
 		};
 		59BFB2432BFCFAE6008B6EA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -672,121 +670,147 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		597A7F492C31274B00891DCA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				597A7F4A2C31274B00891DCA /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		5992D2342C0699E900E643A2 /* Debug */ = {
+		597A7F512C31274B00891DCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ShareSheet/ShareSheet.entitlements;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.0.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T458C78BL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShareSheet/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ShareSheet;
+				INFOPLIST_FILE = MementoShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MementoShare;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.sharesheet;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.MementoShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		5992D2352C0699E900E643A2 /* Release */ = {
+		597A7F522C31274B00891DCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ShareSheet/ShareSheet.entitlements;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.0.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T458C78BL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShareSheet/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ShareSheet;
+				INFOPLIST_FILE = MementoShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MementoShare;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.sharesheet;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.MementoShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		59A076852C161ECD0050D90F /* Debug */ = {
+		597A7F7B2C31292F00891DCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetAppExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.0.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T458C78BL;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WidgetApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WidgetApp;
+				INFOPLIST_FILE = MementoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MementoWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.widget;
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.MementoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		59A076862C161ECD0050D90F /* Release */ = {
+		597A7F7C2C31292F00891DCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetAppExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.0.1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5T458C78BL;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WidgetApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WidgetApp;
+				INFOPLIST_FILE = MementoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MementoWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.widget;
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.MementoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1083,20 +1107,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5992D2362C0699E900E643A2 /* Build configuration list for PBXNativeTarget "ShareSheet" */ = {
+		597A7F502C31274B00891DCA /* Build configuration list for PBXNativeTarget "MementoShare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5992D2342C0699E900E643A2 /* Debug */,
-				5992D2352C0699E900E643A2 /* Release */,
+				597A7F512C31274B00891DCA /* Debug */,
+				597A7F522C31274B00891DCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59A076872C161ECD0050D90F /* Build configuration list for PBXNativeTarget "WidgetAppExtension" */ = {
+		597A7F7A2C31292F00891DCA /* Build configuration list for PBXNativeTarget "MementoWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59A076852C161ECD0050D90F /* Debug */,
-				59A076862C161ECD0050D90F /* Release */,
+				597A7F7B2C31292F00891DCA /* Debug */,
+				597A7F7C2C31292F00891DCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

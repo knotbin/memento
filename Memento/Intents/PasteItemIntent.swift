@@ -8,16 +8,23 @@
 import Foundation
 import AppIntents
 import SwiftData
+import SwiftUI
 
 struct PasteItemIntent: AppIntent {
     static var title: LocalizedStringResource = "Save Item From Clipboard"
     
     func perform() async throws -> some IntentResult & ProvidesDialog {
+        let pasteboard = UIPasteboard.general
         let context = ModelContext(ConfigureModelContainer())
         context.autosaveEnabled = true
-        guard let item = await ItemFromPaste() else {
+        guard let link: String = pasteboard.string else {
             return .result(
                 dialog: "There is no available clipboard text."
+            )
+        }
+        guard let item = await Item(link: link) else {
+            return .result(
+                dialog: "An error occured. Please try again."
             )
         }
         context.insert(item)

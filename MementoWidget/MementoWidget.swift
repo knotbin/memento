@@ -41,7 +41,7 @@ struct SimpleEntry: TimelineEntry {
     var items: [Item]?
 }
 
-struct WidgetAppEntryView : View {
+struct MementoWidgetEntryView : View {
     static var itemdescriptor = FetchDescriptor<Item>(predicate: #Predicate {$0.viewed == false})
     @Query(itemdescriptor, animation: .snappy) var items: [Item]
     var entry: Provider.Entry
@@ -110,13 +110,13 @@ struct WidgetAppEntryView : View {
     }
 }
 
-struct WidgetApp: Widget {
+struct MementoWidget: Widget {
     let modelContainer = ConfigureModelContainer()
-    let kind: String = "WidgetApp"
+    let kind: String = "MementoWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            WidgetAppEntryView(entry: entry)
+            MementoWidgetEntryView(entry: entry)
                 .modelContainer(modelContainer)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
@@ -126,7 +126,7 @@ struct WidgetApp: Widget {
 }
 
 #Preview(as: .systemSmall) {
-    WidgetApp()
+    MementoWidget()
 } timeline: {
     SimpleEntry(date: .now)
     SimpleEntry(date: .now)
