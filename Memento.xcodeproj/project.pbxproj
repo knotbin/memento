@@ -129,6 +129,7 @@
 /* Begin PBXFileReference section */
 		590FA2A12C2DC87200DA4A6E /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		59632F292C312CAA008E09A4 /* MementoShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MementoShare.entitlements; sourceTree = "<group>"; };
 		5978256D2C23926400BC86FF /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		597A7F452C31274B00891DCA /* MementoShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MementoShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		597A7F4A2C31274B00891DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
 		59A076762C161ECC0050D90F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		59A076782C161ECC0050D90F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		59A076882C161FC40050D90F /* WidgetAppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetAppExtension.entitlements; sourceTree = "<group>"; };
 		59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemIntent.swift; sourceTree = "<group>"; };
 		59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemIntent.swift; sourceTree = "<group>"; };
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +217,7 @@
 		597A7F462C31274B00891DCA /* MementoShare */ = {
 			isa = PBXGroup;
 			children = (
+				59632F292C312CAA008E09A4 /* MementoShare.entitlements */,
 				597A7F572C31282E00891DCA /* ShareViewController.swift */,
 				597A7F5A2C31286600891DCA /* ShareView.swift */,
 				597A7F492C31274B00891DCA /* MainInterface.storyboard */,
@@ -269,7 +270,6 @@
 		59BFB2262BFCFAE5008B6EA8 = {
 			isa = PBXGroup;
 			children = (
-				59A076882C161FC40050D90F /* WidgetAppExtension.entitlements */,
 				59BFB2312BFCFAE5008B6EA8 /* Memento */,
 				59BFB2442BFCFAE6008B6EA8 /* MementoTests */,
 				59BFB24E2BFCFAE6008B6EA8 /* MementoUITests */,
@@ -686,6 +686,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -715,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
