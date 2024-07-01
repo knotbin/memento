@@ -32,7 +32,7 @@ struct ToggleViewedIntent: AppIntent {
         } else {
             enteredItem = try await $item.requestDisambiguation(
                 among: ItemEntityQuery().suggestedEntities(),
-                dialog: "Which item would you like to mark viewed?"
+                dialog: "Which item would you like to toggle viewed?"
             )
         }
         let context = ModelContext(ConfigureModelContainer())

@@ -12,7 +12,7 @@ import AppIntents
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+        SimpleEntry(date: Date(), placeholder: true)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -38,7 +38,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     var date: Date
-    var items: [Item]?
+    var placeholder: Bool = false
 }
 
 struct MementoWidgetEntryView : View {
@@ -50,15 +50,9 @@ struct MementoWidgetEntryView : View {
         VStack {
             if let item = items.randomElement() {
                 VStack(alignment: .leading) {
-                    VStack(alignment: .leading) {
+                    HStack(alignment: .top) {
                         if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
                             Image(uiImage: image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(10)
-                                .shadow(radius: 2)
-                        } else {
-                            Image("EmptyItem")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(10)
@@ -69,6 +63,8 @@ struct MementoWidgetEntryView : View {
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)
                     }
+                    Text(item.note ?? "")
+                        .font(.subheadline)
                     HStack {
                         Button(intent: ItemViewedIntent(item: item), label: {
                             Image(systemName: "book")
@@ -80,7 +76,7 @@ struct MementoWidgetEntryView : View {
                 }
                 .transition(.push(from: .bottom))
                 .widgetURL(item.url)
-            } else if entry.items != nil {
+            } else if entry.placeholder == true {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
                         Image("EmptyItem")
