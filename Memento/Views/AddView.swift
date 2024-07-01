@@ -11,10 +11,15 @@ import LinkPresentation
 import WidgetKit
 
 struct AddView: View {
+    enum FocusableField: Hashable, CaseIterable {
+        case link, note
+    }
     @Environment(\.modelContext) private var modelContext
     
     @State var viewModel = AddViewModel()
     @Binding var shown: Bool
+    
+    @FocusState var focus: FocusableField?
     
     let provider = LPMetadataProvider()
     
@@ -22,13 +27,16 @@ struct AddView: View {
         NavigationStack {
             Form {
                 TextField("Enter URL", text: $viewModel.itemText)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
                     .keyboardType(.URL)
+                    .focused($focus, equals: .link)
                 Section {
                     TextField("Add Notes (optional)", text: $viewModel.noteText, axis: .vertical)
                         .lineLimit(5...10)
+                        .focused($focus, equals: .note)
                 }
+            }
+            .onSubmit {
+                focusNextField()
             }
             .navigationTitle("New Item")
             .toolbar {
@@ -56,6 +64,9 @@ struct AddView: View {
                 
             }
         }
+        .onAppear {
+            focus = AddView.FocusableField.allCases.first
+        }
     }
     
     func addItem(link: String, note: String? = nil) async {
@@ -65,6 +76,24 @@ struct AddView: View {
         modelContext.insert(item)
         MementoShortcuts.updateAppShortcutParameters()
         WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    private func focusFirstField() {
+        focus = FocusableField.allCases.first
+    }
+
+    private func focusNextField() {
+        switch focus {
+        case .link:
+            focus = .note
+        case .note:
+            Task {
+                await addItem(link: viewModel.itemText, note: viewModel.noteText)
+                shown = false
+            }
+        case nil:
+            break
+        }
     }
 }
 

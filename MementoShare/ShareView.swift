@@ -14,6 +14,7 @@ struct ShareView: View {
     
     @State var notetext = ""
     @State var alertPresented = false
+    @FocusState var focus
     
     let extensionContext: NSExtensionContext?
     let url: URL
@@ -25,6 +26,19 @@ struct ShareView: View {
                 Text(url.absoluteString)
                 TextField("Notes (optional)", text: $notetext, axis: .vertical)
                     .lineLimit(5...10)
+                    .focused($focus)
+                    .onAppear { focus = true }
+            }
+            .onSubmit {
+                Task {
+                    if let item = await Item(link: url.absoluteString, note: notetext) {
+                        modelContext.insert(item)
+                    } else {
+                        alertPresented = true
+                    }
+                    UpdateAll()
+                    self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
