@@ -7,44 +7,55 @@
 import SwiftUI
 import SwiftData
 import LinkPresentation
+import UniformTypeIdentifiers
 
 struct ShareView: View {
     @Environment(\.modelContext) private var modelContext
     
-    var extensionContext: NSExtensionContext?
+    @State var notetext = ""
+    @State var alertPresented = false
     
+    let extensionContext: NSExtensionContext?
+    let url: URL
     let linkprovider = LPMetadataProvider()
     
     var body: some View {
-        Text("Adding Item...")
-        
-            .onAppear {
-                guard
-                    let input = (extensionContext?.inputItems.first as! NSExtensionItem).attachments else {
-                    extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                    return
+        NavigationStack {
+            Form {
+                Text(url.absoluteString)
+                TextField("Notes (optional)", text: $notetext, axis: .vertical)
+                    .lineLimit(5...10)
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                    }
                 }
-                for provider in input {
-                    provider.loadItem(forTypeIdentifier: "public.url") { data, _ in
-                        if let url = data as? URL {
-                            Task {
-                                let item = await Item(link: url.absoluteString)
-                                guard let fullitem = item else {
-                                    extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                                    return
-                                }
-                                modelContext.insert(fullitem)
-                                UpdateAll()
-                                extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save") {
+                        Task {
+                            if let item = await Item(link: url.absoluteString, note: notetext) {
+                                modelContext.insert(item)
+                            } else {
+                                alertPresented = true
                             }
+                            UpdateAll()
+                            self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                         }
                     }
                 }
             }
+            .navigationTitle("New Item")
+            .toolbarTitleDisplayMode(.inline)
+        }
+        .alert(isPresented: $alertPresented) {
+            Alert(title: Text("An error occured"))
+        }
     }
     
 }
 
 #Preview {
-    ShareView()
+    ShareView(extensionContext: nil, url: URL(string: "apple.com")!)
 }
