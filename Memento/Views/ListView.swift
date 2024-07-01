@@ -29,7 +29,7 @@ struct ListView: View {
                     }
                 }))
                 .swipeActions(edge: .leading) {
-                    Button({item.viewed ? "Unmark Viewed" : "Mark Viewed"}(), systemImage: "book", action: {viewModel.toggleViewed(item)}).tint(.indigo)
+                    Button({item.viewed ? "Unmark Viewed" : "Mark Viewed"}(), systemImage: "book", intent: ToggleViewedIntent(item: item)).tint(.indigo)
                 }
                 .swipeActions(edge: .trailing) {
                     Button("Delete", systemImage: "trash", role: .destructive, intent: DeleteItemIntent(item: item))
