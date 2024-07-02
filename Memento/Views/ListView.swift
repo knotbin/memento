@@ -11,9 +11,16 @@ import SwiftData
 struct ListView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Item.timestamp, order: .reverse, animation: .smooth) private var items: [Item]
+    @Query(animation: .smooth) private var items: [Item]
     var filteredItems: [Item] {
-        viewModel.filterItems(items)
+        let filtered = viewModel.filterItems(items)
+        let filteredsorted = filtered.sorted { (lhs: Item, rhs: Item) in
+            if lhs.viewed == rhs.viewed {
+                return lhs.timestamp > rhs.timestamp
+            }
+            return !lhs.viewed && rhs.viewed
+        }
+        return filteredsorted
     }
     
     @State var viewModel = ListViewModel()

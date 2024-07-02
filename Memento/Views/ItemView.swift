@@ -18,7 +18,10 @@ struct ItemView: View {
             item.viewed = true
             openURL(item.url)
         } label: {
-            HStack(alignment: .top) {
+            HStack {
+                if !item.viewed {
+                    Image(systemName: "circle.fill")
+                }
                 if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
                     Image(uiImage: image)
                         .resizable()
@@ -38,8 +41,6 @@ struct ItemView: View {
                             .tint(.secondary)
                     }
                 }
-                Spacer()
-                Image(systemName: item.viewed ? "book.fill" : "book")
             }
         }
     }
