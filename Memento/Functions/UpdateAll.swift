@@ -9,6 +9,5 @@ import Foundation
 import WidgetKit
 
 func UpdateAll() {
-    MementoShortcuts.updateAppShortcutParameters()
     WidgetCenter.shared.reloadAllTimelines()
 }

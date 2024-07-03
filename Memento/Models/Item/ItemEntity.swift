@@ -22,6 +22,8 @@ struct ItemEntity: AppEntity {
     
     var viewed: Bool
     
+    var timestamp: Date
+    
     static let typeDisplayRepresentation: TypeDisplayRepresentation = "Item"
     
     var displayRepresentation: DisplayRepresentation {
@@ -37,6 +39,7 @@ struct ItemEntity: AppEntity {
     init(item: Item) {
         self.id = item.id
         self.viewed = item.viewed
+        self.timestamp = item.timestamp
         self.name = item.metadata?.title ?? item.link
         self.item = item.link
         self.imageData = item.metadata?.siteImage ?? nil
