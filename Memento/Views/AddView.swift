@@ -27,6 +27,8 @@ struct AddView: View {
         NavigationStack {
             Form {
                 TextField("Enter URL", text: $viewModel.itemText)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
                     .keyboardType(.URL)
                     .focused($focus, equals: .link)
                 Section {
