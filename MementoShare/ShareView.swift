@@ -24,6 +24,7 @@ struct ShareView: View {
         NavigationStack {
             Form {
                 Text(url.absoluteString)
+                    .lineLimit(1)
                 TextField("Notes (optional)", text: $notetext, axis: .vertical)
                     .lineLimit(5...10)
                     .focused($focus)
