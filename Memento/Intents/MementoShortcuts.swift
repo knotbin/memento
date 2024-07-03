@@ -23,14 +23,12 @@ struct MementoShortcuts: AppShortcutsProvider {
             shortTitle: "Delete Item",
             systemImageName: "trash"
         )
-        if #available(iOS 18.0, *) {
-            AppShortcut(
-                intent: OpenItemIntent(),
-                phrases: ["Open a link in \(.applicationName)", "Open a link I saved in \(.applicationName)"],
-                shortTitle: "Open Item",
-                systemImageName: "envelope.open"
-            )
-        }
+        AppShortcut(
+            intent: OpenItemIntent(),
+            phrases: ["Open a link in \(.applicationName)", "Open a link I saved in \(.applicationName)"],
+            shortTitle: "Open Item",
+            systemImageName: "envelope.open"
+        )
         AppShortcut(
             intent: PasteItemIntent(),
             phrases: ["Add an item in \(.applicationName) from my clipboard.", "Save an item in \(.applicationName) from paste."],

@@ -37,9 +37,6 @@ struct AddView: View {
                         .focused($focus, equals: .note)
                 }
             }
-            .onSubmit {
-                focusNextField()
-            }
             .navigationTitle("New Item")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

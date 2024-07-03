@@ -8,8 +8,8 @@
 import Foundation
 import AppIntents
 import SwiftData
+import SwiftUICore
 
-@available(iOS 18.0, *)
 struct OpenItemIntent: AppIntent, OpensIntent {
     var value: Never?
     
@@ -48,7 +48,11 @@ struct OpenItemIntent: AppIntent, OpensIntent {
         try context.save()
         UpdateAll()
 
-        return .result(opensIntent: OpenURLIntent(item.url))
+        if #available(iOS 18.0, *) {
+            return .result(opensIntent: OpenURLIntent(item.url))
+        } else {
+            return .result()
+        }
     }
     struct urlError: Error {
         let linkUsed: String?
