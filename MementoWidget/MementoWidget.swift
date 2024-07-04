@@ -12,7 +12,7 @@ import AppIntents
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), placeholder: true)
+        SimpleEntry(date: Date())
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -38,7 +38,6 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     var date: Date
-    var placeholder: Bool = false
 }
 
 struct MementoWidgetEntryView : View {
@@ -82,7 +81,66 @@ struct MementoWidgetEntryView : View {
                 }
                 .transition(.push(from: .bottom))
                 .widgetURL(item.url)
-            
+            case .systemMedium:
+                HStack {
+                    VStack(alignment: .leading) {
+                        if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(10)
+                                .shadow(radius: 2)
+                        }
+                        Text(item.metadata?.title ?? item.link)
+                            .bold()
+                            .multilineTextAlignment(.leading)
+                            .foregroundStyle(Color.primary)
+                    }
+                    VStack(alignment: .leading) {
+                        if let note = item.note, note.count >= 30 {
+                            Text(note)
+                            HStack {
+                                Button(
+                                    intent: ItemViewedIntent(item: item),
+                                    label: {
+                                        Label(
+                                            "Viewed",
+                                            systemImage: "book"
+                                        ).labelStyle(.iconOnly)
+                                })
+                                Button(
+                                    intent: DeleteItemIntent(item: item),
+                                    label: {
+                                        Label(
+                                            "Delete",
+                                            systemImage: "trash"
+                                        ).labelStyle(.iconOnly)
+                                })
+                            }
+                        } else {
+                            Text(item.note ?? "")
+                                .font(.subheadline)
+                            Button(
+                                intent: ItemViewedIntent(item: item),
+                                label: {
+                                    Label(
+                                        "Viewed",
+                                        systemImage: "book"
+                                    )
+                            })
+                            Button(
+                                intent: DeleteItemIntent(item: item),
+                                label: {
+                                    Label(
+                                        "Delete",
+                                        systemImage: "trash"
+                                    )
+                            })
+                        }
+                    }
+                }
+                .transition(.push(from: .bottom))
+                .widgetURL(item.url)
             default:
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
@@ -111,27 +169,6 @@ struct MementoWidgetEntryView : View {
                 }
                 .transition(.push(from: .bottom))
                 .widgetURL(item.url)
-            }
-        } else if entry.placeholder == true {
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
-                    Image("EmptyItem")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(10)
-                        .frame(height: 65)
-                        .shadow(radius: 2)
-                    Text("Memento")
-                        .bold()
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(Color.primary)
-                }
-                HStack {
-                    Button(action: {}, label: {
-                        Image(systemName: "book")
-                    })
-                    Button(action: {}, label: {Image(systemName: "xmark")})
-                }
             }
         } else {
             Text("There are no unviewed items.")
@@ -162,7 +199,7 @@ struct MementoWidget: Widget {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     MementoWidget()
 } timeline: {
     SimpleEntry(date: .now)
