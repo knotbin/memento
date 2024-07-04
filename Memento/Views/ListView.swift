@@ -29,17 +29,21 @@ struct ListView: View {
         List(filteredItems) { item in
             ItemView(item: item)
                 .contextMenu(
-                    ContextMenu(menuItems: {
-                        Button(
-                            "Delete",
-                            systemImage: "trash",
-                            role: .destructive,
-                            intent: DeleteItemIntent(item: item)
-                        )
-                        Button(
-                            item.viewed ? "Unmark Viewed": "Mark Viewed",
-                            systemImage: "book",
-                            action: { viewModel.toggleViewed(item) }
+                    ContextMenu(
+                        menuItems: {
+                            Button(
+                                "Delete",
+                                systemImage: "trash",
+                                role: .destructive,
+                                intent: DeleteItemIntent(item: item)
+                            )
+                            Button(
+                                item.viewed ? "Unmark Viewed": "Mark Viewed",
+                                systemImage: "book",
+                                action: {
+                                    viewModel.toggleViewed(item)
+                                    UpdateAll()
+                                }
                         )
                     })
                 )
@@ -47,7 +51,10 @@ struct ListView: View {
                     Button(
                         { item.viewed ? "Unmark Viewed" : "Mark Viewed" }(),
                         systemImage: "book",
-                        action: { viewModel.toggleViewed(item) }
+                        action: {
+                            viewModel.toggleViewed(item)
+                            UpdateAll()
+                        }
                     ).tint(.indigo)
                 }
                 .swipeActions(edge: .trailing) {

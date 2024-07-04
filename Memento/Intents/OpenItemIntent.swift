@@ -18,8 +18,8 @@ struct OpenItemIntent: AppIntent, OpensIntent {
     @Parameter(title: "Item")
     var target: ItemEntity?
     
-    init(target: ItemEntity?) {
-        self.target = target
+    init(target: Item) {
+        self.target = ItemEntity(item: target)
     }
     
     init() {}
