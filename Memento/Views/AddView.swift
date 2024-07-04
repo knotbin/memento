@@ -52,7 +52,7 @@ struct AddView: View {
                             } else {
                                 await addItem(link: viewModel.itemText, note: viewModel.noteText)
                             }
-                            
+                            UpdateAll()
                         }
                         shown = false
                     }
@@ -73,8 +73,6 @@ struct AddView: View {
             return
         }
         modelContext.insert(item)
-        MementoShortcuts.updateAppShortcutParameters()
-        WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func focusFirstField() {
