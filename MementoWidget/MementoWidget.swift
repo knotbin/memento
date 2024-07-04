@@ -95,6 +95,7 @@ struct MementoWidgetEntryView : View {
                             .bold()
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)
+                            .lineLimit(2)
                     }
                     VStack(alignment: .leading) {
                         if let note = item.note, note.count >= 30 {
@@ -126,7 +127,7 @@ struct MementoWidgetEntryView : View {
                                     Label(
                                         "Viewed",
                                         systemImage: "book"
-                                    )
+                                    ).frame(maxWidth: .infinity)
                             })
                             Button(
                                 intent: DeleteItemIntent(item: item),
@@ -134,7 +135,7 @@ struct MementoWidgetEntryView : View {
                                     Label(
                                         "Delete",
                                         systemImage: "trash"
-                                    )
+                                    ).frame(maxWidth: .infinity)
                             })
                         }
                     }
