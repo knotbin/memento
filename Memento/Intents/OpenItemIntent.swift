@@ -18,6 +18,12 @@ struct OpenItemIntent: AppIntent, OpensIntent {
     @Parameter(title: "Item")
     var target: ItemEntity?
     
+    init(target: ItemEntity?) {
+        self.target = target
+    }
+    
+    init() {}
+    
     func perform() async throws -> some OpensIntent {
         let entities = try await ItemEntityQuery().suggestedEntities().sorted { (lhs: ItemEntity, rhs: ItemEntity) in
             if lhs.viewed == rhs.viewed {
