@@ -10,7 +10,7 @@ import AppIntents
 import SwiftData
 
 struct DeleteItemIntent: AppIntent {
-    static var title: LocalizedStringResource = "Delete Item"
+    static let title: LocalizedStringResource = "Delete Item"
     
     @Parameter(title: "Item")
     var item: ItemEntity?

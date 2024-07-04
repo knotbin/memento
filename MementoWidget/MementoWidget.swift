@@ -42,13 +42,19 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct MementoWidgetEntryView : View {
-    static var itemdescriptor = FetchDescriptor<Item>(predicate: #Predicate {$0.viewed == false})
-    @Query(itemdescriptor, animation: .snappy) var items: [Item]
+    @Environment(\.widgetFamily) var family
     var entry: Provider.Entry
+    @Query(
+        FetchDescriptor<Item>(predicate: #Predicate {$0.viewed == false}),
+        animation: .snappy
+    ) var items: [Item]
 
+
+    
     var body: some View {
-        VStack {
-            if let item = items.randomElement() {
+        if let item = items.randomElement() {
+            switch family {
+            case .systemSmall:
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
                         if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
@@ -76,33 +82,62 @@ struct MementoWidgetEntryView : View {
                 }
                 .transition(.push(from: .bottom))
                 .widgetURL(item.url)
-            } else if entry.placeholder == true {
+            
+            default:
                 VStack(alignment: .leading) {
-                    VStack(alignment: .leading) {
-                        Image("EmptyItem")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(10)
-                            .frame(height: 65)
-                            .shadow(radius: 2)
-                        Text("Memento")
+                    HStack(alignment: .top) {
+                        if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(10)
+                                .shadow(radius: 2)
+                        }
+                        Text(item.metadata?.title ?? item.link)
                             .bold()
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)
                     }
+                    Text(item.note ?? "")
+                        .font(.subheadline)
                     HStack {
-                        Button(action: {}, label: {
+                        Button(intent: ItemViewedIntent(item: item), label: {
                             Image(systemName: "book")
                         })
-                        Button(action: {}, label: {Image(systemName: "xmark")})
+                            .clipShape(Circle())
+                        Button(intent: DeleteItemIntent(item: item), label: {Image(systemName: "trash")})
+                            .clipShape(Circle())
                     }
                 }
-            } else {
-                Text("You have no unviewed items")
-                    .widgetURL(nil)
+                .transition(.push(from: .bottom))
+                .widgetURL(item.url)
             }
-            
+        } else if entry.placeholder == true {
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    Image("EmptyItem")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(10)
+                        .frame(height: 65)
+                        .shadow(radius: 2)
+                    Text("Memento")
+                        .bold()
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(Color.primary)
+                }
+                HStack {
+                    Button(action: {}, label: {
+                        Image(systemName: "book")
+                    })
+                    Button(action: {}, label: {Image(systemName: "xmark")})
+                }
+            }
+        } else {
+            Text("There are no unviewed items.")
+                .multilineTextAlignment(.center)
         }
+        
     }
 }
 
@@ -116,8 +151,14 @@ struct MementoWidget: Widget {
                 .modelContainer(modelContainer)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("Item Display")
-        .description("This widget shows a random item you saved, updating every hour.")
+#if os(watchOS)
+        .supportedFamilies([.accessoryCircular,
+                            .accessoryRectangular, .accessoryInline])
+#else
+        .supportedFamilies([.accessoryCircular,
+                            .accessoryRectangular, .accessoryInline,
+                            .systemSmall, .systemMedium, .systemLarge])
+#endif
     }
 }
 

@@ -10,7 +10,7 @@ import AppIntents
 import SwiftData
 
 struct ToggleViewedIntent: AppIntent {
-    static var title: LocalizedStringResource = "Toggle Item Viewed"
+    static let title: LocalizedStringResource = "Toggle Item Viewed"
     
     @Parameter(title: "Item")
     var item: ItemEntity?
