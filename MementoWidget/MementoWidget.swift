@@ -190,12 +190,9 @@ struct MementoWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
 #if os(watchOS)
-        .supportedFamilies([.accessoryCircular,
-                            .accessoryRectangular, .accessoryInline])
+        .supportedFamilies([.accessoryInline])
 #else
-        .supportedFamilies([.accessoryCircular,
-                            .accessoryRectangular, .accessoryInline,
-                            .systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.accessoryInline, .systemSmall, .systemMedium])
 #endif
     }
 }
