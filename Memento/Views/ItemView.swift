@@ -31,15 +31,13 @@ struct ItemView: View {
                         .shadow(radius: 2)
                 }
                 VStack(alignment: .leading) {
-                    Text(item.metadata?.title ?? item.link)
+                    Text(item.metadata?.title ?? item.link ?? "")
                         .bold()
                         .tint(Color.primary)
                         .lineLimit(1)
-                    if let note = item.note {
-                        Text(note)
-                            .multilineTextAlignment(.leading)
-                            .tint(.secondary)
-                    }
+                    Text(item.note ?? "")
+                        .multilineTextAlignment(.leading)
+                        .tint(.secondary)
                 }
             }
         }

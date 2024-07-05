@@ -14,7 +14,10 @@ struct ItemEntity: AppEntity {
     var name: String?
     
     @Property(title: "URL")
-    var item: String
+    var link: String?
+    
+    @Property(title: "Note")
+    var note: String?
     
     var imageData: Data?
     
@@ -28,9 +31,9 @@ struct ItemEntity: AppEntity {
     
     var displayRepresentation: DisplayRepresentation {
         if let data = imageData {
-            return DisplayRepresentation(title: LocalizedStringResource(stringLiteral: name ?? item), image: DisplayRepresentation.Image(data: data))
+            return DisplayRepresentation(title: LocalizedStringResource(stringLiteral: name ?? link ?? note ?? ""), image: DisplayRepresentation.Image(data: data))
         } else {
-            return DisplayRepresentation(title: LocalizedStringResource(stringLiteral: name ?? item), image: DisplayRepresentation.Image(named: "EmptyItem"))
+            return DisplayRepresentation(title: LocalizedStringResource(stringLiteral: name ?? link ?? note ?? ""))
         }
     }
     
@@ -41,7 +44,7 @@ struct ItemEntity: AppEntity {
         self.viewed = item.viewed
         self.timestamp = item.timestamp
         self.name = item.metadata?.title ?? item.link
-        self.item = item.link
+        self.link = item.link
         self.imageData = item.metadata?.siteImage ?? nil
     }
 }

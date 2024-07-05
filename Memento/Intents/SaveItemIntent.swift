@@ -31,7 +31,7 @@ struct SaveItemIntent: AppIntent {
         context.insert(item)
         try context.save()
         UpdateAll()
-        return .result(dialog: "I've added \(item.metadata?.title ?? item.link) to Memento")
+        return .result(dialog: "I've added \(item.metadata?.title ?? item.link ?? "the item") to Memento")
         
     }
 }

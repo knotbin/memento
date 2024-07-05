@@ -44,7 +44,7 @@ struct ToggleViewedIntent: AppIntent {
         item.viewed.toggle()
         try context.save()
         UpdateAll()
-        return .result(dialog: "Okay, \(enteredItem.name ?? enteredItem.item)'s view state has been toggled.")
+        return .result(dialog: "Okay, \(enteredItem.name ?? enteredItem.link ?? "the note")'s view state has been toggled.")
     }
     
     static var parameterSummary: some ParameterSummary {

@@ -96,7 +96,7 @@ struct MementoWidgetEntryView : View {
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(item.metadata?.title ?? item.link)
+                        Text(item.metadata?.title ?? item.link ?? "")
                             .bold()
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)
@@ -157,7 +157,7 @@ struct MementoWidgetEntryView : View {
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(item.metadata?.title ?? item.link)
+                        Text(item.metadata?.title ?? item.link ?? "")
                             .bold()
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)

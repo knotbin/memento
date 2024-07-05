@@ -28,6 +28,6 @@ struct PasteItemIntent: AppIntent {
             )
         }
         context.insert(item)
-        return .result(dialog: "OK, \(item.metadata?.title ?? item.link) has been added.")
+        return .result(dialog: "OK, \(item.metadata?.title ?? item.link ?? "the item") has been added.")
     }
 }

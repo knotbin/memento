@@ -32,7 +32,7 @@ struct OpenItemIntent: AppIntent, OpensIntent {
             return !lhs.viewed && rhs.viewed
         }
         guard !entities.isEmpty else {
-            throw urlError(linkUsed: target?.item)
+            throw urlError(linkUsed: target?.link)
         }
         var enteredItem: ItemEntity
         if let item = target {

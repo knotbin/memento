@@ -47,7 +47,7 @@ struct ItemViewedIntent: AppIntent {
         item.viewed = true
         try context.save()
         UpdateAll()
-        return .result(dialog: "Okay, \(enteredItem.name ?? enteredItem.item) has been marked as viewed.")
+        return .result(dialog: "Okay, \(enteredItem.name ?? enteredItem.link ?? "the note") has been marked as viewed.")
     }
     
     static var parameterSummary: some ParameterSummary {

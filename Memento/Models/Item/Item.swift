@@ -13,7 +13,7 @@ class Item: Identifiable {
     let id: UUID
     
     let timestamp: Date
-    var link: String
+    var link: String?
     var url: URL
     var viewed: Bool
     var metadata: CodableLinkMetadata?

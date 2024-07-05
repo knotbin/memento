@@ -44,7 +44,7 @@ struct DeleteItemIntent: AppIntent {
         context.delete(item)
         try context.save()
         UpdateAll()
-        return .result(dialog: "Okay, \(enteredItem.name ?? enteredItem.item) has been deleted.")
+        return .result(dialog: "Okay, \(enteredItem.name ?? enteredItem.link ?? "the note") has been deleted.")
     }
     
     static var parameterSummary: some ParameterSummary {
