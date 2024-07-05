@@ -53,6 +53,11 @@ struct MementoWidgetEntryView : View {
     var body: some View {
         if let item = items.randomElement() {
             switch family {
+            case .accessoryInline:
+                VStack {
+                    Text(item.metadata?.title ?? item.link ?? "")
+                    Text(item.note ?? "")
+                }
             case .systemSmall:
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
@@ -63,7 +68,7 @@ struct MementoWidgetEntryView : View {
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(item.metadata?.title ?? item.link)
+                        Text(item.metadata?.title ?? item.link ?? "")
                             .bold()
                             .multilineTextAlignment(.leading)
                             .foregroundStyle(Color.primary)
