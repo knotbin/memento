@@ -10,7 +10,7 @@ import SwiftUI
 
 @Observable
 class ContentViewModel {
-    var path: [Item] = []
+    var selectedItem: Item? = nil
     var sheetShown = false
     var searchText = ""
     

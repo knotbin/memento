@@ -19,6 +19,7 @@ struct ItemView: View {
         HStack {
             if !item.viewed {
                 Image(systemName: "circle.fill")
+                    .foregroundStyle(Color.accentColor)
             }
             if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
                 Image(uiImage: image)
@@ -58,7 +59,9 @@ struct ItemView: View {
                         item.viewed ? "Unmark Viewed": "Mark Viewed",
                         systemImage: "book",
                         action: {
-                            item.viewed.toggle()
+                            withAnimation {
+                                item.viewed.toggle()
+                            }
                             UpdateAll()
                         }
                 )
@@ -69,7 +72,9 @@ struct ItemView: View {
                 { item.viewed ? "Unmark Viewed" : "Mark Viewed" }(),
                 systemImage: "book",
                 action: {
-                    item.viewed.toggle()
+                    withAnimation {
+                        item.viewed.toggle()
+                    }
                     UpdateAll()
                 }
             ).tint(.indigo)

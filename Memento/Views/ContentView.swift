@@ -18,10 +18,12 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationStack(path: $viewModel.path) {
-            List(filteredItems) { item in
-                ItemView(item: item)
-                    .modelContext(modelContext)
+        NavigationSplitView {
+            List(items, selection: $viewModel.selectedItem) { item in
+                NavigationLink(value: item) {
+                    ItemView(item: item)
+                        .modelContext(modelContext)
+                }
             }
             .searchable(text: $viewModel.searchText, prompt: "Search Items")
             .overlay {
@@ -48,7 +50,8 @@ struct ContentView: View {
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddView(shown: $viewModel.sheetShown)
             })
-            .modelContext(modelContext)
+        } detail: {
+            Text(viewModel.selectedItem?.link ?? "NOOOOOO")
         }
         
     }
