@@ -41,7 +41,7 @@
 		598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
-		59AA75902C1E5B7800313B7F /* SaveItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */; };
+		59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */; };
 		59B4D2D82C34623F0045CAA1 /* OpenItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */; };
 		59BD681E2C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
 		59BD681F2C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
@@ -55,7 +55,7 @@
 		59BFB2462BFCFAE6008B6EA8 /* MementoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2452BFCFAE6008B6EA8 /* MementoTests.swift */; };
 		59BFB2502BFCFAE6008B6EA8 /* MementoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */; };
 		59BFB2522BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */; };
-		59C5069D2C291C390022B553 /* PasteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteItemIntent.swift */; };
+		59C5069D2C291C390022B553 /* PasteLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5069C2C291C390022B553 /* PasteLinkIntent.swift */; };
 		59CEA23C2C2F6AE1009079E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEA23B2C2F6AE1009079E8 /* ContentView.swift */; };
 		59CEA23E2C2F6C0F009079E8 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEA23D2C2F6C0F009079E8 /* ContentViewModel.swift */; };
 		59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF06A52C0439BF00457E4B /* AddViewModel.swift */; };
@@ -147,7 +147,7 @@
 		5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
 		59A076762C161ECC0050D90F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		59A076782C161ECC0050D90F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemIntent.swift; sourceTree = "<group>"; };
+		59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkIntent.swift; sourceTree = "<group>"; };
 		59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemIntent.swift; sourceTree = "<group>"; };
 		59BD681D2C34CFEE00141362 /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
 		59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemIntent.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		59BFB24B2BFCFAE6008B6EA8 /* MementoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MementoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB24F2BFCFAE6008B6EA8 /* MementoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITests.swift; sourceTree = "<group>"; };
 		59BFB2512BFCFAE6008B6EA8 /* MementoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		59C5069C2C291C390022B553 /* PasteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteItemIntent.swift; sourceTree = "<group>"; };
+		59C5069C2C291C390022B553 /* PasteLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteLinkIntent.swift; sourceTree = "<group>"; };
 		59CEA23B2C2F6AE1009079E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59CEA23D2C2F6C0F009079E8 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		59DF06A52C0439BF00457E4B /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
@@ -338,9 +338,9 @@
 				59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */,
 				59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */,
 				5972DD982C32D0E1001FB802 /* ToggleViewedIntent.swift */,
-				59AA758F2C1E5B7800313B7F /* SaveItemIntent.swift */,
+				59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */,
 				59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */,
-				59C5069C2C291C390022B553 /* PasteItemIntent.swift */,
+				59C5069C2C291C390022B553 /* PasteLinkIntent.swift */,
 				59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */,
 			);
 			path = Intents;
@@ -599,7 +599,7 @@
 				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */,
-				59C5069D2C291C390022B553 /* PasteItemIntent.swift in Sources */,
+				59C5069D2C291C390022B553 /* PasteLinkIntent.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* ListViewModel.swift in Sources */,
 				59B4D2D82C34623F0045CAA1 /* OpenItemIntent.swift in Sources */,
 				59E7BE3D2C1AB6280091BFEF /* ItemEntity.swift in Sources */,
@@ -612,7 +612,7 @@
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
 				59CEA23C2C2F6AE1009079E8 /* ContentView.swift in Sources */,
-				59AA75902C1E5B7800313B7F /* SaveItemIntent.swift in Sources */,
+				59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */,
 				59899A3B2C015B8400470E42 /* AddView.swift in Sources */,
 				5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */,
 				598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */,

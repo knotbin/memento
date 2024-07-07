@@ -12,7 +12,7 @@ struct MementoShortcuts: AppShortcutsProvider {
     @AppShortcutsBuilder
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
-            intent: SaveItemIntent(),
+            intent: SaveLinkIntent(),
             phrases: ["Add an item to \(.applicationName)", "Make a new item in \(.applicationName)", "Create a new item in \(.applicationName)"],
             shortTitle: "Save Item",
             systemImageName: "plus"
@@ -30,7 +30,7 @@ struct MementoShortcuts: AppShortcutsProvider {
             systemImageName: "envelope.open"
         )
         AppShortcut(
-            intent: PasteItemIntent(),
+            intent: PasteLinkIntent(),
             phrases: ["Add an item in \(.applicationName) from my clipboard.", "Save an item in \(.applicationName) from paste."],
             shortTitle: "Save Clipboard Item",
             systemImageName: "clipboard"

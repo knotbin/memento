@@ -1,5 +1,5 @@
 //
-//  SaveItemIntent.swift
+//  SaveLinkIntent.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 6/15/24.
@@ -9,8 +9,8 @@ import Foundation
 import AppIntents
 import SwiftData
 
-struct SaveItemIntent: AppIntent {
-    static var title: LocalizedStringResource = "Save Item"
+struct SaveLinkIntent: AppIntent {
+    static var title: LocalizedStringResource = "Save Link"
     
     @Parameter(title: "URL")
     var url: URL?
@@ -31,7 +31,7 @@ struct SaveItemIntent: AppIntent {
         context.insert(item)
         try context.save()
         UpdateAll()
-        return .result(dialog: "I've added \(item.metadata?.title ?? item.link ?? "the item") to Memento")
+        return .result(dialog: "I've added \(item.metadata?.title ?? item.link ?? "the link") to Memento")
         
     }
 }

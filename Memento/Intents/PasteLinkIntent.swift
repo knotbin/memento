@@ -1,5 +1,5 @@
 //
-//  PasteItemIntent.swift
+//  PasteLinkIntent.swift
 //  Memento
 //
 //  Created by Roscoe Rubin-Rottenberg on 6/23/24.
@@ -10,8 +10,8 @@ import AppIntents
 import SwiftData
 import SwiftUI
 
-struct PasteItemIntent: AppIntent {
-    static var title: LocalizedStringResource = "Save Item From Clipboard"
+struct PasteLinkIntent: AppIntent {
+    static var title: LocalizedStringResource = "Save Clipboard Link"
     
     func perform() async throws -> some IntentResult & ProvidesDialog {
         let pasteboard = UIPasteboard.general
