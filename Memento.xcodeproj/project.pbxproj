@@ -12,7 +12,7 @@
 		5972DD992C32D0E1001FB802 /* ToggleViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972DD982C32D0E1001FB802 /* ToggleViewedIntent.swift */; };
 		5978256E2C23926400BC86FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978256D2C23926400BC86FF /* ItemView.swift */; };
 		597A7F4B2C31274B00891DCA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 597A7F4A2C31274B00891DCA /* Base */; };
-		597A7F4F2C31274B00891DCA /* MementoShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F452C31274B00891DCA /* MementoShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		597A7F4F2C31274B00891DCA /* MementoShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F452C31274B00891DCA /* MementoShare.appex */; platformFilters = (ios, maccatalyst, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		597A7F582C31282E00891DCA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F572C31282E00891DCA /* ShareViewController.swift */; };
 		597A7F592C31284D00891DCA /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		597A7F5B2C31286600891DCA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F5A2C31286600891DCA /* ShareView.swift */; };
@@ -26,7 +26,7 @@
 		597A7F702C31292E00891DCA /* MementoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F6F2C31292E00891DCA /* MementoWidgetBundle.swift */; };
 		597A7F722C31292E00891DCA /* MementoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F712C31292E00891DCA /* MementoWidget.swift */; };
 		597A7F742C31292F00891DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597A7F732C31292F00891DCA /* Assets.xcassets */; };
-		597A7F792C31292F00891DCA /* MementoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F6B2C31292E00891DCA /* MementoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		597A7F792C31292F00891DCA /* MementoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F6B2C31292E00891DCA /* MementoWidgetExtension.appex */; platformFilters = (ios, maccatalyst, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		597A7F822C3129A700891DCA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
 		597A7F832C3129A900891DCA /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3C2C1AB6280091BFEF /* ItemEntity.swift */; };
 		597A7F842C3129AB00891DCA /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
@@ -644,11 +644,19 @@
 /* Begin PBXTargetDependency section */
 		597A7F4E2C31274B00891DCA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				maccatalyst,
+			);
 			target = 597A7F442C31274B00891DCA /* MementoShare */;
 			targetProxy = 597A7F4D2C31274B00891DCA /* PBXContainerItemProxy */;
 		};
 		597A7F782C31292F00891DCA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				maccatalyst,
+			);
 			target = 597A7F6A2C31292E00891DCA /* MementoWidgetExtension */;
 			targetProxy = 597A7F772C31292F00891DCA /* PBXContainerItemProxy */;
 		};
@@ -699,6 +707,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.MementoShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -729,6 +738,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp.MementoShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -967,12 +977,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -1003,12 +1014,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.mementoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};

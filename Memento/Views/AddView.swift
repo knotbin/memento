@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 import LinkPresentation
-import WidgetKit
 
 struct AddView: View {
     enum FocusableField: Hashable, CaseIterable {

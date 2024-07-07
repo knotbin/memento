@@ -6,8 +6,12 @@
 //
 
 import Foundation
-import WidgetKit
+#if canImport(WidgetKit)
+    import WidgetKit
+#endif
 
 func UpdateAll() {
+#if os(iOS) || os(macOS)
     WidgetCenter.shared.reloadAllTimelines()
+#endif
 }
