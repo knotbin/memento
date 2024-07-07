@@ -8,7 +8,10 @@
 import Foundation
 import AppIntents
 
-struct ItemEntity: AppEntity {
+struct ItemEntity: URLRepresentableEntity {
+    @available(iOS 18.0, *)
+    static var urlRepresentation: URLRepresentation = URLRepresentation("memento://item/\(.id)")
+    
     
     @Property(title: "Title")
     var name: String?

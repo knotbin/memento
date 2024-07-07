@@ -24,12 +24,6 @@ struct MementoShortcuts: AppShortcutsProvider {
             systemImageName: "trash"
         )
         AppShortcut(
-            intent: OpenItemIntent(),
-            phrases: ["Open a link in \(.applicationName)", "Open a link I saved in \(.applicationName)"],
-            shortTitle: "Open Item",
-            systemImageName: "envelope.open"
-        )
-        AppShortcut(
             intent: PasteLinkIntent(),
             phrases: ["Add an item in \(.applicationName) from my clipboard.", "Save an item in \(.applicationName) from paste."],
             shortTitle: "Save Clipboard Item",

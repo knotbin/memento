@@ -28,43 +28,7 @@ struct ListView: View {
     var body: some View {
         List(filteredItems) { item in
             ItemView(item: item)
-                .contextMenu(
-                    ContextMenu(
-                        menuItems: {
-                            Button(
-                                "Delete",
-                                systemImage: "trash",
-                                role: .destructive,
-                                intent: DeleteItemIntent(item: item)
-                            )
-                            Button(
-                                item.viewed ? "Unmark Viewed": "Mark Viewed",
-                                systemImage: "book",
-                                action: {
-                                    viewModel.toggleViewed(item)
-                                    UpdateAll()
-                                }
-                        )
-                    })
-                )
-                .swipeActions(edge: .leading) {
-                    Button(
-                        { item.viewed ? "Unmark Viewed" : "Mark Viewed" }(),
-                        systemImage: "book",
-                        action: {
-                            viewModel.toggleViewed(item)
-                            UpdateAll()
-                        }
-                    ).tint(.indigo)
-                }
-                .swipeActions(edge: .trailing) {
-                    Button(
-                        "Delete",
-                        systemImage: "trash",
-                        role: .destructive,
-                        intent: DeleteItemIntent(item: item)
-                    )
-                }
+                .modelContext(modelContext)
         }
         .searchable(text: $viewModel.searchText, prompt: "Search Items")
         .overlay {

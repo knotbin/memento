@@ -10,13 +10,14 @@ import AppIntents
 import SwiftData
 import SwiftUICore
 
-struct OpenItemIntent: AppIntent, OpensIntent {
+@available(iOS 18.0, *)
+struct OpenItemIntent: AppIntent, OpenIntent, URLRepresentableIntent {
     var value: Never?
     
     static var title: LocalizedStringResource = "Open Item"
     
     @Parameter(title: "Item")
-    var target: ItemEntity?
+    var target: ItemEntity
     
     init(target: Item) {
         self.target = ItemEntity(item: target)
@@ -24,42 +25,27 @@ struct OpenItemIntent: AppIntent, OpensIntent {
     
     init() {}
     
-    func perform() async throws -> some OpensIntent {
-        let entities = try await ItemEntityQuery().suggestedEntities().sorted { (lhs: ItemEntity, rhs: ItemEntity) in
-            if lhs.viewed == rhs.viewed {
-                return lhs.timestamp > rhs.timestamp
-            }
-            return !lhs.viewed && rhs.viewed
-        }
-        guard !entities.isEmpty else {
-            throw urlError(linkUsed: target?.link)
-        }
-        var enteredItem: ItemEntity
-        if let item = target {
-            enteredItem = item
-        } else {
-            enteredItem = try await $target.requestDisambiguation(
-                among: ItemEntityQuery().suggestedEntities(),
-                dialog: "Which item would you like to open?"
-            )
-        }
-        let context = ModelContext(ConfigureModelContainer())
-        context.autosaveEnabled = true
-        
-        let items = try? context.fetch(FetchDescriptor<Item>())
-        guard let item = items?.filter({ $0.id == enteredItem.id }).first else {
-            throw dataError()
-        }
-        item.viewed.toggle()
-        try context.save()
-        UpdateAll()
-
-        if #available(iOS 18.0, *) {
-            return .result(opensIntent: OpenURLIntent(item.url))
-        } else {
-            return .result()
-        }
-    }
+//    func perform() async throws -> some OpensIntent {
+//        let context = ModelContext(ConfigureModelContainer())
+//        context.autosaveEnabled = true
+//        
+//        let items = try? context.fetch(FetchDescriptor<Item>())
+//        guard let item = items?.filter({ $0.id == target.id }).first else {
+//            throw dataError()
+//        }
+//        item.viewed.toggle()
+//        try context.save()
+//        UpdateAll()
+//
+//        if #available(iOS 18.0, *) {
+//            guard let url = item.url else {
+//                return .result()
+//            }
+//            return .result(opensIntent: OpenURLIntent(url))
+//        } else {
+//            return .result()
+//        }
+//    }
     struct urlError: Error {
         let linkUsed: String?
     }

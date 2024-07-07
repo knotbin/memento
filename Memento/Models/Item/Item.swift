@@ -14,7 +14,7 @@ class Item: Identifiable {
     
     let timestamp: Date
     var link: String?
-    var url: URL
+    var url: URL?
     var viewed: Bool
     var metadata: CodableLinkMetadata?
     var note: String?
