@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		59002F6B2C371F6600ED1191 /* OpenItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */; };
+		592F04092C3C7A0A00C1CA84 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F04082C3C7A0A00C1CA84 /* DetailView.swift */; };
 		5946444F2C13722800F47784 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946444E2C13722800F47784 /* Filters.swift */; };
 		5972DD992C32D0E1001FB802 /* ToggleViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972DD982C32D0E1001FB802 /* ToggleViewedIntent.swift */; };
 		5978256E2C23926400BC86FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978256D2C23926400BC86FF /* ItemView.swift */; };
@@ -122,6 +123,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		592F04082C3C7A0A00C1CA84 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5946444E2C13722800F47784 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		59632F292C312CAA008E09A4 /* MementoShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MementoShare.entitlements; sourceTree = "<group>"; };
 		5972DD982C32D0E1001FB802 /* ToggleViewedIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewedIntent.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				59899A382C0159FB00470E42 /* ListView.swift */,
 				59899A3A2C015B8400470E42 /* AddView.swift */,
 				5978256D2C23926400BC86FF /* ItemView.swift */,
+				592F04082C3C7A0A00C1CA84 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
+				592F04092C3C7A0A00C1CA84 /* DetailView.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */,
 				59C5069D2C291C390022B553 /* PasteLinkIntent.swift in Sources */,

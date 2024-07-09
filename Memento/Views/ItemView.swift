@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import LinkPresentation
 import UIKit
 import SwiftData
 
@@ -19,15 +18,6 @@ struct ItemView: View {
         HStack {
             if !item.viewed {
                 Image(systemName: "circle.fill")
-                    .foregroundStyle(Color.accentColor)
-            }
-            if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .frame(width: 70, height: 50)
-                    .shadow(radius: 2)
             }
             Button {
                 item.viewed = true
@@ -35,14 +25,24 @@ struct ItemView: View {
                     openURL(url)
                 }
             } label: {
-                VStack(alignment: .leading) {
-                    Text(item.metadata?.title ?? item.link ?? "")
-                        .bold()
-                        .tint(Color.primary)
-                        .lineLimit(1)
-                    Text(item.note ?? "")
-                        .multilineTextAlignment(.leading)
-                        .tint(.secondary)
+                HStack(alignment: .top) {
+                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(10)
+                            .frame(width: 70, height: 50)
+                            .shadow(radius: 2)
+                    }
+                    VStack(alignment: .leading) {
+                        Text(item.metadata?.title ?? item.link ?? "")
+                            .bold()
+                            .tint(Color.primary)
+                            .lineLimit(1)
+                        Text(item.note ?? "")
+                            .multilineTextAlignment(.leading)
+                            .tint(.secondary)
+                    }
                 }
             }
         }

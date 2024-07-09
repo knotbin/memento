@@ -51,7 +51,8 @@ struct ContentView: View {
                 AddView(shown: $viewModel.sheetShown)
             })
         } detail: {
-            Text(viewModel.selectedItem?.link ?? "NOOOOOO")
+            DetailView(selecteditem: viewModel.selectedItem)
+                .modelContext(modelContext)
         }
         
     }
