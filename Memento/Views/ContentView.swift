@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @State var viewModel = ContentViewModel()
-    let modelContext = ModelContext(ConfigureModelContainer())
+    @Environment(\.modelContext) var modelContext
     @Environment(\.openURL) var openURL
     @Query(animation: .smooth) private var items: [Item]
     var filteredItems: [Item] {
@@ -24,6 +24,7 @@ struct ContentView: View {
                     ItemView(item: item)
                         .modelContext(modelContext)
                 }
+                .isDetailLink(true)
             }
             .searchable(text: $viewModel.searchText, prompt: "Search Items")
             .overlay {
@@ -51,8 +52,11 @@ struct ContentView: View {
                 AddView(shown: $viewModel.sheetShown)
             })
         } detail: {
-            DetailView(selecteditem: viewModel.selectedItem)
-                .modelContext(modelContext)
+            if let selectedItem = viewModel.selectedItem {
+                DetailView(item: selectedItem, selectedItem: $viewModel.selectedItem)
+            } else {
+                Text("No Items selected")
+            }
         }
         
     }
