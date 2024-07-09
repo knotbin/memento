@@ -50,7 +50,10 @@ struct DetailView: View {
                                 }
                                 .buttonStyle(.bordered)
                                 Button("Delete", systemImage: "trash") {
-                                    selectedItem = nil
+                                    withAnimation {
+                                        modelContext.delete(item)
+                                        selectedItem = nil
+                                    }
                                 }
                                 .buttonStyle(.bordered)
                             }
@@ -81,7 +84,7 @@ struct DetailView: View {
                     GroupBox(label: Label("Created", systemImage: "calendar")) {
                         Text(item.timestamp.formatted())
                     }
-                    GroupBox(label: Label("Actions", image: "pencil")) {
+                    GroupBox(label: Label("Actions", systemImage: "pencil")) {
                         HStack {
                             Button(item.viewed ? "Unmark Viewed" : "Mark Viewed", systemImage: item.viewed ? "book.fill" : "book") {
                                 withAnimation {
@@ -91,7 +94,10 @@ struct DetailView: View {
                             }
                             .buttonStyle(.bordered)
                             Button("Delete", systemImage: "trash") {
-                                selectedItem = nil
+                                withAnimation {
+                                    modelContext.delete(item)
+                                    selectedItem = nil
+                                }
                             }
                             .buttonStyle(.bordered)
                         }
