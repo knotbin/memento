@@ -24,18 +24,21 @@ struct AddView: View {
     
     var body: some View {
         NavigationStack {
-            Form {
+            VStack(alignment: .leading) {
                 TextField("Enter URL", text: $viewModel.itemText)
+                    .textFieldStyle(.roundedBorder)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
                     .keyboardType(.URL)
                     .focused($focus, equals: .link)
-                Section {
-                    TextField("Add Notes (optional)", text: $viewModel.noteText, axis: .vertical)
-                        .lineLimit(5...10)
-                        .focused($focus, equals: .note)
-                }
+                    .padding(.bottom)
+                Text("Notes")
+                    .font(.headline)
+                TextEditor(text: $viewModel.noteText)
+                    .focused($focus, equals: .note)
+                
             }
+            .padding()
             .navigationTitle("New Item")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

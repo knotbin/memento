@@ -12,7 +12,7 @@ import UniformTypeIdentifiers
 struct ShareView: View {
     @Environment(\.modelContext) private var modelContext
     
-    @State var notetext = ""
+    @State var notetext: String = ""
     @State var alertPresented = false
     @FocusState var focus
     
@@ -25,10 +25,11 @@ struct ShareView: View {
             Form {
                 Text(url.absoluteString)
                     .lineLimit(1)
-                TextField("Notes (optional)", text: $notetext, axis: .vertical)
-                    .lineLimit(5...10)
-                    .focused($focus)
-                    .onAppear { focus = true }
+                Section("Note") {
+                    TextEditor(text: $notetext)
+                        .focused($focus)
+                        .onAppear { focus = true }
+                }
             }
             .onSubmit {
                 Task {
