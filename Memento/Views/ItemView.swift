@@ -13,7 +13,7 @@ struct ItemView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.modelContext) var modelContext
     var item: Item
-    
+    @Binding var selectedItem: Item?
     var body: some View {
         HStack {
             if !item.viewed {
@@ -50,12 +50,6 @@ struct ItemView: View {
             ContextMenu(
                 menuItems: {
                     Button(
-                        "Delete",
-                        systemImage: "trash",
-                        role: .destructive,
-                        intent: DeleteItemIntent(item: item)
-                    )
-                    Button(
                         item.viewed ? "Unmark Viewed": "Mark Viewed",
                         systemImage: "book",
                         action: {
@@ -64,7 +58,14 @@ struct ItemView: View {
                             }
                             UpdateAll()
                         }
-                )
+                    )
+                    Button("Delete", systemImage: "trash", role: .destructive) {
+                        withAnimation {
+                            selectedItem = nil
+                            modelContext.delete(item)
+                            UpdateAll()
+                        }
+                    }
             })
         )
         .swipeActions(edge: .leading) {
@@ -80,12 +81,13 @@ struct ItemView: View {
             ).tint(.indigo)
         }
         .swipeActions(edge: .trailing) {
-            Button(
-                "Delete",
-                systemImage: "trash",
-                role: .destructive,
-                intent: DeleteItemIntent(item: item)
-            )
+            Button("Delete", systemImage: "trash", role: .destructive) {
+                withAnimation {
+                    selectedItem = nil
+                    modelContext.delete(item)
+                    UpdateAll()
+                }
+            }
         }
     }
 }

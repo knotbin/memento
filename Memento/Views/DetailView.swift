@@ -12,6 +12,7 @@ import SwiftData
 struct DetailView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.modelContext) var modelContext
+    @Environment(\.openURL) var openURL
     var item: Item
     @Binding var selectedItem: Item?
     var body: some View {
@@ -19,21 +20,30 @@ struct DetailView: View {
             ScrollView {
                 Text("Created \(item.timestamp.formatted())")
                 VStack(alignment: .leading) {
-                    GroupBox(label: Label("Link", systemImage: "link")) {
-                        HStack {
-                            if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxHeight: 100)
-                                    .cornerRadius(10)
-                                    .shadow(radius: 2)
-                            }
-                            VStack(alignment: .leading) {
-                                Text(item.metadata?.title ?? "")
-                                    .font(.title).bold()
-                                    .tint(Color.primary)
-                                Text(item.link ?? "")
+                    Button {
+                        item.viewed = true
+                        if let url = item.url {
+                            openURL(url)
+                        }
+                    } label: {
+                        GroupBox(label: Label("Link", systemImage: "link").foregroundStyle(Color.primary)) {
+                            HStack {
+                                if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(maxHeight: 100)
+                                        .cornerRadius(10)
+                                        .shadow(radius: 2)
+                                }
+                                VStack(alignment: .leading) {
+                                    Text(item.metadata?.title ?? "")
+                                        .font(.title).bold()
+                                        .tint(Color.primary)
+                                    Text(item.link?.replacingOccurrences(of: "https://", with: "") ?? "")
+                                        .multilineTextAlignment(.leading)
+                                        .lineLimit(3)
+                                }
                             }
                         }
                     }

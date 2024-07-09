@@ -21,7 +21,7 @@ struct ContentView: View {
         NavigationSplitView {
             List(items, selection: $viewModel.selectedItem) { item in
                 NavigationLink(value: item) {
-                    ItemView(item: item)
+                    ItemView(item: item, selectedItem: $viewModel.selectedItem)
                         .modelContext(modelContext)
                 }
                 .isDetailLink(true)

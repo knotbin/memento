@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 class Item: Identifiable {
-    let id: UUID
+    var id: UUID
     
-    let timestamp: Date
+    var timestamp: Date
     var link: String?
     var url: URL?
     var viewed: Bool
