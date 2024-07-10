@@ -36,18 +36,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .onOpenURL(perform: { url in
-                guard let matches = try? items.filter(#Predicate { $0.url == url }) else {
-                    return
-                }
-                for item in matches {
-                    item.viewed = true
-                }
-                UpdateAll()
-                openURL(url)
-            })
             .toolbar { Button("Add Item", systemImage: "plus", action: viewModel.addSheet) }
-            .navigationTitle("Links")
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddView(shown: $viewModel.sheetShown)
             })
@@ -58,7 +47,23 @@ struct ContentView: View {
                 Text("No Items selected")
             }
         }
-        
+        .onOpenURL(perform: { url in
+            if url.absoluteString.hasPrefix("http") {
+                guard let matches = try? items.filter(#Predicate { $0.url == url }) else {
+                    return
+                }
+                for item in matches {
+                    item.viewed = true
+                }
+                UpdateAll()
+                openURL(url)
+            } else {
+                guard let match = try? items.filter(#Predicate { url.absoluteString.contains($0.id.uuidString) }).first else {
+                    return
+                }
+                viewModel.selectedItem = match
+            }
+        })
     }
 }
 
