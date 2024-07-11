@@ -79,6 +79,12 @@ struct DetailView: View {
             }
             .navigationTitle(item.metadata?.title ?? item.note ?? "Item")
             .navigationBarTitleDisplayMode(.inline)
+            
+            .onAppear {
+                if item.link == nil && item.note != nil {
+                    item.viewed = true
+                }
+            }
         }
     }
 }
