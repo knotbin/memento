@@ -12,12 +12,22 @@ import SwiftData
 struct ItemView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.modelContext) var modelContext
+    
     var item: Item
     @Binding var selectedItem: Item?
+    
+    var isSelected: Bool {
+        if selectedItem == item {
+            return true
+        }
+        return false
+    }
+    
     var body: some View {
         HStack {
             if !item.viewed {
                 Image(systemName: "circle.fill")
+                    .foregroundStyle(!isSelected ? Color.accentColor : Color.white)
             }
             Button {
                 item.viewed = true
