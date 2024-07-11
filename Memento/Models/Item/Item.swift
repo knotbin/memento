@@ -47,4 +47,13 @@ class Item: Identifiable {
             self.note = nil
         }
     }
+    init?(_ note: String) {
+        self.id = UUID()
+        self.timestamp = Date()
+        self.viewed = false
+        self.link = nil
+        self.url = url
+        self.metadata = nil
+        self.note = note
+    }
 }
