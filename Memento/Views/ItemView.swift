@@ -45,10 +45,12 @@ struct ItemView: View {
                             .shadow(radius: 2)
                     }
                     VStack(alignment: .leading) {
-                        Text(item.metadata?.title ?? item.link ?? "")
-                            .bold()
-                            .tint(Color.primary)
-                            .lineLimit(1)
+                        if item.link != nil {
+                            Text(item.metadata?.title ?? item.link ?? "")
+                                .bold()
+                                .tint(Color.primary)
+                                .lineLimit(1)
+                        }
                         Text(item.note ?? "")
                             .multilineTextAlignment(.leading)
                             .tint(.secondary)

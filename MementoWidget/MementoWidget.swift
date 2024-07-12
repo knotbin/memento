@@ -55,7 +55,9 @@ struct MementoWidgetEntryView : View {
             switch family {
             case .accessoryInline:
                 VStack {
-                    Text(item.metadata?.title ?? item.link ?? "")
+                    if item.link != nil {
+                        Text(item.metadata?.title ?? item.link ?? "")
+                    }
                     Text(item.note ?? "")
                 }
             case .systemSmall:
@@ -68,10 +70,9 @@ struct MementoWidgetEntryView : View {
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(item.metadata?.title ?? item.link ?? "")
-                            .bold()
-                            .multilineTextAlignment(.leading)
-                            .foregroundStyle(Color.primary)
+                        if item.link != nil {
+                            Text(item.metadata?.title ?? item.link ?? "")
+                        }
                     }
                     Text(item.note ?? "")
                         .font(.subheadline)
@@ -96,11 +97,13 @@ struct MementoWidgetEntryView : View {
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(item.metadata?.title ?? item.link ?? "")
-                            .bold()
-                            .multilineTextAlignment(.leading)
-                            .foregroundStyle(Color.primary)
-                            .lineLimit(2)
+                        if item.link != nil {
+                            Text(item.metadata?.title ?? item.link ?? "")
+                                .bold()
+                                .multilineTextAlignment(.leading)
+                                .foregroundStyle(Color.primary)
+                                .lineLimit(2)
+                        }
                     }
                     VStack(alignment: .leading) {
                         if let note = item.note, note.count >= 30 {
@@ -157,10 +160,12 @@ struct MementoWidgetEntryView : View {
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
                         }
-                        Text(item.metadata?.title ?? item.link ?? "")
-                            .bold()
-                            .multilineTextAlignment(.leading)
-                            .foregroundStyle(Color.primary)
+                        if item.link != nil {
+                            Text(item.metadata?.title ?? item.link ?? "")
+                                .bold()
+                                .multilineTextAlignment(.leading)
+                                .foregroundStyle(Color.primary)
+                        }
                     }
                     Text(item.note ?? "")
                         .font(.subheadline)

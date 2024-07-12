@@ -18,42 +18,44 @@ struct DetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                Text("Created \(item.timestamp.formatted())")
+                Text("Created \(item.timestamp.formatted())").font(.caption2)
                 VStack(alignment: .leading) {
-                    Button {
-                        item.viewed = true
-                        if let url = item.url {
-                            openURL(url)
-                        }
-                    } label: {
-                        GroupBox(label: Label("Link", systemImage: "link").foregroundStyle(Color.primary)) {
-                            HStack {
-                                if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                                    Image(uiImage: image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(maxHeight: 100)
-                                        .cornerRadius(10)
-                                        .shadow(radius: 2)
-                                }
-                                VStack(alignment: .leading) {
-                                    Text(item.metadata?.title ?? "")
-                                        .font(.title).bold()
-                                        .tint(Color.primary)
-                                    Text(item.link?.replacingOccurrences(of: "https://", with: "") ?? "")
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(3)
+                    if item.link != nil {
+                        Button {
+                            item.viewed = true
+                            if let url = item.url {
+                                openURL(url)
+                            }
+                        } label: {
+                            GroupBox(label: Label("Link", systemImage: "link").foregroundStyle(Color.primary)) {
+                                HStack {
+                                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                                        Image(uiImage: image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(maxHeight: 100)
+                                            .cornerRadius(10)
+                                            .shadow(radius: 2)
+                                    }
+                                    VStack(alignment: .leading) {
+                                        Text(item.metadata?.title ?? "")
+                                            .font(.title).bold()
+                                            .tint(Color.primary)
+                                        Text(item.link?.replacingOccurrences(of: "https://", with: "") ?? "")
+                                            .multilineTextAlignment(.leading)
+                                            .lineLimit(3)
+                                    }
                                 }
                             }
                         }
+                        .padding()
                     }
-                    .padding()
                     Text(item.note ?? "")
                         .multilineTextAlignment(.leading)
                         .tint(.secondary)
                         .font(.system(size: 20))
-                        .padding(.horizontal)
-                }
+                        .padding()
+                }.frame(maxWidth: .infinity, alignment: .leading)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
