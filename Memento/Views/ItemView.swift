@@ -54,6 +54,7 @@ struct ItemView: View {
                         Text(item.note ?? "")
                             .multilineTextAlignment(.leading)
                             .tint(.secondary)
+                            .lineLimit(2)
                     }
                 }
             }
