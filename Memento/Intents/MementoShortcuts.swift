@@ -14,19 +14,19 @@ struct MementoShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: SaveLinkIntent(),
             phrases: ["Add an item to \(.applicationName)", "Make a new item in \(.applicationName)", "Create a new item in \(.applicationName)"],
-            shortTitle: "Save Item",
+            shortTitle: "Save Link",
             systemImageName: "plus"
         )
         AppShortcut(
-            intent: DeleteItemIntent(),
-            phrases: ["Delete an item in \(.applicationName)"],
-            shortTitle: "Delete Item",
-            systemImageName: "trash"
+            intent: SaveNoteIntent(),
+            phrases: ["Save a note to \(.applicationName)"],
+            shortTitle: "Save Note",
+            systemImageName: "note.text.badge.plus"
         )
         AppShortcut(
             intent: PasteLinkIntent(),
             phrases: ["Add an item in \(.applicationName) from my clipboard.", "Save an item in \(.applicationName) from paste."],
-            shortTitle: "Save Clipboard Item",
+            shortTitle: "Paste Link",
             systemImageName: "clipboard"
         )
     }

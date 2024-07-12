@@ -63,6 +63,7 @@
 		59E7BE3F2C1AB6530091BFEF /* ItemEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */; };
 		59E7BE462C1B77F00091BFEF /* ItemViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */; };
 		59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */; };
+		59FD4FE12C416FB800D5C18C /* SaveNoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FD4FE02C416FB800D5C18C /* SaveNoteIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		59E7BE3E2C1AB6530091BFEF /* ItemEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntityQuery.swift; sourceTree = "<group>"; };
 		59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewedIntent.swift; sourceTree = "<group>"; };
 		59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoShortcuts.swift; sourceTree = "<group>"; };
+		59FD4FE02C416FB800D5C18C /* SaveNoteIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNoteIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,12 +338,13 @@
 			isa = PBXGroup;
 			children = (
 				59E7BE4D2C1D16470091BFEF /* MementoShortcuts.swift */,
+				59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */,
 				59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */,
 				5972DD982C32D0E1001FB802 /* ToggleViewedIntent.swift */,
-				59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */,
 				59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */,
+				59FD4FE02C416FB800D5C18C /* SaveNoteIntent.swift */,
+				59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */,
 				59C5069C2C291C390022B553 /* PasteLinkIntent.swift */,
-				59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				5978256E2C23926400BC86FF /* ItemView.swift in Sources */,
 				59BD681E2C34CFEE00141362 /* UpdateAll.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
+				59FD4FE12C416FB800D5C18C /* SaveNoteIntent.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
 				59CEA23C2C2F6AE1009079E8 /* ContentView.swift in Sources */,
 				59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */,
