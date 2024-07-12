@@ -19,7 +19,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationSplitView {
-            List(items, selection: $viewModel.selectedItem) { item in
+            List(filteredItems, selection: $viewModel.selectedItem) { item in
                 NavigationLink(value: item) {
                     ItemView(item: item, selectedItem: $viewModel.selectedItem)
                         .modelContext(modelContext)
@@ -28,7 +28,7 @@ struct ContentView: View {
             }
             .searchable(text: $viewModel.searchText, prompt: "Search Items")
             .overlay {
-                if viewModel.filterItems(items).isEmpty {
+                if filteredItems.isEmpty {
                     if viewModel.searchText.isEmpty {
                         ContentUnavailableView("No Items Added", systemImage: "doc")
                     } else {

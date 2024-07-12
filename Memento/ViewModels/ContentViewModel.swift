@@ -16,7 +16,12 @@ class ContentViewModel {
     
     func filterItems(_ items: [Item]) -> [Item] {
         guard !searchText.isEmpty else {
-            return items
+            return items.sorted { (lhs, rhs) in
+                if lhs.viewed != rhs.viewed {
+                    return !lhs.viewed && rhs.viewed
+                }
+                return lhs.timestamp > rhs.timestamp
+            }
         }
         let filtered = items.filter {
             if
@@ -34,14 +39,14 @@ class ContentViewModel {
             }
             return false
         }
-        let filteredsorted = filtered.sorted { (lhs: Item, rhs: Item) in
-            if lhs.viewed == rhs.viewed {
-                return lhs.timestamp > rhs.timestamp
+        return filtered.sorted { (lhs, rhs) in
+            if lhs.viewed != rhs.viewed {
+                return !lhs.viewed && rhs.viewed
             }
-            return !lhs.viewed && rhs.viewed
+            return lhs.timestamp > rhs.timestamp
         }
-        return filteredsorted
     }
+    
     func toggleViewed(_ item: Item) {
         withAnimation {
             item.viewed.toggle()
