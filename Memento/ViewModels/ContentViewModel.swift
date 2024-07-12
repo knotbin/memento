@@ -17,32 +17,24 @@ class ContentViewModel {
     func filterItems(_ items: [Item]) -> [Item] {
         guard !searchText.isEmpty else {
             return items.sorted { (lhs, rhs) in
-                if lhs.viewed != rhs.viewed {
-                    return !lhs.viewed && rhs.viewed
-                }
+//                if lhs.viewed != rhs.viewed {
+//                    return !lhs.viewed && rhs.viewed
+//                }
                 return lhs.timestamp > rhs.timestamp
             }
         }
-        let filtered = items.filter {
-            if
-                let link = $0.link?
-                    .replacingOccurrences(of: "https://", with: "")
-                    .replacingOccurrences(of: "www.", with: ""),
-                link.localizedCaseInsensitiveContains(searchText) {
-                return true
-            }
-            if let title = $0.metadata?.title, title.localizedCaseInsensitiveContains(searchText) {
-                return true
-            }
-            if let note = $0.note, note.localizedCaseInsensitiveContains(searchText) {
-                return true
-            }
-            return false
+        let filteredItems = searchText.isEmpty ? items : items.filter { item in
+            let searchableFields = [
+                item.link?.replacingOccurrences(of: "https://", with: "").replacingOccurrences(of: "www.", with: ""),
+                item.metadata?.title,
+                item.note
+            ]
+            return searchableFields.compactMap { $0 }.contains { $0.localizedCaseInsensitiveContains(searchText) }
         }
-        return filtered.sorted { (lhs, rhs) in
-            if lhs.viewed != rhs.viewed {
-                return !lhs.viewed && rhs.viewed
-            }
+        return filteredItems.sorted { (lhs, rhs) in
+//            if lhs.viewed != rhs.viewed {
+//                return !lhs.viewed && rhs.viewed
+//            }
             return lhs.timestamp > rhs.timestamp
         }
     }
