@@ -47,7 +47,8 @@ class Item: Identifiable {
             self.note = nil
         }
     }
-    init?(_ note: String) {
+    
+    init(_ note: String) {
         self.id = UUID()
         self.timestamp = Date()
         self.viewed = false

@@ -25,7 +25,7 @@ struct AddView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                TextField("Enter URL", text: $viewModel.itemText)
+                TextField("Enter URL", text: $viewModel.linkText)
                     .textFieldStyle(.roundedBorder)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
@@ -49,16 +49,18 @@ struct AddView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         Task {
-                            if viewModel.noteText.isEmpty {
-                                await addItem(link: viewModel.itemText)
-                            } else {
-                                await addItem(link: viewModel.itemText, note: viewModel.noteText)
+                            if viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
+                                await addLink(link: viewModel.linkText)
+                            } else if !viewModel.noteText.isEmpty && viewModel.linkText.isEmpty {
+                                modelContext.insert(Item(viewModel.noteText))
+                            } else if !viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
+                                await addLink(link: viewModel.linkText, note: viewModel.noteText)
                             }
                             UpdateAll()
                         }
                         shown = false
                     }
-                    .disabled(viewModel.itemText.isEmpty)
+                    .disabled(viewModel.linkText.isEmpty && viewModel.noteText.isEmpty)
                     .keyboardShortcut(.defaultAction)
                     
                 }
@@ -70,7 +72,7 @@ struct AddView: View {
         }
     }
     
-    func addItem(link: String, note: String? = nil) async {
+    func addLink(link: String, note: String? = nil) async {
         guard let item = await Item(link: link, note: note) else {
             return
         }
@@ -87,7 +89,14 @@ struct AddView: View {
             focus = .note
         case .note:
             Task {
-                await addItem(link: viewModel.itemText, note: viewModel.noteText)
+                if viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
+                    await addLink(link: viewModel.linkText)
+                } else if !viewModel.noteText.isEmpty && viewModel.linkText.isEmpty {
+                    modelContext.insert(Item(viewModel.noteText))
+                } else if !viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
+                    await addLink(link: viewModel.linkText, note: viewModel.noteText)
+                }
+                UpdateAll()
                 shown = false
             }
         case nil:

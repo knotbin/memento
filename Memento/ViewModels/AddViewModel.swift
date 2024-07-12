@@ -10,7 +10,7 @@ import SwiftUI
 
 @Observable
 class AddViewModel {
-    var itemText = ""
+    var linkText = ""
     var noteText = ""
     
     init() {}
