@@ -25,4 +25,8 @@ struct OpenItemIntent: AppIntent, OpenIntent, URLRepresentableIntent {
     }
     
     init() {}
+    
+    static var parameterSummary: some ParameterSummary {
+        Summary("Save \(\.$target).")
+    }
 }

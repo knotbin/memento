@@ -34,4 +34,7 @@ struct SaveLinkIntent: AppIntent {
         return .result(dialog: "I've added \(item.metadata?.title ?? item.link ?? "the link") to Memento")
         
     }
+    static var parameterSummary: some ParameterSummary {
+        Summary("Save \(\.$url.projectedValue).")
+    }
 }
