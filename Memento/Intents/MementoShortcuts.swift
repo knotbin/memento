@@ -13,9 +13,9 @@ struct MementoShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: SaveLinkIntent(),
-            phrases: ["Add an item to \(.applicationName)", "Make a new item in \(.applicationName)", "Create a new item in \(.applicationName)"],
+            phrases: ["Add a link to \(.applicationName)", "Make a new link in \(.applicationName)", "Create a new link in \(.applicationName)"],
             shortTitle: "Save Link",
-            systemImageName: "plus"
+            systemImageName: "link.badge.plus"
         )
         AppShortcut(
             intent: SaveNoteIntent(),
@@ -25,7 +25,7 @@ struct MementoShortcuts: AppShortcutsProvider {
         )
         AppShortcut(
             intent: PasteLinkIntent(),
-            phrases: ["Add an item in \(.applicationName) from my clipboard.", "Save an item in \(.applicationName) from paste."],
+            phrases: ["Add a link in \(.applicationName) from my clipboard.", "Save a link in \(.applicationName) from paste."],
             shortTitle: "Paste Link",
             systemImageName: "clipboard"
         )
