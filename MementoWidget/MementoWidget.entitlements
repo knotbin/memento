@@ -6,7 +6,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.xyz.knotbin.memento</string>
+		<string>group.xyz.knotbin.memento.app</string>
 	</array>
 </dict>
 </plist>

@@ -57,8 +57,23 @@ struct MementoWidgetEntryView : View {
                 VStack {
                     if item.link != nil {
                         Text(item.metadata?.title ?? item.link ?? "")
+                            .widgetURL(item.url)
+                    } else {
+                        Text(item.note ?? "")
                     }
-                    Text(item.note ?? "")
+                }
+            case .accessoryRectangular:
+                VStack(alignment: .leading) {
+                    Text("MEMENTO")
+                        .font(.caption).bold()
+                    if item.link != nil {
+                        Text(item.metadata?.title ?? item.link ?? "")
+                            .bold()
+                            .widgetURL(item.url)
+                    }
+                    if item.note != nil {
+                        Text(item.note ?? "")
+                    }
                 }
             case .systemSmall:
                 VStack(alignment: .leading) {
@@ -200,14 +215,14 @@ struct MementoWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
 #if os(watchOS)
-        .supportedFamilies([.accessoryInline])
+        .supportedFamilies([.accessoryRectangular])
 #else
-        .supportedFamilies([.accessoryInline, .systemSmall, .systemMedium])
+        .supportedFamilies([.accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium])
 #endif
     }
 }
 
-#Preview(as: .systemMedium) {
+#Preview(as: .accessoryRectangular) {
     MementoWidget()
 } timeline: {
     SimpleEntry(date: .now)
