@@ -701,7 +701,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.share;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -734,7 +734,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.share;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";

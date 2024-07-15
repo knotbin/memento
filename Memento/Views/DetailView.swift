@@ -28,7 +28,7 @@ struct DetailView: View {
                             }
                         } label: {
                             GroupBox(label: Label("Link", systemImage: "link").foregroundStyle(Color.primary)) {
-                                HStack {
+                                HStack(alignment: .top) {
                                     if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
                                         Image(uiImage: image)
                                             .resizable()
@@ -39,12 +39,12 @@ struct DetailView: View {
                                     }
                                     VStack(alignment: .leading) {
                                         Text(item.metadata?.title ?? "")
-                                            .font(.title).bold()
+                                            .font(.headline).bold()
                                             .tint(Color.primary)
                                         Text(item.link?.replacingOccurrences(of: "https://", with: "") ?? "")
-                                            .multilineTextAlignment(.leading)
-                                            .lineLimit(3)
+                                            .lineLimit(2)
                                     }
+                                    .multilineTextAlignment(.leading)
                                 }
                             }
                         }
