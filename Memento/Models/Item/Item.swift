@@ -35,9 +35,6 @@ class Item: Identifiable {
         
         let metadata = await fetchMetadata(url: url)
         
-        self.id = UUID()
-        self.timestamp = Date()
-        self.viewed = false
         self.link = fulllink
         self.url = url
         self.metadata = CodableLinkMetadata(metadata: metadata)
@@ -49,9 +46,6 @@ class Item: Identifiable {
     }
     
     init(_ note: String) {
-        self.id = UUID()
-        self.timestamp = Date()
-        self.viewed = false
         self.link = nil
         self.url = url
         self.metadata = nil

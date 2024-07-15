@@ -52,16 +52,17 @@ struct MementoWidgetEntryView : View {
     
     var body: some View {
         if let item = items.randomElement() {
+            let widgetURL = (item.url != nil) ? item.url : URL(string: "memento://item/\(item.id)")
             switch family {
             case .accessoryInline:
                 VStack {
                     if item.link != nil {
                         Text(item.metadata?.title ?? item.link ?? "")
-                            .widgetURL(item.url)
                     } else {
                         Text(item.note ?? "")
                     }
                 }
+                .widgetURL(widgetURL)
             case .accessoryRectangular:
                 VStack(alignment: .leading) {
                     Text("MEMENTO")
@@ -69,12 +70,12 @@ struct MementoWidgetEntryView : View {
                     if item.link != nil {
                         Text(item.metadata?.title ?? item.link ?? "")
                             .bold()
-                            .widgetURL(item.url)
                     }
                     if item.note != nil {
                         Text(item.note ?? "")
                     }
                 }
+                .widgetURL(widgetURL)
             case .systemSmall:
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
@@ -101,7 +102,7 @@ struct MementoWidgetEntryView : View {
                     }
                 }
                 .transition(.push(from: .bottom))
-                .widgetURL(item.url)
+                .widgetURL(widgetURL)
             case .systemMedium:
                 HStack {
                     VStack(alignment: .leading) {
@@ -164,7 +165,7 @@ struct MementoWidgetEntryView : View {
                     }
                 }
                 .transition(.push(from: .bottom))
-                .widgetURL(item.url)
+                .widgetURL(widgetURL)
             default:
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
@@ -194,11 +195,12 @@ struct MementoWidgetEntryView : View {
                     }
                 }
                 .transition(.push(from: .bottom))
-                .widgetURL(item.url)
+                .widgetURL(widgetURL)
             }
         } else {
             Text("There are no unviewed items.")
                 .multilineTextAlignment(.center)
+                .widgetURL(nil)
         }
         
     }
