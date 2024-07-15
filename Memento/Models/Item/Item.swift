@@ -10,12 +10,12 @@ import SwiftData
 
 @Model
 class Item: Identifiable {
-    var id: UUID
+    var id: UUID = UUID()
     
-    var timestamp: Date
+    var timestamp: Date = Date()
     var link: String?
     var url: URL?
-    var viewed: Bool
+    var viewed: Bool = false
     var metadata: CodableLinkMetadata?
     var note: String?
     
