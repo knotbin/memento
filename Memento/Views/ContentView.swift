@@ -36,16 +36,27 @@ struct ContentView: View {
                     }
                 }
             }
-            .toolbar { Button("Add Item", systemImage: "plus", action: viewModel.addSheet) }
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddView(shown: $viewModel.sheetShown)
             })
+#if !targetEnvironment(macCatalyst)
+            .toolbar { ToolbarItem(placement: .topBarTrailing) {
+                Button("New Item", systemImage: "square.and.pencil", action: viewModel.addSheet)
+            } }
+#endif
         } detail: {
-            if let selectedItem = viewModel.selectedItem {
-                DetailView(item: selectedItem, selectedItem: $viewModel.selectedItem)
-            } else {
-                Text("No Items selected")
+            VStack {
+                if let selectedItem = viewModel.selectedItem {
+                    DetailView(item: selectedItem, selectedItem: $viewModel.selectedItem)
+                } else {
+                    Text("No Items selected")
+                }
             }
+#if targetEnvironment(macCatalyst)
+            .toolbar { ToolbarItem(placement: .topBarTrailing) {
+                Button("New Item", systemImage: "square.and.pencil", action: viewModel.addSheet)
+            } }
+#endif
         }
         .onOpenURL(perform: { url in
             if url.absoluteString.hasPrefix("http") {

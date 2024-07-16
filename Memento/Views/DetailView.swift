@@ -18,7 +18,7 @@ struct DetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                Text("Created \(item.timestamp.formatted())").font(.caption2)
+                Text("Created \(item.timestamp.formatted())").font(.caption2).padding(.top, 10)
                 VStack(alignment: .leading) {
                     if item.link != nil {
                         Button {
@@ -49,6 +49,7 @@ struct DetailView: View {
                             }
                         }
                         .padding()
+                        .buttonStyle(.borderless)
                     }
                     Text(item.note ?? "")
                         .multilineTextAlignment(.leading)
