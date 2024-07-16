@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("usesCloud") var cloud: Bool = false
+    @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool = true
     @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: viewedTypes = .notes
+    @AppStorage("openLinkAutoViewed") var openLinkAutoViewed: Bool = true
     @Binding var isShown: Bool
     var body: some View {
         NavigationStack {
             Form {
-                Toggle("Sync Through iCloud", isOn: $cloud)
-                Section("Auto-mark viewed") {
-                    Picker("Mark Viewed When Opened in Detail", selection: $autoViewedOnOpen) {
+                Toggle("Widget Opens Links Directly", isOn: $widgetDirectToLink)
+                
+                Section("Marking Viewed") {
+                    Picker("Mark Viewed When Detail View is opened", selection: $autoViewedOnOpen) {
                         Text("Only Items with Notes")
                             .tag(viewedTypes.notes)
                         Text("Only Items with Links")
@@ -27,6 +29,8 @@ struct SettingsView: View {
                             .tag(viewedTypes.none)
                     }
                     .pickerStyle(.navigationLink)
+                    Toggle("Mark opened links viewed", isOn: $openLinkAutoViewed)
+                    
                 }
             }
             .navigationTitle("Settings")
