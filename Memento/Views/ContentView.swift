@@ -40,9 +40,11 @@ struct ContentView: View {
                 AddView(shown: $viewModel.sheetShown)
             })
 #if !targetEnvironment(macCatalyst)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) {
-                Button("New Item", systemImage: "square.and.pencil", action: viewModel.addSheet)
-            } }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("New Item", systemImage: "square.and.pencil", action: viewModel.addSheet)
+                }
+            }
 #endif
         } detail: {
             VStack {

@@ -52,6 +52,7 @@
 		59BD68202C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
 		59BD68212C34D07900141362 /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
 		59BD68222C34D1ED00141362 /* ItemViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E7BE452C1B77F00091BFEF /* ItemViewedIntent.swift */; };
+		59BDF9662C46DC8800961C86 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59BDF9652C46DC8800961C86 /* Settings.bundle */; };
 		59BE70012C20C9CC00F17829 /* DeleteItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */; };
 		59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */; };
 		59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BFB2362BFCFAE5008B6EA8 /* Item.swift */; };
@@ -157,6 +158,7 @@
 		59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkIntent.swift; sourceTree = "<group>"; };
 		59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemIntent.swift; sourceTree = "<group>"; };
 		59BD681D2C34CFEE00141362 /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
+		59BDF9652C46DC8800961C86 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemIntent.swift; sourceTree = "<group>"; };
 		59BFB22F2BFCFAE5008B6EA8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BFB2322BFCFAE5008B6EA8 /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				5992D2372C069E1700E643A2 /* Functions */,
 				59FC6A452BFEE23D00D72FF2 /* Models */,
 				59E7BE442C1B76160091BFEF /* Intents */,
+				59BDF9652C46DC8800961C86 /* Settings.bundle */,
 				59BFB2382BFCFAE6008B6EA8 /* Assets.xcassets */,
 				598F53AE2C06BE3000362AB5 /* Memento.entitlements */,
 				598F53AD2C06AFBA00362AB5 /* Info.plist */,
@@ -548,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				593B7AEA2C461FCB003FEE42 /* PrivacyInfo.xcprivacy in Resources */,
+				59BDF9662C46DC8800961C86 /* Settings.bundle in Resources */,
 				59BFB2392BFCFAE6008B6EA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
