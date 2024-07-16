@@ -10,9 +10,13 @@ import SwiftData
 
 struct ContentView: View {
     @State var viewModel = ContentViewModel()
-    @Environment(\.modelContext) var modelContext
+    
     @Environment(\.openURL) var openURL
+    @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool?
+    
+    @Environment(\.modelContext) var modelContext
     @Query(animation: .smooth) private var items: [Item]
+    
     var filteredItems: [Item] {
         return viewModel.filterItems(items)
     }
@@ -39,10 +43,16 @@ struct ContentView: View {
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddView(shown: $viewModel.sheetShown)
             })
+            .sheet(isPresented: $viewModel.infoShown, content: {
+                InfoView(isShown: $viewModel.infoShown)
+            })
 #if !targetEnvironment(macCatalyst)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("New Item", systemImage: "square.and.pencil", action: viewModel.addSheet)
+                    Button("New Item", systemImage: "square.and.pencil", action: {viewModel.sheetShown = true})
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("New Item", systemImage: "info.circle", action: {viewModel.infoShown = true})
                 }
             }
 #endif
@@ -74,7 +84,11 @@ struct ContentView: View {
                 guard let match = try? items.filter(#Predicate { url.absoluteString.contains($0.id.uuidString) }).first else {
                     return
                 }
-                viewModel.selectedItem = match
+                if match.link != nil, let url = match.url, widgetDirectToLink == Optional(true) {
+                    openURL(url)
+                } else {
+                    viewModel.selectedItem = match
+                }
             }
         })
     }

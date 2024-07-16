@@ -12,6 +12,7 @@ import SwiftUI
 class ContentViewModel {
     var selectedItem: Item? = nil
     var sheetShown = false
+    var infoShown = false
     var searchText = ""
     
     func filterItems(_ items: [Item]) -> [Item] {
@@ -44,9 +45,6 @@ class ContentViewModel {
             item.viewed.toggle()
             UpdateAll()
         }
-    }
-    func addSheet() {
-        sheetShown = true
     }
     
     init() {}

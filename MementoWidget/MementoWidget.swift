@@ -52,7 +52,7 @@ struct MementoWidgetEntryView : View {
     
     var body: some View {
         if let item = items.randomElement() {
-            let widgetURL = (item.url != nil) ? item.url : URL(string: "memento://item/\(item.id)")
+            let widgetURL = URL(string: "memento://item/\(item.id)")
             switch family {
             case .accessoryInline:
                 VStack {
