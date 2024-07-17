@@ -33,15 +33,19 @@
 			<string>notes</string>
 			<key>Titles</key>
 			<array>
-				<string>Only Items with Notes</string>
-				<string>Only Items with Links</string>
+				<string>Any Item that Contains Notes</string>
+				<string>Any Item that Contains a Link</string>
+				<string>Only Items with Notes and Without a Link</string>
+				<string>Only Items with a Link and Without Notes</string>
 				<string>All Items</string>
 				<string>None</string>
 			</array>
 			<key>Values</key>
 			<array>
-				<string>notes</string>
-				<string>links</string>
+				<string>containsNotes</string>
+				<string>containsLinks</string>
+				<string>onlyNotes</string>
+				<string>onlyLinks</string>
 				<string>all</string>
 				<string>none</string>
 			</array>

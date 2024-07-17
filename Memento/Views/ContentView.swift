@@ -13,6 +13,7 @@ struct ContentView: View {
     
     @Environment(\.openURL) var openURL
     @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool?
+    @AppStorage("openLinkAutoViewed") var openLinkAutoViewed: Bool?
     
     @Environment(\.modelContext) var modelContext
     @Query(animation: .smooth) private var items: [Item]
@@ -30,6 +31,7 @@ struct ContentView: View {
                 }
                 .isDetailLink(true)
             }
+            .listRowSpacing(20)
             .searchable(text: $viewModel.searchText, prompt: "Search Items")
             .overlay {
                 if filteredItems.isEmpty {
@@ -66,7 +68,7 @@ struct ContentView: View {
             }
 #if targetEnvironment(macCatalyst)
             .toolbar { ToolbarItem(placement: .topBarTrailing) {
-                Button("New Item", systemImage: "square.and.pencil", action: viewModel.addSheet)
+                Button("New Item", systemImage: "square.and.pencil", action: {viewModel.sheetShown = true})
             } }
 #endif
         }
@@ -75,8 +77,10 @@ struct ContentView: View {
                 guard let matches = try? items.filter(#Predicate { $0.url == url }) else {
                     return
                 }
-                for item in matches {
-                    item.viewed = true
+                if openLinkAutoViewed == Optional(true) || openLinkAutoViewed == true {
+                    for item in matches {
+                        item.viewed = true
+                    }
                 }
                 UpdateAll()
                 openURL(url)
@@ -84,7 +88,7 @@ struct ContentView: View {
                 guard let match = try? items.filter(#Predicate { url.absoluteString.contains($0.id.uuidString) }).first else {
                     return
                 }
-                if match.link != nil, let url = match.url, widgetDirectToLink == Optional(true) {
+                if match.link != nil, let url = match.url, (widgetDirectToLink == Optional(true) || widgetDirectToLink == true) {
                     openURL(url)
                 } else {
                     viewModel.selectedItem = match

@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct InfoView: View {
-    @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool?
-    @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: viewedTypes = .notes
-    @AppStorage("openLinkAutoViewed") var openLinkAutoViewed: Bool = true
     @Binding var isShown: Bool
     var body: some View {
         NavigationStack {

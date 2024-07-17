@@ -10,19 +10,28 @@ import UIKit
 import SwiftData
 
 struct DetailView: View {
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.modelContext) var modelContext
+    
     @Environment(\.openURL) var openURL
+    
+    @AppStorage("openLinkAutoViewed") var openLinkAutoViewed: Bool?
+    @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: String?
+    
     var item: Item
     @Binding var selectedItem: Item?
     var body: some View {
         NavigationStack {
             ScrollView {
-                Text("Created \(item.timestamp.formatted())").font(.caption2).padding(.top, 10)
+                Text("Created \(item.timestamp.formatted())")
+                    .font(.caption2)
+                    .padding(.top, 10)
+                    .textCase(.uppercase)
                 VStack(alignment: .leading) {
                     if item.link != nil {
                         Button {
-                            item.viewed = true
+                            if openLinkAutoViewed == Optional(true) || openLinkAutoViewed == true {
+                                item.viewed = true
+                            }
                             if let url = item.url {
                                 openURL(url)
                             }
@@ -84,10 +93,24 @@ struct DetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             
             .onAppear {
-                if item.link == nil && item.note != nil {
-                    item.viewed = true
-                }
+                markViewedOnOpen()
             }
+        }
+    }
+    func markViewedOnOpen() {
+        switch autoViewedOnOpen {
+        case "all":
+            item.viewed = true
+        case "onlyNotes" where item.link == nil && item.note != nil:
+            item.viewed = true
+        case "onlyLinks" where item.link != nil && item.note == nil:
+            item.viewed = true
+        case "containsNotes" where item.note != nil:
+            item.viewed = true
+        case "containsLinks" where item.link != nil:
+            item.viewed = true
+        default:
+            break
         }
     }
 }

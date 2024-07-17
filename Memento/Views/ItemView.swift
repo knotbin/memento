@@ -12,6 +12,7 @@ import SwiftData
 struct ItemView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.modelContext) var modelContext
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var item: Item
     @Binding var selectedItem: Item?
@@ -26,8 +27,13 @@ struct ItemView: View {
     var body: some View {
         HStack {
             if !item.viewed {
-                Image(systemName: "circle.fill")
-                    .foregroundStyle(!isSelected ? Color.accentColor : Color.white)
+                if horizontalSizeClass == .regular {
+                    Image(systemName: "circle.fill")
+                        .foregroundStyle(isSelected ? Color.white : Color.accentColor)
+                } else if horizontalSizeClass == .compact {
+                    Image(systemName: "circle.fill")
+                        .foregroundStyle(Color.accentColor)
+                }
             }
             Button {
                 item.viewed = true
