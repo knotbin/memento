@@ -80,13 +80,11 @@ struct DetailView: View {
                         
                         if let url = item.url {
                             ShareLink(item: url) {
-                                Label("Share Link", systemImage: "square.and.arrow.up")
+                                Label("Share", systemImage: "square.and.arrow.up")
                             }
-                        }
-                        
-                        if let note = item.note, !note.isEmpty {
+                        } else if let note = item.note, !note.isEmpty {
                             ShareLink(item: note) {
-                                Label("Share Note", systemImage: "square.and.arrow.up")
+                                Label("Share", systemImage: "square.and.arrow.up")
                             }
                         }
                         

@@ -83,6 +83,10 @@ struct ItemView: View {
                         ShareLink(item: url) {
                             Label("Share", systemImage: "square.and.arrow.up")
                         }
+                    } else if let note = item.note, !note.isEmpty {
+                        ShareLink(item: note) {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
                     }
                     
                     Button("Delete", systemImage: "trash", role: .destructive) {
@@ -108,6 +112,10 @@ struct ItemView: View {
             
             if let url = item.url {
                 ShareLink(item: url) {
+                    Label("Share", systemImage: "square.and.arrow.up")
+                }
+            } else if let note = item.note, !note.isEmpty {
+                ShareLink(item: note) {
                     Label("Share", systemImage: "square.and.arrow.up")
                 }
             }
