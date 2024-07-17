@@ -77,6 +77,17 @@ struct DetailView: View {
                             }
                         }
                         .buttonStyle(.bordered)
+                        
+                        if let url = item.url {
+                            ShareLink(item: url) {
+                                Label("Share", systemImage: "square.and.arrow.up")
+                            }
+                        } else if let note = item.note, !note.isEmpty {
+                            ShareLink(item: note) {
+                                Label("Share", systemImage: "square.and.arrow.up")
+                            }
+                        }
+                        
                         Button("Delete", systemImage: "trash", role: .destructive) {
                             withAnimation {
                                 modelContext.delete(item)
