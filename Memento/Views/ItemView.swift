@@ -78,6 +78,13 @@ struct ItemView: View {
                             UpdateAll()
                         }
                     )
+                    
+                    if let url = item.url {
+                        ShareLink(item: url) {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
+                    }
+                    
                     Button("Delete", systemImage: "trash", role: .destructive) {
                         withAnimation {
                             selectedItem = nil
@@ -98,6 +105,12 @@ struct ItemView: View {
                     UpdateAll()
                 }
             ).tint(.indigo)
+            
+            if let url = item.url {
+                ShareLink(item: url) {
+                    Label("Share", systemImage: "square.and.arrow.up")
+                }
+            }
         }
         .swipeActions(edge: .trailing) {
             Button("Delete", systemImage: "trash", role: .destructive) {
