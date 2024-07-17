@@ -114,10 +114,12 @@ struct ItemView: View {
                 ShareLink(item: url) {
                     Label("Share", systemImage: "square.and.arrow.up")
                 }
+                .tint(.blue)
             } else if let note = item.note, !note.isEmpty {
                 ShareLink(item: note) {
                     Label("Share", systemImage: "square.and.arrow.up")
                 }
+                .tint(.blue)
             }
         }
         .swipeActions(edge: .trailing) {

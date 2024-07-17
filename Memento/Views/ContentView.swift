@@ -31,7 +31,6 @@ struct ContentView: View {
                 }
                 .isDetailLink(true)
             }
-            .listRowSpacing(20)
             .searchable(text: $viewModel.searchText, prompt: "Search Items")
             .overlay {
                 if filteredItems.isEmpty {
