@@ -11,34 +11,27 @@ import SwiftData
 struct ContentView: View {
     @State var viewModel = ContentViewModel()
     
-    @Environment(\.openURL) var openURL
-    @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool?
-    @AppStorage("openLinkAutoViewed") var openLinkAutoViewed: Bool?
-    
     @Environment(\.modelContext) var modelContext
-    @Query(animation: .smooth) private var items: [Item]
-    
-    var filteredItems: [Item] {
-        return viewModel.filterItems(items)
-    }
     
     var body: some View {
         NavigationSplitView {
-            List(filteredItems, selection: $viewModel.selectedItem) { item in
-                NavigationLink(value: item) {
-                    ItemView(item: item, selectedItem: $viewModel.selectedItem)
-                        .modelContext(modelContext)
-                }
-                .isDetailLink(true)
-            }
-            .searchable(text: $viewModel.searchText, prompt: "Search Items")
-            .overlay {
-                if filteredItems.isEmpty {
-                    if viewModel.searchText.isEmpty {
-                        ContentUnavailableView("No Items Added", systemImage: "doc")
-                    } else {
-                        ContentUnavailableView.search(text: viewModel.searchText)
+            ZStack {
+                ListView(selectedItem: $viewModel.selectedItem)
+                    .modelContext(modelContext)
+                VStack {
+                    Spacer()
+                    Button {
+                        viewModel.sheetShown = true
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .imageScale(.large)
+                            .padding(.top, 11)
+                            .padding(.bottom, 15)
+                            .padding(.horizontal, 15)
                     }
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.circle)
+                    .shadow(radius: 10)
                 }
             }
             .sheet(isPresented: $viewModel.sheetShown, content: {
@@ -49,11 +42,8 @@ struct ContentView: View {
             })
 #if !targetEnvironment(macCatalyst)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("New Item", systemImage: "square.and.pencil", action: {viewModel.sheetShown = true})
-                }
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("New Item", systemImage: "info.circle", action: {viewModel.infoShown = true})
+                    Button("Info", systemImage: "info.circle", action: {viewModel.infoShown = true})
                 }
             }
 #endif
@@ -71,29 +61,6 @@ struct ContentView: View {
             } }
 #endif
         }
-        .onOpenURL(perform: { url in
-            if url.absoluteString.hasPrefix("http") {
-                guard let matches = try? items.filter(#Predicate { $0.url == url }) else {
-                    return
-                }
-                if openLinkAutoViewed == Optional(true) || openLinkAutoViewed == true {
-                    for item in matches {
-                        item.viewed = true
-                    }
-                }
-                UpdateAll()
-                openURL(url)
-            } else {
-                guard let match = try? items.filter(#Predicate { url.absoluteString.contains($0.id.uuidString) }).first else {
-                    return
-                }
-                if match.link != nil, let url = match.url, (widgetDirectToLink == Optional(true) || widgetDirectToLink == true) {
-                    openURL(url)
-                } else {
-                    viewModel.selectedItem = match
-                }
-            }
-        })
     }
 }
 

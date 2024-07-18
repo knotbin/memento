@@ -45,6 +45,7 @@
 		598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
+		599593712C4893B000E014DD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599593702C4893B000E014DD /* ListView.swift */; };
 		59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */; };
 		59B4D2D82C34623F0045CAA1 /* OpenItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */; };
 		59BD681E2C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
@@ -153,6 +154,7 @@
 		598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
 		598F53B92C096D2500362AB5 /* FetchMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMetadata.swift; sourceTree = "<group>"; };
 		5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
+		599593702C4893B000E014DD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		59A076762C161ECC0050D90F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		59A076782C161ECC0050D90F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkIntent.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				59CEA23B2C2F6AE1009079E8 /* ContentView.swift */,
+				599593702C4893B000E014DD /* ListView.swift */,
 				59899A3A2C015B8400470E42 /* AddView.swift */,
 				5978256D2C23926400BC86FF /* ItemView.swift */,
 				592F04082C3C7A0A00C1CA84 /* DetailView.swift */,
@@ -628,6 +631,7 @@
 				5978256E2C23926400BC86FF /* ItemView.swift in Sources */,
 				59BD681E2C34CFEE00141362 /* UpdateAll.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
+				599593712C4893B000E014DD /* ListView.swift in Sources */,
 				59FD4FE12C416FB800D5C18C /* SaveNoteIntent.swift in Sources */,
 				593E1C832C45CC7D00D8C0AC /* InfoView.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
@@ -704,7 +708,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MementoShare/Info.plist;
@@ -716,7 +720,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
@@ -737,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MementoShare/Info.plist;
@@ -749,7 +753,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
@@ -770,7 +774,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -790,7 +794,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -810,7 +814,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -830,7 +834,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -975,7 +979,7 @@
 				CODE_SIGN_ENTITLEMENTS = Memento/Memento.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_PREVIEWS = YES;
@@ -993,7 +997,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1017,7 +1021,7 @@
 				CODE_SIGN_ENTITLEMENTS = Memento/Memento.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_PREVIEWS = YES;
@@ -1035,7 +1039,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
