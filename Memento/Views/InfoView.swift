@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import BugReporter
 
 struct InfoView: View {
     @Binding var isShown: Bool
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
         NavigationStack {
             Form {
                 Link("App Settings", destination: URL(string: UIApplication.openSettingsURLString)!)
+                
             }
-            .navigationTitle("Info")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
                     Button("Done") {
@@ -23,13 +24,8 @@ struct InfoView: View {
                     }
                 }
             }
+            .navigationTitle("Memento")
         }
-    }
-    enum viewedTypes: String, CaseIterable {
-        case notes
-        case links
-        case all
-        case none
     }
 }
 

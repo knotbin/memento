@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		59002F6B2C371F6600ED1191 /* OpenItemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D2D72C34623F0045CAA1 /* OpenItemIntent.swift */; };
+		591535FC2C4B136200D9FBC4 /* BugReporter in Frameworks */ = {isa = PBXBuildFile; productRef = 591535FB2C4B136200D9FBC4 /* BugReporter */; };
 		592F04092C3C7A0A00C1CA84 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F04082C3C7A0A00C1CA84 /* DetailView.swift */; };
 		593B7AE92C461FCB003FEE42 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 593B7AE82C461FCB003FEE42 /* PrivacyInfo.xcprivacy */; };
 		593B7AEA2C461FCB003FEE42 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 593B7AE82C461FCB003FEE42 /* PrivacyInfo.xcprivacy */; };
@@ -205,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591535FC2C4B136200D9FBC4 /* BugReporter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +530,9 @@
 				Base,
 			);
 			mainGroup = 59BFB2262BFCFAE5008B6EA8;
+			packageReferences = (
+				591535FA2C4B136200D9FBC4 /* XCRemoteSwiftPackageReference "bugreporter" */,
+			);
 			productRefGroup = 59BFB2302BFCFAE5008B6EA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1211,6 +1216,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		591535FA2C4B136200D9FBC4 /* XCRemoteSwiftPackageReference "bugreporter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/knotbin/bugreporter";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		591535FB2C4B136200D9FBC4 /* BugReporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 591535FA2C4B136200D9FBC4 /* XCRemoteSwiftPackageReference "bugreporter" */;
+			productName = BugReporter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 59BFB2272BFCFAE5008B6EA8 /* Project object */;
 }
