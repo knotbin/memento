@@ -15,7 +15,7 @@ struct InfoView: View {
         NavigationStack {
             Form {
                 Link("App Settings", destination: URL(string: UIApplication.openSettingsURLString)!)
-                
+                BugReporterView()
             }
             .toolbar {
                 ToolbarItem {
