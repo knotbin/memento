@@ -14,8 +14,13 @@ struct InfoView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Link("App Settings", destination: URL(string: UIApplication.openSettingsURLString)!)
-                BugReporterView()
+                Link( destination: URL(string: UIApplication.openSettingsURLString)!, label: {Label("Memento Settings", systemImage: "gear")})
+                
+                Section("Socials") {
+                    Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Twitter", systemImage: "bubble")})
+                    Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Github", systemImage: "applescript")})
+                    Link(destination: URL(string: "https://www.x.com/knotbin")!, label: {Label("Roscoe on Twitter", systemImage: "person.bubble")})
+                }
             }
             .toolbar {
                 ToolbarItem {
