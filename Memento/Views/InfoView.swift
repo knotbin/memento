@@ -13,6 +13,7 @@ struct InfoView: View {
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
         NavigationStack {
+            BugReporterView(isShown: $isShown)
             Form {
                 Link( destination: URL(string: UIApplication.openSettingsURLString)!, label: {Label("Memento Settings", systemImage: "gear")})
                 
