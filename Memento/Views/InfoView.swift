@@ -13,7 +13,6 @@ struct InfoView: View {
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
         NavigationStack {
-            BugReporterView(isShown: $isShown)
             Form {
                 Link( destination: URL(string: UIApplication.openSettingsURLString)!, label: {Label("Memento Settings", systemImage: "gear")})
                 
@@ -21,6 +20,10 @@ struct InfoView: View {
                     Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Twitter", systemImage: "bubble")})
                     Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Github", systemImage: "applescript")})
                     Link(destination: URL(string: "https://www.x.com/knotbin")!, label: {Label("Roscoe on Twitter", systemImage: "person.bubble")})
+                }
+                Section("Feedback") {
+                    Link(destination: URL(string: "https://typeform.com")!, label: {Label("Report a bug", systemImage: "ant")})
+                    Link(destination: URL(string: "https://typeform.com")!, label: {Label("Request a feature", systemImage: "tray.and.arrow.down")})
                 }
             }
             .toolbar {
