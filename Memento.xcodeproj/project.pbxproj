@@ -531,7 +531,6 @@
 			);
 			mainGroup = 59BFB2262BFCFAE5008B6EA8;
 			packageReferences = (
-				591535FA2C4B136200D9FBC4 /* XCRemoteSwiftPackageReference "bugreporter" */,
 			);
 			productRefGroup = 59BFB2302BFCFAE5008B6EA8 /* Products */;
 			projectDirPath = "";
