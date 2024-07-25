@@ -29,6 +29,7 @@ struct ListView: View {
                     .modelContext(modelContext)
             }
             .isDetailLink(true)
+            .sensoryFeedback(.selection, trigger: selectedItem)
         }
         .searchable(text: $viewModel.searchText, prompt: "Search Items")
         .overlay {

@@ -60,6 +60,7 @@ struct AddView: View {
                         }
                         shown = false
                     }
+                    .sensoryFeedback(.success, trigger: shown)
                     .disabled(viewModel.linkText.isEmpty && viewModel.noteText.isEmpty)
                     .keyboardShortcut(.defaultAction)
                     

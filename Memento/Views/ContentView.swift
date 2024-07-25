@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import CoreHaptics
 
 struct ContentView: View {
     @State var viewModel = ContentViewModel()
@@ -29,6 +30,7 @@ struct ContentView: View {
                             .padding(.bottom, 15)
                             .padding(.horizontal, 15)
                     }
+                    .sensoryFeedback(.start, trigger: viewModel.sheetShown)
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.circle)
                     .shadow(radius: 10)
