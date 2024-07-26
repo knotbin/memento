@@ -16,12 +16,13 @@ struct InfoView: View {
                 Link( destination: URL(string: UIApplication.openSettingsURLString)!, label: {Label("Memento Settings", systemImage: "gear")})
                 
                 Section("Socials") {
+                    Link(destination: URL(string: "https://memento.knotbin.xyz")!, label: {Label("Official Website", systemImage: "globe")})
                     Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Twitter", systemImage: "bubble")})
                     Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Github", systemImage: "applescript")})
                     Link(destination: URL(string: "https://www.x.com/knotbin")!, label: {Label("Roscoe on Twitter", systemImage: "person.bubble")})
                 }
                 Section("Feedback") {
-                    Link(destination: URL(string: "https://typeform.com")!, label: {Label("Report a bug", systemImage: "ant")})
+                    Link(destination: URL(string: "https://fbogmeocs87.typeform.com/to/Pc2mZtmg")!, label: {Label("Report a bug", systemImage: "ant")})
                     Link(destination: URL(string: "https://typeform.com")!, label: {Label("Request a feature", systemImage: "tray.and.arrow.down")})
                 }
             }
@@ -32,7 +33,7 @@ struct InfoView: View {
                     }
                 }
             }
-            .navigationTitle("Memento")
+            .navigationTitle("Memento v\(appVersion)").navigationBarTitleDisplayMode(.inline)
         }
     }
 }
