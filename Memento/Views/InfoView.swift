@@ -23,7 +23,7 @@ struct InfoView: View {
                 }
                 Section("Feedback") {
                     Link(destination: URL(string: "https://fbogmeocs87.typeform.com/to/Pc2mZtmg")!, label: {Label("Report a bug", systemImage: "ant")})
-                    Link(destination: URL(string: "https://typeform.com")!, label: {Label("Request a feature", systemImage: "tray.and.arrow.down")})
+                    Link(destination: URL(string: "https://fbogmeocs87.typeform.com/to/iREGTSlU")!, label: {Label("Request a feature", systemImage: "tray.and.arrow.down")})
                 }
             }
             .toolbar {
