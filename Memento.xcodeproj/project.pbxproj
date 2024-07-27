@@ -45,6 +45,7 @@
 		598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
+		599472702C556C7800BBDBE2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994726F2C556C7800BBDBE2 /* WelcomeView.swift */; };
 		599593712C4893B000E014DD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599593702C4893B000E014DD /* ListView.swift */; };
 		599593742C49DE8E00E014DD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599593732C49DE8E00E014DD /* Launch Screen.storyboard */; };
 		59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */; };
@@ -155,6 +156,7 @@
 		598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
 		598F53B92C096D2500362AB5 /* FetchMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMetadata.swift; sourceTree = "<group>"; };
 		5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureModelContainer.swift; sourceTree = "<group>"; };
+		5994726F2C556C7800BBDBE2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		599593702C4893B000E014DD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		599593732C49DE8E00E014DD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		59A076762C161ECC0050D90F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -381,6 +383,7 @@
 				5978256D2C23926400BC86FF /* ItemView.swift */,
 				592F04082C3C7A0A00C1CA84 /* DetailView.swift */,
 				593E1C822C45CC7D00D8C0AC /* InfoView.swift */,
+				5994726F2C556C7800BBDBE2 /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				592F04092C3C7A0A00C1CA84 /* DetailView.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */,
+				599472702C556C7800BBDBE2 /* WelcomeView.swift in Sources */,
 				59C5069D2C291C390022B553 /* PasteLinkIntent.swift in Sources */,
 				59899A3E2C015D1D00470E42 /* ListViewModel.swift in Sources */,
 				59B4D2D82C34623F0045CAA1 /* OpenItemIntent.swift in Sources */,
