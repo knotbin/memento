@@ -13,6 +13,12 @@ struct InfoView: View {
     var body: some View {
         NavigationStack {
             Form {
+                HStack {
+                    Label("Memento", systemImage: "tray")
+                    Spacer()
+                    Text("v\(appVersion)")
+                        .foregroundStyle(.secondary)
+                }
                 Link( destination: URL(string: UIApplication.openSettingsURLString)!, label: {Label("Memento Settings", systemImage: "gear")})
                 
                 Section("Socials") {
@@ -24,6 +30,10 @@ struct InfoView: View {
                 Section("Feedback") {
                     Link(destination: URL(string: "https://fbogmeocs87.typeform.com/to/Pc2mZtmg")!, label: {Label("Report a bug", systemImage: "ant")})
                     Link(destination: URL(string: "https://fbogmeocs87.typeform.com/to/iREGTSlU")!, label: {Label("Request a feature", systemImage: "tray.and.arrow.down")})
+                    Link(destination: URL(string: "mailto:memento@knotbin.xyz")!, label: {Label("Contact", systemImage: "envelope")})
+                }
+                Section(header: Text("About"), footer: Text("Copyright © Roscoe Rubin-Rottenberg 2024")) {
+                    Text("Memento was made by Roscoe Rubin-Rottenberg, a 14 year old aspiring iOS developer and 2024 Apple Swift Student Challenge winner. It is completely open-source for full transparency and user confidence. If you'd like to follow or contribute to Memento's development, you can check out our Github.")
                 }
             }
             .toolbar {
@@ -33,7 +43,7 @@ struct InfoView: View {
                     }
                 }
             }
-            .navigationTitle("Memento v\(appVersion)").navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Info").navigationBarTitleDisplayMode(.inline)
         }
     }
 }

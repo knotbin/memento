@@ -17,7 +17,7 @@
 		5972DD992C32D0E1001FB802 /* ToggleViewedIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972DD982C32D0E1001FB802 /* ToggleViewedIntent.swift */; };
 		5978256E2C23926400BC86FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978256D2C23926400BC86FF /* ItemView.swift */; };
 		597A7F4B2C31274B00891DCA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 597A7F4A2C31274B00891DCA /* Base */; };
-		597A7F4F2C31274B00891DCA /* MementoShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F452C31274B00891DCA /* MementoShare.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		597A7F4F2C31274B00891DCA /* MementoShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 597A7F452C31274B00891DCA /* MementoShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		597A7F582C31282E00891DCA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F572C31282E00891DCA /* ShareViewController.swift */; };
 		597A7F592C31284D00891DCA /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		597A7F5B2C31286600891DCA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A7F5A2C31286600891DCA /* ShareView.swift */; };
@@ -686,7 +686,6 @@
 /* Begin PBXTargetDependency section */
 		597A7F4E2C31274B00891DCA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 597A7F442C31274B00891DCA /* MementoShare */;
 			targetProxy = 597A7F4D2C31274B00891DCA /* PBXContainerItemProxy */;
 		};
@@ -722,65 +721,77 @@
 		597A7F512C31274B00891DCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MementoShare/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MementoShare;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MementoShare;
+				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,6,7";
 			};
 			name = Debug;
 		};
 		597A7F522C31274B00891DCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MementoShare/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MementoShare;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MementoShare;
+				REGISTER_APP_GROUPS = NO;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "xrsimulator xros watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4,6,7";
 			};
 			name = Release;
 		};
@@ -792,7 +803,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -812,7 +823,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -832,7 +843,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -852,7 +863,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -997,7 +1008,7 @@
 				CODE_SIGN_ENTITLEMENTS = Memento/Other/Memento.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_PREVIEWS = YES;
@@ -1016,7 +1027,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1040,7 +1051,7 @@
 				CODE_SIGN_ENTITLEMENTS = Memento/Other/Memento.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_PREVIEWS = YES;
@@ -1059,7 +1070,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
