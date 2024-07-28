@@ -29,7 +29,6 @@ struct DetailView: View {
                 VStack(alignment: .leading) {
                     if item.link != nil {
                         Button {
-                            print(linkOpenViewed)
                             if linkOpenViewed == Optional(true) {
                                 item.viewed = true
                             }

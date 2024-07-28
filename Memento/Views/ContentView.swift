@@ -10,6 +10,7 @@ import SwiftData
 import CoreHaptics
 
 struct ContentView: View {
+    @AppStorage("welcomeOpen") var welcomeOpen = true
     @State var viewModel = ContentViewModel()
     
     @Environment(\.modelContext) var modelContext
@@ -63,6 +64,7 @@ struct ContentView: View {
             } }
 #endif
         }
+        .fullScreenCover(isPresented: $welcomeOpen, content: {WelcomeView(shown: $welcomeOpen)})
     }
 }
 

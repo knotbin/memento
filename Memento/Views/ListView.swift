@@ -46,7 +46,7 @@ struct ListView: View {
                 guard let matches = try? items.filter(#Predicate { $0.url == url }) else {
                     return
                 }
-                if linkOpenViewed == Optional(true) || linkOpenViewed == true {
+                if linkOpenViewed == Optional(true) {
                     for item in matches {
                         item.viewed = true
                     }
@@ -57,7 +57,11 @@ struct ListView: View {
                 guard let match = try? items.filter(#Predicate { url.absoluteString.contains($0.id.uuidString) }).first else {
                     return
                 }
-                if match.link != nil, let url = match.url, (widgetDirectToLink == Optional(true) || widgetDirectToLink == true) {
+                if match.link != nil, let url = match.url, widgetDirectToLink == Optional(true){
+                    if linkOpenViewed == Optional(true) {
+                        match.viewed = true
+                        UpdateAll()
+                    }
                     openURL(url)
                 } else {
                     selectedItem = match
