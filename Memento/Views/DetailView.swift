@@ -14,7 +14,7 @@ struct DetailView: View {
     
     @Environment(\.openURL) var openURL
     
-    @AppStorage("openLinkAutoViewed") var openLinkAutoViewed: Bool?
+    @AppStorage("linkOpenViewed") var linkOpenViewed: Bool?
     @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: String?
     
     var item: Item
@@ -29,7 +29,8 @@ struct DetailView: View {
                 VStack(alignment: .leading) {
                     if item.link != nil {
                         Button {
-                            if openLinkAutoViewed == Optional(true) || openLinkAutoViewed == true {
+                            print(linkOpenViewed)
+                            if linkOpenViewed == Optional(true) {
                                 item.viewed = true
                             }
                             if let url = item.url {

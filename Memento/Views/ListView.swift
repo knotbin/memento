@@ -14,7 +14,7 @@ struct ListView: View {
     
     @Environment(\.openURL) var openURL
     @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool?
-    @AppStorage("openLinkAutoViewed") var openLinkAutoViewed: Bool?
+    @AppStorage("linkOpenViewed") var linkOpenViewed: Bool?
     
     @Environment(\.modelContext) var modelContext
     @Query(animation: .smooth) private var items: [Item]
@@ -46,7 +46,7 @@ struct ListView: View {
                 guard let matches = try? items.filter(#Predicate { $0.url == url }) else {
                     return
                 }
-                if openLinkAutoViewed == Optional(true) || openLinkAutoViewed == true {
+                if linkOpenViewed == Optional(true) || linkOpenViewed == true {
                     for item in matches {
                         item.viewed = true
                     }
