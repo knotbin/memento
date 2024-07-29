@@ -30,7 +30,7 @@
 			<key>Key</key>
 			<string>autoViewedOnOpen</string>
 			<key>DefaultValue</key>
-			<string>notes</string>
+			<string>onlyNotes</string>
 			<key>Titles</key>
 			<array>
 				<string>Any Item that Contains Notes</string>

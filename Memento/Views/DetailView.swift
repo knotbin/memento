@@ -18,6 +18,7 @@ struct DetailView: View {
     @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: String?
     
     var item: Item
+    
     @Binding var selectedItem: Item?
     var body: some View {
         NavigationStack {
