@@ -16,7 +16,7 @@ class ListViewModel {
         guard !searchText.isEmpty else {
             return items
         }
-        return items.filter {
+        let filteredItems = items.filter {
             if
                 let link = $0.link?
                     .replacingOccurrences(of: "https://", with: "")
@@ -31,6 +31,9 @@ class ListViewModel {
                 return true
             }
             return false
+        }
+        return filteredItems.sorted { (lhs, rhs) in
+            return lhs.timestamp > rhs.timestamp
         }
     }
     func toggleViewed(_ item: Item) {
