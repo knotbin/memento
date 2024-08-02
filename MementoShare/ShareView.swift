@@ -53,11 +53,12 @@ struct ShareView: View {
                         Task {
                             if let item = await Item(link: url.absoluteString, note: notetext) {
                                 modelContext.insert(item)
+                                try modelContext.save()
+                                UpdateAll()
+                                self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                             } else {
                                 alertPresented = true
                             }
-                            UpdateAll()
-                            self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                         }
                     }
                 }
