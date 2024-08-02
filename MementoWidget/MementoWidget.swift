@@ -119,10 +119,30 @@ struct MementoWidgetEntryView : View {
                                 .multilineTextAlignment(.leading)
                                 .foregroundStyle(Color.primary)
                                 .lineLimit(2)
+                        } else {
+                            Text(item.note ?? "")
+                                .padding()
                         }
                     }
                     VStack(alignment: .leading) {
-                        if let note = item.note, note.count >= 30 {
+                        if item.note != nil, item.link == nil {
+                            Button(
+                                intent: ItemViewedIntent(item: item),
+                                label: {
+                                    Label(
+                                        "Viewed",
+                                        systemImage: "book"
+                                    ).frame(maxWidth: .infinity)
+                            })
+                            Button(
+                                intent: DeleteItemIntent(item: item),
+                                label: {
+                                    Label(
+                                        "Delete",
+                                        systemImage: "trash"
+                                    ).frame(maxWidth: .infinity)
+                            })
+                        } else if let note = item.note, note.count >= 30 {
                             Text(note)
                             HStack {
                                 Button(
