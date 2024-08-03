@@ -19,25 +19,24 @@ class Item: Identifiable {
     var metadata: CodableLinkMetadata?
     var note: String?
     
-    init?(link: String, note: String? = nil) async {
-        var fulllink = link
-        
-        if link.hasPrefix("https://www.") || link.hasPrefix("http://www.") || link.hasPrefix("https://") || link.hasPrefix("http://") {
-            fulllink = link
-        } else if link.hasPrefix("www.") {
-            fulllink = "https://\(link)"
-        } else {
-            fulllink = "https://www.\(link)"
+    init?(link: String?, note: String? = nil) async {
+        var url: URL?
+        if var fulllink = link, let compareLink = link {
+            if compareLink.hasPrefix("https://www.") || compareLink.hasPrefix("http://www.") || compareLink.hasPrefix("https://") || compareLink.hasPrefix("http://") {
+                fulllink = compareLink
+            } else if compareLink.hasPrefix("www.") {
+                fulllink = "https://\(compareLink)"
+            } else {
+                fulllink = "https://www.\(compareLink)"
+            }
+            url = URL(string: fulllink)
         }
-        guard let url = URL(string: fulllink) else {
-            return nil
-        }
         
-        let metadata = await fetchMetadata(url: url)
-        
-        self.link = fulllink
+        self.link = url?.absoluteString
         self.url = url
-        self.metadata = CodableLinkMetadata(metadata: metadata)
+        if let fullurl = url {
+            self.metadata = CodableLinkMetadata(metadata: await fetchMetadata(url: fullurl))
+        }
         if let newnote = note, !newnote.isEmpty {
             self.note = newnote
         } else {
