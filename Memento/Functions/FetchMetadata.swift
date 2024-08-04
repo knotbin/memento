@@ -10,8 +10,9 @@ import LinkPresentation
 
 public func fetchMetadata(url: URL) async -> LPLinkMetadata {
     let provider = LPMetadataProvider()
-    
-    return await withCheckedContinuation { continuation in
+    let timeout: UInt64 = 15 * 1_000_000_000 // 15 seconds in nanoseconds
+
+    return await withCheckedContinuation { (continuation: CheckedContinuation<LPLinkMetadata, Never>) in
         provider.startFetchingMetadata(for: url) { (metadata, error) in
             if let metadata = metadata {
                 continuation.resume(returning: metadata)
@@ -21,6 +22,11 @@ public func fetchMetadata(url: URL) async -> LPLinkMetadata {
             } else {
                 continuation.resume(returning: LPLinkMetadata()) // Return an empty metadata object if metadata is nil
             }
+        }
+        
+        Task {
+            try? await Task.sleep(nanoseconds: timeout)
+            continuation.resume(returning: LPLinkMetadata()) // Return an empty metadata object if timeout occurs
         }
     }
 }
