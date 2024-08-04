@@ -14,7 +14,9 @@ class ListViewModel {
     
     func filterItems(_ items: [Item]) -> [Item] {
         guard !searchText.isEmpty else {
-            return items
+            return items.sorted { (lhs, rhs) in
+                return lhs.timestamp > rhs.timestamp
+            }
         }
         let filteredItems = items.filter {
             if
