@@ -720,7 +720,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.4.1;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MementoShare/Info.plist;
@@ -733,7 +733,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.4.1;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
@@ -759,7 +759,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoShare/MementoShare.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.4.1;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MementoShare/Info.plist;
@@ -772,7 +772,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.4.1;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = xyz.knotbin.memento.app.share;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = xyz.knotbin.memento.app.share;
@@ -797,7 +797,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.4.1;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -817,7 +817,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.1;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -837,7 +837,7 @@
 				CODE_SIGN_ENTITLEMENTS = MementoWidget/MementoWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.4.1;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -857,7 +857,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.4.1;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -903,7 +903,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -924,14 +924,15 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SHARED_VERSION = 0.4.2;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -969,7 +970,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.2.0;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -984,13 +985,14 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SHARED_VERSION = 0.4.2;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1002,7 +1004,7 @@
 				CODE_SIGN_ENTITLEMENTS = Memento/Other/Memento.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.4.1;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_PREVIEWS = YES;
@@ -1021,7 +1023,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.1;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1045,7 +1047,7 @@
 				CODE_SIGN_ENTITLEMENTS = Memento/Other/Memento.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.4.1;
+				CURRENT_PROJECT_VERSION = "$(SHARED_VERSION)";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = V2WCUWDL7B;
 				ENABLE_PREVIEWS = YES;
@@ -1064,7 +1066,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.1;
+				MARKETING_VERSION = "$(SHARED_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.knotbin.memento.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
