@@ -13,8 +13,8 @@ struct ListView: View {
     @Binding var selectedItem: Item?
     
     @Environment(\.openURL) var openURL
-    @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool?
-    @AppStorage("linkOpenViewed") var linkOpenViewed: Bool?
+    @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool = true
+    @AppStorage("linkOpenViewed") var linkOpenViewed: Bool = true
     
     @Environment(\.modelContext) var modelContext
     @Query(animation: .smooth) private var items: [Item]
@@ -42,6 +42,7 @@ struct ListView: View {
             }
         }
         .onOpenURL(perform: { url in
+            print(widgetDirectToLink)
             if url.absoluteString.hasPrefix("http") {
                 guard let matches = try? items.filter(#Predicate { $0.url == url }) else {
                     return

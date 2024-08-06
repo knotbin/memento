@@ -14,8 +14,8 @@ struct DetailView: View {
     
     @Environment(\.openURL) var openURL
     
-    @AppStorage("linkOpenViewed") var linkOpenViewed: Bool?
-    @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: String?
+    @AppStorage("linkOpenViewed") var linkOpenViewed: Bool = true
+    @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: String = "onlyNotes"
     
     var item: Item
     
@@ -55,6 +55,7 @@ struct DetailView: View {
                                             .lineLimit(2)
                                     }
                                     .multilineTextAlignment(.leading)
+                                    Spacer()
                                 }
                             }
                         }
