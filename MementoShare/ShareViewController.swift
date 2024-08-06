@@ -17,8 +17,7 @@ class ShareViewController: UIViewController {
             return
         }
         guard
-            let extensionItem = extensionContext?.inputItems.first as? NSExtensionItem,
-            let itemProvider = extensionItem.attachments?.first else {
+            let extensionItem = extensionContext?.inputItems.first as? NSExtensionItem else {
             close()
             return
         }
@@ -45,7 +44,7 @@ class ShareViewController: UIViewController {
         }
         if input.hasItemConformingToTypeIdentifier(textDataType) {
             input.loadItem(forTypeIdentifier: textDataType, options: nil) { (providedText, error) in
-                if let error {
+                if error != nil {
                     self.close()
                     return
                 }
