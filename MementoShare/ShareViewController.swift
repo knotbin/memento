@@ -16,11 +16,6 @@ class ShareViewController: UIViewController {
             extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
             return
         }
-        guard
-            let extensionItem = extensionContext?.inputItems.first as? NSExtensionItem else {
-            close()
-            return
-        }
         let textDataType = UTType.plainText.identifier
         let urlDataType = UTType.url.identifier
         if input.hasItemConformingToTypeIdentifier(urlDataType) {
