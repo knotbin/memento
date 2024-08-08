@@ -12,6 +12,7 @@ import SwiftUI
 class ContentViewModel {
     var selectedItem: Item? = nil
     var sheetShown = false
+    var addingItem = false
     var infoShown = false
     var searchText = ""
     

@@ -23,6 +23,7 @@ struct ContentView: View {
                 VStack {
                     Spacer()
                     Button {
+                        viewModel.addingItem.toggle()
                         viewModel.sheetShown = true
                     } label: {
                         Image(systemName: "square.and.pencil")
@@ -31,7 +32,7 @@ struct ContentView: View {
                             .padding(.bottom, 15)
                             .padding(.horizontal, 15)
                     }
-                    .sensoryFeedback(.start, trigger: viewModel.sheetShown)
+                    .sensoryFeedback(.start, trigger: viewModel.addingItem)
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.circle)
                     .shadow(radius: 10)
@@ -47,6 +48,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Info", systemImage: "info.circle", action: {viewModel.infoShown = true})
+                        .sensoryFeedback(.selection, trigger: viewModel.infoShown)
                 }
             }
 #endif

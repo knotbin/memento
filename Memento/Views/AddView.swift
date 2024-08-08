@@ -16,7 +16,10 @@ struct AddView: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var viewModel = AddViewModel()
+    @State var saving: Bool = false
+    @State var exiting: Bool = false
     @Binding var shown: Bool
+    
     
     @FocusState var focus: FocusableField?
     
@@ -43,11 +46,14 @@ struct AddView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
+                        exiting = true
                         shown = false
                     }
+                    .sensoryFeedback(.stop, trigger: exiting)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
+                        saving = true
                         Task {
                             if viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
                                 await addLink(link: viewModel.linkText)
@@ -60,7 +66,7 @@ struct AddView: View {
                         }
                         shown = false
                     }
-                    .sensoryFeedback(.success, trigger: shown)
+                    .sensoryFeedback(.success, trigger: saving)
                     .disabled(viewModel.linkText.isEmpty && viewModel.noteText.isEmpty)
                     .keyboardShortcut(.defaultAction)
                     

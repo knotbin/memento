@@ -11,6 +11,7 @@ import SwiftUI
 @Observable
 class ListViewModel {
     var searchText = ""
+    var selectingItem = false
     
     func filterItems(_ items: [Item]) -> [Item] {
         guard !searchText.isEmpty else {
