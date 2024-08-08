@@ -12,15 +12,15 @@ import UniformTypeIdentifiers
 struct ShareView: View {
     @Environment(\.modelContext) private var modelContext
     
-    @State var notetext: String = ""
-    @State var linkText = ""
-    @State var alertPresented = false
-    @FocusState var focus
+    @State private var notetext: String = ""
+    @State private var linkText = ""
+    @State private var alertPresented = false
+    @FocusState private var focus
     
-    let note: String?
-    let extensionContext: NSExtensionContext?
-    let url: URL?
-    let linkprovider = LPMetadataProvider()
+    private let note: String?
+    private let extensionContext: NSExtensionContext?
+    private let url: URL?
+    private let linkprovider = LPMetadataProvider()
     
     var body: some View {
         NavigationStack {
@@ -40,34 +40,17 @@ struct ShareView: View {
                 }
             }
             .onSubmit {
-                Task {
-                    if let item = await Item(link: (url?.absoluteString ?? nil), note: notetext) {
-                        modelContext.insert(item)
-                    } else {
-                        alertPresented = true
-                    }
-                    UpdateAll()
-                    self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                }
+                saveItem()
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
-                        self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                        extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        Task {
-                            if let item = await Item(link: url?.absoluteString, note: notetext) {
-                                modelContext.insert(item)
-                                try modelContext.save()
-                                UpdateAll()
-                                self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                            } else {
-                                alertPresented = true
-                            }
-                        }
+                        saveItem()
                     }
                 }
             }
@@ -80,13 +63,27 @@ struct ShareView: View {
             }
         }
         .alert(isPresented: $alertPresented) {
-            Alert(title: Text("An error occured"))
+            Alert(title: Text("An error occurred"))
         }
     }
+    
     init(extensionContext: NSExtensionContext?, url: URL? = nil, note: String? = nil) {
         self.extensionContext = extensionContext
         self.url = url
         self.note = note ?? ""
+    }
+    
+    private func saveItem() {
+        Task {
+            if let item = await Item(link: url?.absoluteString, note: notetext) {
+                modelContext.insert(item)
+                try? modelContext.save()
+                UpdateAll()
+                extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+            } else {
+                alertPresented = true
+            }
+        }
     }
 }
 
