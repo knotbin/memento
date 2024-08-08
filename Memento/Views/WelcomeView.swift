@@ -31,7 +31,6 @@ struct WelcomeView: View {
                     .foregroundStyle(.white)
                 Text("Memento is your personal inbox, helping you remember the things you save.")
                     .foregroundStyle(.white)
-                    .multilineTextAlignment(.center)
                     .padding(.bottom)
                 Button {
                     withAnimation {
@@ -60,7 +59,6 @@ struct WelcomeView: View {
                     .foregroundStyle(.white)
                 Text("Save links to Memento quickly using the share sheet and save notes easily using Siri or the action button.")
                     .foregroundStyle(.white)
-                    .multilineTextAlignment(.center)
                     .padding(.bottom)
                 Button {
                     withAnimation {
@@ -89,7 +87,6 @@ struct WelcomeView: View {
                     .foregroundStyle(.white)
                 Text("Add the Memento widget to your home screen or lock screen so it can remind you of these ideas.")
                     .foregroundStyle(.white)
-                    .multilineTextAlignment(.center)
                     .padding(.bottom)
                 Button {
                     withAnimation {
@@ -118,7 +115,6 @@ struct WelcomeView: View {
                     .foregroundStyle(.white)
                 Text("The widget will show you a different random unviewed item each hour to remind you of them in an unintrusive way.")
                     .foregroundStyle(.white)
-                    .multilineTextAlignment(.center)
                     .padding(.bottom)
                 Button {
                     withAnimation {
@@ -136,6 +132,7 @@ struct WelcomeView: View {
         .tabViewStyle(.page)
         .ignoresSafeArea(.all)
         .background(Gradient(colors: [Color.init(red: 0, green: 0.72, blue: 1), Color.init(red: 0.02, green: 0.53, blue: 0.74)]))
+        .multilineTextAlignment(.center)
     }
 }
 
