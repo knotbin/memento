@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5908054B2C759C4300489532 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908054A2C759C4300489532 /* EditView.swift */; };
 		592F04092C3C7A0A00C1CA84 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F04082C3C7A0A00C1CA84 /* DetailView.swift */; };
 		593B7AE92C461FCB003FEE42 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 593B7AE82C461FCB003FEE42 /* PrivacyInfo.xcprivacy */; };
 		593B7AEA2C461FCB003FEE42 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 593B7AE82C461FCB003FEE42 /* PrivacyInfo.xcprivacy */; };
@@ -129,6 +130,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5908054A2C759C4300489532 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		592F04082C3C7A0A00C1CA84 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		593B7AE82C461FCB003FEE42 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		593E1C822C45CC7D00D8C0AC /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				59CEA23B2C2F6AE1009079E8 /* ContentView.swift */,
 				599593702C4893B000E014DD /* ListView.swift */,
 				59899A3A2C015B8400470E42 /* AddView.swift */,
+				5908054A2C759C4300489532 /* EditView.swift */,
 				5978256D2C23926400BC86FF /* ItemView.swift */,
 				592F04082C3C7A0A00C1CA84 /* DetailView.swift */,
 				593E1C822C45CC7D00D8C0AC /* InfoView.swift */,
@@ -646,6 +649,7 @@
 				599593712C4893B000E014DD /* ListView.swift in Sources */,
 				59FD4FE12C416FB800D5C18C /* SaveNoteIntent.swift in Sources */,
 				593E1C832C45CC7D00D8C0AC /* InfoView.swift in Sources */,
+				5908054B2C759C4300489532 /* EditView.swift in Sources */,
 				598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */,
 				59CEA23C2C2F6AE1009079E8 /* ContentView.swift in Sources */,
 				59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */,
@@ -929,7 +933,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SHARED_VERSION = 0.5.1;
+				SHARED_VERSION = 1.0.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -989,7 +993,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SHARED_VERSION = 0.5.1;
+				SHARED_VERSION = 1.0.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

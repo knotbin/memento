@@ -17,6 +17,8 @@ struct ItemView: View {
     var item: Item
     @Binding var selectedItem: Item?
     
+    @State var editShown: Bool = false
+    
     var isSelected: Bool {
         if selectedItem == item {
             return true
@@ -88,7 +90,11 @@ struct ItemView: View {
                             Label("Share", systemImage: "square.and.arrow.up")
                         }
                     }
-                    
+                    Button("Edit", systemImage: "pencil") {
+                        withAnimation {
+                            editShown = true
+                        }
+                    }
                     Button("Delete", systemImage: "trash", role: .destructive) {
                         withAnimation {
                             selectedItem = nil
@@ -130,7 +136,16 @@ struct ItemView: View {
                     UpdateAll()
                 }
             }
+            Button("Edit", systemImage: "pencil") {
+                withAnimation {
+                    editShown = true
+                }
+            }
+            .tint(.orange)
         }
+        .sheet(isPresented: $editShown, content: {
+            EditView(shown: $editShown, item: item)
+        })
     }
 }
 

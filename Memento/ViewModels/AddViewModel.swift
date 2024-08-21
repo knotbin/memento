@@ -12,6 +12,8 @@ import SwiftUI
 class AddViewModel {
     var linkText = ""
     var noteText = ""
+    var saving: Bool = false
+    var exiting: Bool = false
     
     init() {}
 }

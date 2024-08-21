@@ -18,6 +18,7 @@ struct DetailView: View {
     @AppStorage("autoViewedOnOpen") var autoViewedOnOpen: String = "onlyNotes"
     
     var item: Item
+    @State var editShown: Bool = false
     
     @Binding var selectedItem: Item?
     var body: some View {
@@ -80,6 +81,12 @@ struct DetailView: View {
                         }
                         .buttonStyle(.bordered)
                         
+                        Button("Edit", systemImage: "pencil") {
+                            withAnimation {
+                                editShown = true
+                            }
+                        }
+                        
                         if let url = item.url {
                             ShareLink(item: url) {
                                 Label("Share", systemImage: "square.and.arrow.up")
@@ -104,7 +111,9 @@ struct DetailView: View {
             }
             .navigationTitle(item.metadata?.title ?? item.note ?? "Item")
             .navigationBarTitleDisplayMode(.inline)
-            
+            .sheet(isPresented: $editShown, content: {
+                EditView(shown: $editShown, item: item)
+            })
             .onAppear {
                 markViewedOnOpen()
             }
