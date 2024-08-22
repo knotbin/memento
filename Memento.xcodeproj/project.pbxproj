@@ -48,6 +48,7 @@
 		599472702C556C7800BBDBE2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994726F2C556C7800BBDBE2 /* WelcomeView.swift */; };
 		599593712C4893B000E014DD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599593702C4893B000E014DD /* ListView.swift */; };
 		599593742C49DE8E00E014DD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599593732C49DE8E00E014DD /* Launch Screen.storyboard */; };
+		59A83C9B2C77EA20006E432A /* SmallShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A83C9A2C77EA20006E432A /* SmallShareView.swift */; };
 		59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */; };
 		59BD681E2C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
 		59BD681F2C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
@@ -161,6 +162,7 @@
 		599593732C49DE8E00E014DD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		59A076762C161ECC0050D90F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		59A076782C161ECC0050D90F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		59A83C9A2C77EA20006E432A /* SmallShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallShareView.swift; sourceTree = "<group>"; };
 		59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkIntent.swift; sourceTree = "<group>"; };
 		59BD681D2C34CFEE00141362 /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
 		59BDF9652C46DC8800961C86 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				59632F292C312CAA008E09A4 /* MementoShare.entitlements */,
 				597A7F572C31282E00891DCA /* ShareViewController.swift */,
 				597A7F5A2C31286600891DCA /* ShareView.swift */,
+				59A83C9A2C77EA20006E432A /* SmallShareView.swift */,
 				597A7F492C31274B00891DCA /* MainInterface.storyboard */,
 				597A7F4C2C31274B00891DCA /* Info.plist */,
 			);
@@ -599,6 +602,7 @@
 				597A7F5B2C31286600891DCA /* ShareView.swift in Sources */,
 				597A7F5C2C31289200891DCA /* FetchMetadata.swift in Sources */,
 				597A7F592C31284D00891DCA /* ConfigureModelContainer.swift in Sources */,
+				59A83C9B2C77EA20006E432A /* SmallShareView.swift in Sources */,
 				597A7F642C3128B100891DCA /* ItemEntity.swift in Sources */,
 				597A7F652C3128B300891DCA /* ItemEntityQuery.swift in Sources */,
 				597A7F872C3129B100891DCA /* Filters.swift in Sources */,
@@ -933,7 +937,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SHARED_VERSION = 1.0.0;
+				SHARED_VERSION = 1.1.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -993,7 +997,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SHARED_VERSION = 1.0.0;
+				SHARED_VERSION = 1.1.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

@@ -1,9 +1,3 @@
-//  ShareView.swift
-//  ShareSheet
-//
-//  Created by Roscoe Rubin-Rottenberg on 5/28/24.
-//
-
 import SwiftUI
 import SwiftData
 import LinkPresentation
@@ -16,6 +10,8 @@ struct ShareView: View {
     @State private var linkText = ""
     @State private var alertPresented = false
     @FocusState private var focus
+    
+    @State private var loading: Bool = false
     
     private let note: String?
     private let extensionContext: NSExtensionContext?
@@ -52,18 +48,22 @@ struct ShareView: View {
                     Button("Save") {
                         saveItem()
                     }
+                    .disabled(loading)
+                }
+                ToolbarItem(placement: .principal) {
+                    if loading {
+                        ProgressView()
+                    }
                 }
             }
-            .navigationTitle("New Item")
-            .toolbarTitleDisplayMode(.inline)
             .onAppear {
                 if let note = note {
                     notetext = note
                 }
             }
-        }
-        .alert(isPresented: $alertPresented) {
-            Alert(title: Text("An error occurred"))
+            .alert(isPresented: $alertPresented) {
+                Alert(title: Text("An error occurred"))
+            }
         }
     }
     
@@ -75,7 +75,8 @@ struct ShareView: View {
     
     private func saveItem() {
         Task {
-            if let item = await Item(link: url?.absoluteString, note: notetext) {
+            loading = true
+            if let item = await Item(link: url?.absoluteString ?? linkText, note: notetext) {
                 modelContext.insert(item)
                 try? modelContext.save()
                 UpdateAll()
@@ -83,6 +84,7 @@ struct ShareView: View {
             } else {
                 alertPresented = true
             }
+            loading = false
         }
     }
 }
