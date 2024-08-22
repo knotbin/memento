@@ -17,26 +17,21 @@ struct ContentView: View {
     
     var body: some View {
         NavigationSplitView {
-            ZStack {
+            ZStack(alignment: .bottomTrailing) {
                 ListView(selectedItem: $viewModel.selectedItem)
                     .modelContext(modelContext)
-                VStack {
-                    Spacer()
-                    Button {
-                        viewModel.addingItem.toggle()
-                        viewModel.sheetShown = true
-                    } label: {
-                        Image(systemName: "square.and.pencil")
-                            .imageScale(.large)
-                            .padding(.top, 11)
-                            .padding(.bottom, 15)
-                            .padding(.horizontal, 15)
-                    }
-                    .sensoryFeedback(.start, trigger: viewModel.addingItem)
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.circle)
-                    .shadow(radius: 10)
+                Button {
+                    viewModel.addingItem.toggle()
+                    viewModel.sheetShown = true
+                } label: {
+                    Image(systemName: "pencil")
+                        .font(.title.weight(.semibold))
+                        .padding()
+                        .background(Color.accentColor)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
                 }
+                .padding()
             }
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddView(shown: $viewModel.sheetShown)

@@ -16,7 +16,7 @@ struct AddView: View {
     @Environment(\.modelContext) private var modelContext
     
     @State var viewModel = AddViewModel()
-    @State var saving: Bool = false
+    @State var loading: Bool = false
     @State var exiting: Bool = false
     @Binding var shown: Bool
     
@@ -53,23 +53,20 @@ struct AddView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        saving = true
                         Task {
-                            if viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
-                                await addLink(link: viewModel.linkText)
-                            } else if !viewModel.noteText.isEmpty && viewModel.linkText.isEmpty {
-                                modelContext.insert(Item(viewModel.noteText))
-                            } else if !viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
-                                await addLink(link: viewModel.linkText, note: viewModel.noteText)
-                            }
-                            UpdateAll()
+                            await addLink()
                         }
-                        shown = false
                     }
-                    .sensoryFeedback(.success, trigger: saving)
+                    .sensoryFeedback(.success, trigger: loading)
                     .disabled(viewModel.linkText.isEmpty && viewModel.noteText.isEmpty)
+                    .disabled(loading)
                     .keyboardShortcut(.defaultAction)
                     
+                }
+                ToolbarItem(placement: .principal) {
+                    if loading {
+                        ProgressView()
+                    }
                 }
                 
             }
@@ -79,11 +76,20 @@ struct AddView: View {
         }
     }
     
-    func addLink(link: String, note: String? = nil) async {
-        guard let item = await Item(link: link, note: note) else {
-            return
+    func addLink() async {
+        loading = true
+        if viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
+            guard let item = await Item(link: viewModel.linkText) else {return}
+            modelContext.insert(item)
+        } else if !viewModel.noteText.isEmpty && viewModel.linkText.isEmpty {
+            let item = Item(viewModel.noteText)
+            modelContext.insert(item)
+        } else if !viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
+            guard let item = await Item(link: viewModel.linkText, note: viewModel.noteText) else {return}
+            modelContext.insert(item)
         }
-        modelContext.insert(item)
+        UpdateAll()
+        shown = false
     }
     
     private func focusFirstField() {
@@ -96,15 +102,7 @@ struct AddView: View {
             focus = .note
         case .note:
             Task {
-                if viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
-                    await addLink(link: viewModel.linkText)
-                } else if !viewModel.noteText.isEmpty && viewModel.linkText.isEmpty {
-                    modelContext.insert(Item(viewModel.noteText))
-                } else if !viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
-                    await addLink(link: viewModel.linkText, note: viewModel.noteText)
-                }
-                UpdateAll()
-                shown = false
+                await addLink()
             }
         case nil:
             break
