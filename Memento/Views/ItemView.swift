@@ -105,6 +105,19 @@ struct ItemView: View {
             })
         )
         .swipeActions(edge: .leading) {
+            if let url = item.url {
+                Button(
+                    "Open",
+                    systemImage: "arrow.uturn.right",
+                    action: {
+                        withAnimation {
+                            item.viewed = true
+                            UpdateAll()
+                        }
+                        openURL(url)
+                    }
+                ).tint(.accentColor)
+            }
             Button(
                 { item.viewed ? "Unmark Viewed" : "Mark Viewed" }(),
                 systemImage: "book",
@@ -115,18 +128,6 @@ struct ItemView: View {
                     UpdateAll()
                 }
             ).tint(.indigo)
-            
-            if let url = item.url {
-                ShareLink(item: url) {
-                    Label("Share", systemImage: "square.and.arrow.up")
-                }
-                .tint(.blue)
-            } else if let note = item.note, !note.isEmpty {
-                ShareLink(item: note) {
-                    Label("Share", systemImage: "square.and.arrow.up")
-                }
-                .tint(.blue)
-            }
         }
         .swipeActions(edge: .trailing) {
             Button("Delete", systemImage: "trash", role: .destructive) {
