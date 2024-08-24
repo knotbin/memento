@@ -11,9 +11,13 @@ import CoreHaptics
 
 struct ContentView: View {
     @AppStorage("welcomeOpen") var welcomeOpen = true
+    @AppStorage("reviewRequested") var reviewRequested: Bool = false
     @State var viewModel = ContentViewModel()
     
     @Environment(\.modelContext) var modelContext
+    @Environment(\.requestReview) var requestReview
+    
+    @Query var items: [Item]
     
     var body: some View {
         NavigationSplitView {
@@ -32,6 +36,13 @@ struct ContentView: View {
                         .clipShape(Circle())
                 }
                 .padding()
+            }
+            .task {
+                if items.count >= 4 && !reviewRequested {
+                    try? await Task.sleep(for: .seconds(5))
+                    requestReview()
+                    reviewRequested = true
+                }
             }
             .sheet(isPresented: $viewModel.sheetShown, content: {
                 AddView(shown: $viewModel.sheetShown)

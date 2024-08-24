@@ -21,8 +21,6 @@ struct SmallShareView: View {
     var body: some View {
         ZStack(alignment: .center) {
             Color(.systemBackground)
-                .cornerRadius(16) // Rounded corners
-                .shadow(radius: 5) // Optional: Adding a shadow for better UI
         
             VStack(alignment: .center) {
                 Image(systemName: "checkmark.seal.fill")

@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct InfoView: View {
+    @Environment(\.requestReview) var requestReview
+    @AppStorage("reviewRequested") var reviewRequested: Bool?
     @Binding var isShown: Bool
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
@@ -20,10 +23,15 @@ struct InfoView: View {
                         .foregroundStyle(.secondary)
                 }
                 Link( destination: URL(string: UIApplication.openSettingsURLString)!, label: {Label("Memento Settings", systemImage: "gear")})
-                
+                Button {
+                    reviewRequested = true
+                    requestReview()
+                } label: {
+                    Label("Review Memento", systemImage: "star.leadinghalf.filled")
+                }
                 Section("Socials") {
                     Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Twitter", systemImage: "bubble")})
-                    Link(destination: URL(string: "https://www.x.com/_mementoapp")!, label: {Label("Memento on Github", systemImage: "applescript")})
+                    Link(destination: URL(string: "https://www.github.com/knotbin/memento")!, label: {Label("Memento on Github", systemImage: "applescript")})
                     Link(destination: URL(string: "https://www.x.com/knotbin")!, label: {Label("Roscoe on Twitter", systemImage: "person.bubble")})
                 }
                 Section("Links") {

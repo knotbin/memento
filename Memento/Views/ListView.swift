@@ -13,10 +13,10 @@ struct ListView: View {
     @Binding var selectedItem: Item?
     
     @Environment(\.openURL) var openURL
+    @Environment(\.modelContext) var modelContext
+    
     @AppStorage("widgetDirectToLink") var widgetDirectToLink: Bool = true
     @AppStorage("linkOpenViewed") var linkOpenViewed: Bool = true
-    
-    @Environment(\.modelContext) var modelContext
     @Query(animation: .smooth) private var items: [Item]
     var filteredItems: [Item] {
         return viewModel.filterItems(items)
