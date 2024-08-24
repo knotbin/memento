@@ -39,7 +39,7 @@ struct SmallShareView: View {
             }
         }
         .task {
-            try? await Task.sleep(nanoseconds: UInt64(1 * Double(NSEC_PER_SEC)))
+            try? await Task.sleep(for: .seconds(0.7))
             saveItem()
         }
         .onTapGesture {
