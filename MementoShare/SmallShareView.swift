@@ -33,12 +33,8 @@ struct SmallShareView: View {
             .padding()
         }
         .frame(width: 200, height: 200)
-        .onAppear {
-            if let note = note {
-                notetext = note
-            }
-        }
         .task {
+            print("URL: \(url?.absoluteString ?? "none")")
             try? await Task.sleep(for: .seconds(0.7))
             saveItem()
         }
@@ -54,7 +50,7 @@ struct SmallShareView: View {
             if cancelTask {
                 return
             }
-            if let item = await Item(link: url?.absoluteString ?? linkText, note: notetext) {
+            if let item = await Item(link: url?.absoluteString, note: note) {
                 if cancelTask {
                     return
                 }
