@@ -51,6 +51,8 @@
 		599593742C49DE8E00E014DD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599593732C49DE8E00E014DD /* Launch Screen.storyboard */; };
 		59A83C9B2C77EA20006E432A /* SmallShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A83C9A2C77EA20006E432A /* SmallShareView.swift */; };
 		59AA75902C1E5B7800313B7F /* SaveLinkIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */; };
+		59B389D72C7D0462006BB901 /* ReloadWidgetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B389D62C7D0462006BB901 /* ReloadWidgetIntent.swift */; };
+		59B389D82C7D048C006BB901 /* ReloadWidgetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B389D62C7D0462006BB901 /* ReloadWidgetIntent.swift */; };
 		59BD681E2C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
 		59BD681F2C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
 		59BD68202C34CFEE00141362 /* UpdateAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD681D2C34CFEE00141362 /* UpdateAll.swift */; };
@@ -166,6 +168,7 @@
 		59A076782C161ECC0050D90F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		59A83C9A2C77EA20006E432A /* SmallShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallShareView.swift; sourceTree = "<group>"; };
 		59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkIntent.swift; sourceTree = "<group>"; };
+		59B389D62C7D0462006BB901 /* ReloadWidgetIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadWidgetIntent.swift; sourceTree = "<group>"; };
 		59BD681D2C34CFEE00141362 /* UpdateAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAll.swift; sourceTree = "<group>"; };
 		59BDF9652C46DC8800961C86 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		59BE70002C20C9CC00F17829 /* DeleteItemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemIntent.swift; sourceTree = "<group>"; };
@@ -373,6 +376,7 @@
 				59FD4FE02C416FB800D5C18C /* SaveNoteIntent.swift */,
 				59AA758F2C1E5B7800313B7F /* SaveLinkIntent.swift */,
 				59C5069C2C291C390022B553 /* PasteLinkIntent.swift */,
+				59B389D62C7D0462006BB901 /* ReloadWidgetIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -631,6 +635,7 @@
 				597A7F702C31292E00891DCA /* MementoWidgetBundle.swift in Sources */,
 				597A7F862C3129B000891DCA /* Filters.swift in Sources */,
 				59BD681F2C34CFEE00141362 /* UpdateAll.swift in Sources */,
+				59B389D82C7D048C006BB901 /* ReloadWidgetIntent.swift in Sources */,
 				597A7F722C31292E00891DCA /* MementoWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +657,7 @@
 				59E7BE462C1B77F00091BFEF /* ItemViewedIntent.swift in Sources */,
 				5946444F2C13722800F47784 /* Filters.swift in Sources */,
 				5978256E2C23926400BC86FF /* ItemView.swift in Sources */,
+				59B389D72C7D0462006BB901 /* ReloadWidgetIntent.swift in Sources */,
 				59BD681E2C34CFEE00141362 /* UpdateAll.swift in Sources */,
 				59BFB2332BFCFAE5008B6EA8 /* MementoApp.swift in Sources */,
 				599593712C4893B000E014DD /* ListView.swift in Sources */,

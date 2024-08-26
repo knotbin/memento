@@ -32,7 +32,9 @@ class Item: Identifiable {
             url = URL(string: fulllink)
         }
         
-        self.link = url?.absoluteString
+        if url?.absoluteString.isEmpty == false {
+            self.link = url?.absoluteString
+        }
         self.url = url
         if let fullurl = url {
             self.metadata = CodableLinkMetadata(metadata: await fetchMetadata(url: fullurl))

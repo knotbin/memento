@@ -46,12 +46,13 @@ struct MementoWidgetEntryView : View {
     @Query(
         FetchDescriptor<Item>(predicate: #Predicate {$0.viewed == false}),
         animation: .snappy
-    ) var items: [Item]
+    ) var unviewedItems: [Item]
+    @Query(animation: .snappy) var viewedItems: [Item]
 
 
     
     var body: some View {
-        if let item = items.randomElement() {
+        if let item = getItem() {
             let widgetURL = URL(string: "memento://item/\(item.id)")
             switch family {
             case .accessoryInline:
@@ -78,109 +79,242 @@ struct MementoWidgetEntryView : View {
                 .widgetURL(widgetURL)
             case .systemSmall:
                 VStack(alignment: .leading) {
-                    HStack(alignment: .top) {
-                        if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                            Image(uiImage: image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(10)
-                                .shadow(radius: 2)
-                        }
-                        if item.link != nil {
-                            Text(item.metadata?.title ?? item.link ?? "")
-                        }
+                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                     }
-                    Text(item.note ?? "")
-                        .font(.subheadline)
-                    HStack {
-                        Button(intent: ItemViewedIntent(item: item), label: {
-                            Image(systemName: "book")
-                        })
-                            .clipShape(Circle())
-                        Button(intent: DeleteItemIntent(item: item), label: {Image(systemName: "trash")})
-                            .clipShape(Circle())
+                    if item.link != nil {
+                        Text(item.metadata?.title ?? item.link ?? "")
+                            .font(.subheadline)
+                            .bold()
                     }
-                }
-                .transition(.push(from: .bottom))
-                .widgetURL(widgetURL)
-            case .systemMedium:
-                HStack {
-                    VStack(alignment: .leading) {
-                        if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                            Image(uiImage: image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(10)
-                                .shadow(radius: 2)
+                    if let note = item.note {
+                        if item.link == nil || item.link?.isEmpty == true {
+                            Spacer()
                         }
-                        if item.link != nil {
-                            Text(item.metadata?.title ?? item.link ?? "")
-                                .bold()
-                                .multilineTextAlignment(.leading)
-                                .foregroundStyle(Color.primary)
-                                .lineLimit(2)
-                        } else {
-                            Text(item.note ?? "")
-                                .padding()
-                        }
-                    }
-                    VStack(alignment: .leading) {
-                        if item.note != nil, item.link == nil {
-                            Button(
-                                intent: ItemViewedIntent(item: item),
-                                label: {
-                                    Label(
-                                        "Viewed",
-                                        systemImage: "book"
-                                    ).frame(maxWidth: .infinity)
-                            })
-                            Button(
-                                intent: DeleteItemIntent(item: item),
-                                label: {
-                                    Label(
-                                        "Delete",
-                                        systemImage: "trash"
-                                    ).frame(maxWidth: .infinity)
-                            })
-                        } else if let note = item.note, note.count >= 30 {
+                        HStack(alignment: .bottom) {
                             Text(note)
-                            HStack {
+                                .font(.caption)
+                            if item.link != nil, item.link?.isEmpty == false {
+                                Spacer()
+                                if item.viewed == false {
+                                    Button(
+                                        intent: ItemViewedIntent(item: item),
+                                        label: {
+                                            Label(
+                                                "Viewed",
+                                                systemImage: "book"
+                                            )
+                                            .font(.caption)
+                                            .labelStyle(.iconOnly)
+                                    })
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(Color.accentColor)
+                                }
+                                Button(
+                                    intent: ReloadWidgetIntent(),
+                                    label: {
+                                        Label(
+                                            "Reload",
+                                            systemImage: "arrow.clockwise"
+                                        )
+                                        .font(.caption)
+                                        .labelStyle(.iconOnly)
+                                })
+                                .buttonStyle(.plain)
+                                .foregroundStyle(Color.accentColor)
+                            }
+                        }
+                    }
+                    if item.note == nil || item.link == nil || item.link?.isEmpty == true {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            if item.viewed == false {
                                 Button(
                                     intent: ItemViewedIntent(item: item),
                                     label: {
                                         Label(
                                             "Viewed",
                                             systemImage: "book"
-                                        ).labelStyle(.iconOnly)
+                                        )
+                                        .font(.caption)
+                                        .labelStyle(.iconOnly)
                                 })
-                                Button(
-                                    intent: DeleteItemIntent(item: item),
-                                    label: {
-                                        Label(
-                                            "Delete",
-                                            systemImage: "trash"
-                                        ).labelStyle(.iconOnly)
-                                })
+                                .buttonStyle(.plain)
+                                .foregroundStyle(Color.accentColor)
+                            }
+                            Button(
+                                intent: ReloadWidgetIntent(),
+                                label: {
+                                    Label(
+                                        "Reload",
+                                        systemImage: "arrow.clockwise"
+                                    )
+                                    .font(.caption)
+                                    .labelStyle(.iconOnly)
+                            })
+                            .buttonStyle(.plain)
+                            .foregroundStyle(Color.accentColor)
+                        }
+                    }
+                }
+                .transition(.push(from: .bottom))
+                .widgetURL(widgetURL)
+            case .systemMedium:
+                HStack {
+                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(3)
+                    }
+                    VStack {
+                        Spacer()
+                        if item.metadata?.siteImage != nil {
+                            VStack(alignment: .leading) {
+                                if item.link != nil, item.link?.isEmpty == false {
+                                    Text(item.metadata?.title ?? item.link ?? "")
+                                        .font(.headline)
+                                        .bold()
+                                        .multilineTextAlignment(.leading)
+                                }
+                                if item.note != nil, item.note?.isEmpty == false {
+                                    Text(item.note ?? "")
+                                        .multilineTextAlignment(.leading)
+                                }
                             }
                         } else {
-                            Text(item.note ?? "")
-                                .font(.subheadline)
+                            VStack(alignment: .center) {
+                                if item.link != nil, item.link?.isEmpty == false {
+                                    Text(item.metadata?.title ?? item.link ?? "")
+                                        .font(.headline)
+                                        .bold()
+                                        .multilineTextAlignment(.center)
+                                }
+                                if item.note != nil, item.note?.isEmpty == false {
+                                    Text(item.note ?? "")
+                                        .multilineTextAlignment(.center)
+                                }
+                            }
+                        }
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            if item.viewed == false {
+                                Button(
+                                    intent: ItemViewedIntent(item: item),
+                                    label: {
+                                        Label(
+                                            "Viewed",
+                                            systemImage: "book"
+                                        )
+                                        .font(.caption)
+                                        .labelStyle(.iconOnly)
+                                })
+                                .buttonStyle(.plain)
+                                .foregroundStyle(Color.accentColor)
+                            }
                             Button(
-                                intent: ItemViewedIntent(item: item),
+                                intent: ReloadWidgetIntent(),
                                 label: {
                                     Label(
-                                        "Viewed",
-                                        systemImage: "book"
-                                    ).frame(maxWidth: .infinity)
+                                        "Reload",
+                                        systemImage: "arrow.clockwise"
+                                    )
+                                    .font(.caption)
+                                    .labelStyle(.iconOnly)
                             })
+                            .buttonStyle(.plain)
+                            .foregroundStyle(Color.accentColor)
+                        }
+                    }
+                }
+                .transition(.push(from: .bottom))
+                .widgetURL(widgetURL)
+            case .systemLarge:
+                VStack(alignment: .leading) {
+                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                        Spacer()
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Spacer()
+                    }
+                    if item.link != nil {
+                        Text(item.metadata?.title ?? item.link ?? "")
+                            .font(.subheadline)
+                            .bold()
+                    }
+                    if let note = item.note {
+                        if item.link == nil || item.link?.isEmpty == true {
+                            Spacer()
+                        }
+                        HStack(alignment: .bottom) {
+                            Text(note)
+                                .font(.caption)
+                            if item.link != nil, item.link?.isEmpty == false {
+                                Spacer()
+                                if item.viewed == false {
+                                    Button(
+                                        intent: ItemViewedIntent(item: item),
+                                        label: {
+                                            Label(
+                                                "Viewed",
+                                                systemImage: "book"
+                                            )
+                                            .font(.caption)
+                                            .labelStyle(.iconOnly)
+                                    })
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(Color.accentColor)
+                                }
+                                Button(
+                                    intent: ReloadWidgetIntent(),
+                                    label: {
+                                        Label(
+                                            "Reload",
+                                            systemImage: "arrow.clockwise"
+                                        )
+                                        .font(.caption)
+                                        .labelStyle(.iconOnly)
+                                })
+                                .buttonStyle(.plain)
+                                .foregroundStyle(Color.accentColor)
+                            }
+                        }
+                    }
+                    if item.note == nil || item.link == nil || item.link?.isEmpty == true {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            if item.viewed == false {
+                                Button(
+                                    intent: ItemViewedIntent(item: item),
+                                    label: {
+                                        Label(
+                                            "Viewed",
+                                            systemImage: "book"
+                                        )
+                                        .font(.caption)
+                                        .labelStyle(.iconOnly)
+                                })
+                                .buttonStyle(.plain)
+                                .foregroundStyle(Color.accentColor)
+                            }
                             Button(
-                                intent: DeleteItemIntent(item: item),
+                                intent: ReloadWidgetIntent(),
                                 label: {
                                     Label(
-                                        "Delete",
-                                        systemImage: "trash"
-                                    ).frame(maxWidth: .infinity)
+                                        "Reload",
+                                        systemImage: "arrow.clockwise"
+                                    )
+                                    .font(.caption)
+                                    .labelStyle(.iconOnly)
                             })
+                            .buttonStyle(.plain)
+                            .foregroundStyle(Color.accentColor)
                         }
                     }
                 }
@@ -188,30 +322,85 @@ struct MementoWidgetEntryView : View {
                 .widgetURL(widgetURL)
             default:
                 VStack(alignment: .leading) {
-                    HStack(alignment: .top) {
-                        if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                            Image(uiImage: image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(10)
-                                .shadow(radius: 2)
+                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    if item.link != nil {
+                        Text(item.metadata?.title ?? item.link ?? "")
+                            .font(.subheadline)
+                            .bold()
+                    }
+                    if let note = item.note {
+                        if item.link == nil || item.link?.isEmpty == true {
+                            Spacer()
                         }
-                        if item.link != nil {
-                            Text(item.metadata?.title ?? item.link ?? "")
-                                .bold()
-                                .multilineTextAlignment(.leading)
-                                .foregroundStyle(Color.primary)
+                        HStack(alignment: .bottom) {
+                            Text(note)
+                                .font(.caption)
+                            if item.link != nil, item.link?.isEmpty == false {
+                                Spacer()
+                                if item.viewed == false {
+                                    Button(
+                                        intent: ItemViewedIntent(item: item),
+                                        label: {
+                                            Label(
+                                                "Viewed",
+                                                systemImage: "book"
+                                            )
+                                            .font(.caption)
+                                            .labelStyle(.iconOnly)
+                                    })
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(Color.accentColor)
+                                }
+                                Button(
+                                    intent: ReloadWidgetIntent(),
+                                    label: {
+                                        Label(
+                                            "Reload",
+                                            systemImage: "arrow.clockwise"
+                                        )
+                                        .font(.caption)
+                                        .labelStyle(.iconOnly)
+                                })
+                                .buttonStyle(.plain)
+                                .foregroundStyle(Color.accentColor)
+                            }
                         }
                     }
-                    Text(item.note ?? "")
-                        .font(.subheadline)
-                    HStack {
-                        Button(intent: ItemViewedIntent(item: item), label: {
-                            Image(systemName: "book")
-                        })
-                            .clipShape(Circle())
-                        Button(intent: DeleteItemIntent(item: item), label: {Image(systemName: "trash")})
-                            .clipShape(Circle())
+                    if item.note == nil || item.link == nil || item.link?.isEmpty == true {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            if item.viewed == false {
+                                Button(
+                                    intent: ItemViewedIntent(item: item),
+                                    label: {
+                                        Label(
+                                            "Viewed",
+                                            systemImage: "book"
+                                        )
+                                        .font(.caption)
+                                        .labelStyle(.iconOnly)
+                                })
+                                .buttonStyle(.plain)
+                                .foregroundStyle(Color.accentColor)
+                            }
+                            Button(
+                                intent: ReloadWidgetIntent(),
+                                label: {
+                                    Label(
+                                        "Reload",
+                                        systemImage: "arrow.clockwise"
+                                    )
+                                    .font(.caption)
+                                    .labelStyle(.iconOnly)
+                            })
+                            .buttonStyle(.plain)
+                            .foregroundStyle(Color.accentColor)
+                        }
                     }
                 }
                 .transition(.push(from: .bottom))
@@ -223,6 +412,14 @@ struct MementoWidgetEntryView : View {
                 .widgetURL(nil)
         }
         
+    }
+    
+    func getItem() -> Item? {
+        if let item = unviewedItems.randomElement() {
+            return item
+        } else {
+            return viewedItems.randomElement()
+        }
     }
 }
 
@@ -239,7 +436,7 @@ struct MementoWidget: Widget {
 #if os(watchOS)
         .supportedFamilies([.accessoryRectangular])
 #else
-        .supportedFamilies([.accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium])
+        .supportedFamilies([.accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium, .systemLarge])
 #endif
     }
 }
