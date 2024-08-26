@@ -21,7 +21,7 @@ class Item: Identifiable {
     
     init?(link: String?, note: String? = nil) async {
         var url: URL?
-        if var fulllink = link, let compareLink = link {
+        if var fulllink = link, !fulllink.isEmpty, let compareLink = link {
             if compareLink.hasPrefix("https://www.") || compareLink.hasPrefix("http://www.") || compareLink.hasPrefix("https://") || compareLink.hasPrefix("http://") {
                 fulllink = compareLink
             } else if compareLink.hasPrefix("www.") {

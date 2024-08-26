@@ -42,6 +42,7 @@
 		597A7F8A2C3129C000891DCA /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
 		59899A3B2C015B8400470E42 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3A2C015B8400470E42 /* AddView.swift */; };
 		59899A3E2C015D1D00470E42 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59899A3D2C015D1D00470E42 /* ListViewModel.swift */; };
+		598AB22D2C7BC50700EBF1BA /* TornRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598AB22C2C7BC50700EBF1BA /* TornRectangle.swift */; };
 		598F53B62C096A4A00362AB5 /* CodableLinkMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */; };
 		598F53BA2C096D2500362AB5 /* FetchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F53B92C096D2500362AB5 /* FetchMetadata.swift */; };
 		5992D2392C069E2700E643A2 /* ConfigureModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992D2382C069E2700E643A2 /* ConfigureModelContainer.swift */; };
@@ -152,6 +153,7 @@
 		597A7F762C31292F00891DCA /* MementoWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MementoWidget.entitlements; sourceTree = "<group>"; };
 		59899A3A2C015B8400470E42 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		59899A3D2C015D1D00470E42 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		598AB22C2C7BC50700EBF1BA /* TornRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TornRectangle.swift; sourceTree = "<group>"; };
 		598F53AD2C06AFBA00362AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		598F53AE2C06BE3000362AB5 /* Memento.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memento.entitlements; sourceTree = "<group>"; };
 		598F53B52C096A4A00362AB5 /* CodableLinkMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLinkMetadata.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		59FC6A442BFEE22300D72FF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				598AB22C2C7BC50700EBF1BA /* TornRectangle.swift */,
 				59CEA23B2C2F6AE1009079E8 /* ContentView.swift */,
 				599593702C4893B000E014DD /* ListView.swift */,
 				59899A3A2C015B8400470E42 /* AddView.swift */,
@@ -638,6 +641,7 @@
 			files = (
 				59E7BE4E2C1D16470091BFEF /* MementoShortcuts.swift in Sources */,
 				592F04092C3C7A0A00C1CA84 /* DetailView.swift in Sources */,
+				598AB22D2C7BC50700EBF1BA /* TornRectangle.swift in Sources */,
 				59BFB2372BFCFAE5008B6EA8 /* Item.swift in Sources */,
 				59DF06A62C0439BF00457E4B /* AddViewModel.swift in Sources */,
 				599472702C556C7800BBDBE2 /* WelcomeView.swift in Sources */,

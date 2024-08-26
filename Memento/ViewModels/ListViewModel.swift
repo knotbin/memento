@@ -10,6 +10,7 @@ import SwiftUI
 
 @Observable
 class ListViewModel {
+    var columns: [GridItem] = [GridItem(.adaptive(minimum: 200, maximum: 400)), GridItem(.adaptive(minimum: 200, maximum: 400))]
     var searchText = ""
     var selectingItem = false
     

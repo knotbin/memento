@@ -20,7 +20,7 @@ struct ContentView: View {
     @Query var items: [Item]
     
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             ZStack(alignment: .bottomTrailing) {
                 ListView(selectedItem: $viewModel.selectedItem)
                     .modelContext(modelContext)
@@ -57,19 +57,6 @@ struct ContentView: View {
                         .sensoryFeedback(.selection, trigger: viewModel.infoShown)
                 }
             }
-#endif
-        } detail: {
-            VStack {
-                if let selectedItem = viewModel.selectedItem {
-                    DetailView(item: selectedItem, selectedItem: $viewModel.selectedItem)
-                } else {
-                    Text("No Items selected")
-                }
-            }
-#if targetEnvironment(macCatalyst)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) {
-                Button("New Item", systemImage: "square.and.pencil", action: {viewModel.sheetShown = true})
-            } }
 #endif
         }
         .fullScreenCover(isPresented: $welcomeOpen, content: {WelcomeView(shown: $welcomeOpen)})

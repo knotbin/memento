@@ -23,13 +23,13 @@ struct ListView: View {
     }
     
     var body: some View {
-        List(filteredItems, selection: $selectedItem) { item in
-            NavigationLink(value: item) {
-                ItemView(item: item, selectedItem: $selectedItem)
-                    .modelContext(modelContext)
+        ScrollView {
+            LazyVGrid(columns: viewModel.columns) {
+                ForEach(filteredItems) { item in
+                    ItemView(item: item, selectedItem: $selectedItem)
+                }
             }
-            .isDetailLink(true)
-            .sensoryFeedback(.selection, trigger: selectedItem)
+            .padding()
         }
         .searchable(text: $viewModel.searchText, prompt: "Search Items")
         .overlay {

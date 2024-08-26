@@ -17,56 +17,76 @@ struct ItemView: View {
     var item: Item
     @Binding var selectedItem: Item?
     
-    @State var editShown: Bool = false
+    @State private var editShown: Bool = false
     
+    // Store the rotation and torn edges states
+    @State private var rotation: Int = Int.random(in: -3...3)
+
     var isSelected: Bool {
-        if selectedItem == item {
-            return true
-        }
-        return false
+        return selectedItem == item
     }
     
     var body: some View {
-        HStack {
-            if !item.viewed {
-                if horizontalSizeClass == .regular {
-                    Image(systemName: "circle.fill")
-                        .foregroundStyle(isSelected ? Color.white : Color.accentColor)
-                } else if horizontalSizeClass == .compact {
-                    Image(systemName: "circle.fill")
-                        .foregroundStyle(Color.accentColor)
-                }
-            }
-            Button {
-                item.viewed = true
-                if let url = item.url {
+        VStack {
+            if let url = item.url {
+                Button {
+                    item.viewed = true
                     openURL(url)
-                }
-            } label: {
-                HStack(alignment: .top) {
-                    if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
-                        Image(uiImage: image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(10)
-                            .frame(width: 70, height: 50)
-                            .shadow(radius: 2)
-                    }
+                } label: {
                     VStack(alignment: .leading) {
-                        if item.link != nil {
-                            Text(item.metadata?.title ?? item.link ?? "")
-                                .bold()
-                                .tint(Color.primary)
-                                .lineLimit(1)
+                        if let data = item.metadata?.siteImage, let image = UIImage(data: data) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
                         }
-                        Text(item.note ?? "")
-                            .multilineTextAlignment(.leading)
-                            .tint(.secondary)
-                            .lineLimit(2)
+                        VStack(alignment: .leading) {
+                            if item.link != nil {
+                                Text(item.metadata?.title ?? item.link ?? "")
+                                    .bold()
+                                    .tint(Color.primary)
+                                    .lineLimit(1)
+                            }
+                            Text(item.note ?? "")
+                                .multilineTextAlignment(.leading)
+                                .tint(.secondary)
+                                .lineLimit(2)
+                        }
                     }
+                    .padding(10)
+                }
+                .background(Color.init(.systemGray6))
+                .cornerRadius(0)
+                .shadow(radius: 5)
+            } else if let note = item.note {
+                let baseHeight: CGFloat = 60 // Base height for up to 15 characters
+                let extraHeightPerCharacter: CGFloat = 2 // Additional height per character after 15
+                let characterCount = note.count
+                let dynamicHeight = baseHeight + CGFloat(max(0, characterCount)) * extraHeightPerCharacter
+
+                if horizontalSizeClass == .compact {
+                    Text(note)
+                        .padding()
+                        .frame(width: 150, height: dynamicHeight)
+                        .background(
+                            TornRectangle(tornEdges: .vertical) // Use stored tornEdges state
+                                .fill(Color.init(.systemGray6))
+                                .frame(width: 150, height: dynamicHeight)
+                                .shadow(radius: 5)
+                        )
+                } else if horizontalSizeClass == .regular {
+                    Text(note)
+                        .padding()
+                        .frame(width: 250, height: dynamicHeight * 0.7)
+                        .background(
+                            TornRectangle(tornEdges: .vertical) // Use stored tornEdges state
+                                .fill(Color.init(.systemGray6))
+                                .frame(width: 250, height: dynamicHeight * 0.7)
+                                .shadow(radius: 5)
+                        )
                 }
             }
         }
+        .padding(10)
         .contextMenu(
             ContextMenu(
                 menuItems: {
@@ -96,14 +116,18 @@ struct ItemView: View {
                         }
                     }
                     Button("Delete", systemImage: "trash", role: .destructive) {
-                        withAnimation {
-                            selectedItem = nil
-                            modelContext.delete(item)
-                            UpdateAll()
+                        Task {
+                            try await Task.sleep(for: .seconds(1))
+                            withAnimation {
+                                selectedItem = nil
+                                modelContext.delete(item)
+                                UpdateAll()
+                            }
                         }
                     }
             })
         )
+        .rotationEffect(.degrees(Double(rotation)))
         .swipeActions(edge: .leading) {
             if let url = item.url {
                 Button(
@@ -149,4 +173,3 @@ struct ItemView: View {
         })
     }
 }
-

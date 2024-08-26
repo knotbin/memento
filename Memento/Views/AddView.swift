@@ -72,22 +72,14 @@ struct AddView: View {
             }
         }
         .onAppear {
-            focus = AddView.FocusableField.allCases.first
+            focus = AddView.FocusableField.note
         }
     }
     
     func addLink() async {
         loading = true
-        if viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
-            guard let item = await Item(link: viewModel.linkText) else {return}
-            modelContext.insert(item)
-        } else if !viewModel.noteText.isEmpty && viewModel.linkText.isEmpty {
-            let item = Item(viewModel.noteText)
-            modelContext.insert(item)
-        } else if !viewModel.noteText.isEmpty && !viewModel.linkText.isEmpty {
-            guard let item = await Item(link: viewModel.linkText, note: viewModel.noteText) else {return}
-            modelContext.insert(item)
-        }
+        guard let item = await Item(link: viewModel.linkText, note: viewModel.noteText) else {return}
+        modelContext.insert(item)
         UpdateAll()
         shown = false
     }
