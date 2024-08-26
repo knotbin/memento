@@ -58,7 +58,7 @@ struct ItemView: View {
                 .cornerRadius(0)
                 .shadow(radius: 5)
             } else if let note = item.note {
-                let baseHeight: CGFloat = 60 // Base height for up to 15 characters
+                let baseHeight: CGFloat = 75 // Base height for up to 15 characters
                 let extraHeightPerCharacter: CGFloat = 2 // Additional height per character after 15
                 let characterCount = note.count
                 let dynamicHeight = baseHeight + CGFloat(max(0, characterCount)) * extraHeightPerCharacter
