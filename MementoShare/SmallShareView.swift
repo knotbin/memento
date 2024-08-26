@@ -6,8 +6,6 @@ import UniformTypeIdentifiers
 struct SmallShareView: View {
     @Environment(\.modelContext) private var modelContext
     
-    @State private var notetext: String = ""
-    @State private var linkText = ""
     @State private var cancelTask = false
     @State private var tapped = false // State variable to track tap
     
@@ -50,15 +48,28 @@ struct SmallShareView: View {
             if cancelTask {
                 return
             }
-            if let item = await Item(link: url?.absoluteString, note: note) {
-                if cancelTask {
-                    return
+            if note?.contains("https://") == true || note?.contains("http://") == true || note?.contains("www.") == true {
+                if let item = await Item(link: note) {
+                    if cancelTask {
+                        return
+                    }
+                    modelContext.insert(item)
+                    try? modelContext.save() // Saving the item in SwiftData
+                    UpdateAll()
+                    print("Saved")
+                    extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                } else {
+                    if let item = await Item(link: url?.absoluteString, note: note) {
+                        if cancelTask {
+                            return
+                        }
+                        modelContext.insert(item)
+                        try? modelContext.save() // Saving the item in SwiftData
+                        UpdateAll()
+                        print("Saved")
+                        extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                    }
                 }
-                modelContext.insert(item)
-                try? modelContext.save() // Saving the item in SwiftData
-                UpdateAll()
-                print("Saved")
-                extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
             }
         }
     }
