@@ -58,17 +58,17 @@ struct SmallShareView: View {
                     UpdateAll()
                     print("Saved")
                     extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                } else {
-                    if let item = await Item(link: url?.absoluteString, note: note) {
-                        if cancelTask {
-                            return
-                        }
-                        modelContext.insert(item)
-                        try? modelContext.save() // Saving the item in SwiftData
-                        UpdateAll()
-                        print("Saved")
-                        extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                }
+            } else {
+                if let item = await Item(link: url?.absoluteString, note: note) {
+                    if cancelTask {
+                        return
                     }
+                    modelContext.insert(item)
+                    try? modelContext.save() // Saving the item in SwiftData
+                    UpdateAll()
+                    print("Saved")
+                    extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                 }
             }
         }
