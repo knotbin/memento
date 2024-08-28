@@ -407,9 +407,27 @@ struct MementoWidgetEntryView : View {
                 .widgetURL(widgetURL)
             }
         } else {
-            Text("There are no unviewed items.")
-                .multilineTextAlignment(.center)
-                .widgetURL(nil)
+            VStack {
+                Spacer()
+                Text("No items to show")
+                    .multilineTextAlignment(.center)
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(
+                        intent: ReloadWidgetIntent(),
+                        label: {
+                            Label(
+                                "Reload",
+                                systemImage: "arrow.clockwise"
+                            )
+                            .font(.caption)
+                            .labelStyle(.iconOnly)
+                    })
+                    .buttonStyle(.plain)
+                    .foregroundStyle(Color.accentColor)
+                }
+            }
         }
         
     }

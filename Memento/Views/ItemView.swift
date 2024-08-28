@@ -42,14 +42,16 @@ struct ItemView: View {
                         VStack(alignment: .leading) {
                             if item.link != nil {
                                 Text(item.metadata?.title ?? item.link ?? "")
+                                    .font(.caption)
                                     .bold()
                                     .tint(Color.primary)
-                                    .lineLimit(1)
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(3)
                             }
                             Text(item.note ?? "")
+                                .font(.caption)
                                 .multilineTextAlignment(.leading)
                                 .tint(.secondary)
-                                .lineLimit(2)
                         }
                     }
                     .padding(10)
